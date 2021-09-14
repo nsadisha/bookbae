@@ -2,8 +2,9 @@
     /* Navbar */
     .navbar .navbar-nav .nav-item .nav-link{
         color: #87574b;
+        font-weight: 500;
     }
-    .navbar .navbar-nav .nav-item .active strong{
+    .navbar .navbar-nav .nav-item .active span{
         color: white;
         background-color: #87574b;
         padding-left: 0.7rem;
@@ -24,12 +25,12 @@ function navbar(){
             </button>
             <div class='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
-                <li class='nav-item'><a class='nav-link active' href='#'><strong>Home</strong></a></li>
-                <li class='nav-item'><a class='nav-link' href='#'><strong>About us</strong></a></li>
-                <li class='nav-item'><a class='nav-link' href='#'><strong>Contact us</strong></a></li>
-                <li class='nav-item'><a class='nav-link' href='#'><strong>Login</strong></a></li>
-                <li class='nav-item'><a class='nav-link' href='#'><strong>Register</strong></a></li>
-                <li class='nav-item'><a class='nav-link' href='#'><strong>Account</strong></a></li>
+                <li class='nav-item'><a class='nav-link active' href='#'><span>Home</span></a></li>
+                <li class='nav-item'><a class='nav-link' href='#'><span>About us</span></a></li>
+                <li class='nav-item'><a class='nav-link' href='#'><span>Contact us</span></a></li>
+                <li class='nav-item'><a class='nav-link' href='#'><span>Login</span></a></li>
+                <li class='nav-item'><a class='nav-link' href='#'><span>Register</span></a></li>
+                <li class='nav-item'><a class='nav-link' href='#'><span>Account</span></a></li>
             </ul>
             </div>
         </div>
