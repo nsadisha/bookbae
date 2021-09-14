@@ -14,7 +14,7 @@
 <body>
 
     <!-- Navbar starts -->
-    <?php navbar(); ?>
+    <?php navbar("register"); ?>
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
