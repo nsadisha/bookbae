@@ -1,6 +1,13 @@
 <?php include "components/footer.php" ?>
 <?php include "components/navbar.php" ?>
 
+<?php
+    $isSearched = false;
+    if(isset($_REQUEST["search"])){
+        $isSearched = true;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +25,17 @@
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <h1 class="text-center">Home</h1>
+
+    <!-- search bar -->
+    <section>Search</section>
+    <!-- landing -->
+    <section class="<?php echo !$isSearched?"d-block":"d-none" ?>">
+        <div class="container-fluid">
+            <h4>New arrivals</h4>
+        </div>
+    </section>
+    <!-- search products -->
+    <section class="<?php echo $isSearched?"d-block":"d-none" ?>">Searched</section>
     <!-- Page content ends -->
 
     <!-- Footer starts -->
