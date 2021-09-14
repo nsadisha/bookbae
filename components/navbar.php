@@ -15,7 +15,12 @@
 </style>
 <?php
 
-function navbar(){
+function isActive($current, $page){
+    return $current==$page?" active":"";
+}
+
+function navbar($nav){
+
     $navbar = "
     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
         <div class='container-fluid'>
@@ -25,12 +30,24 @@ function navbar(){
             </button>
             <div class='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
-                <li class='nav-item'><a class='nav-link active' href='#'><span>Home</span></a></li>
-                <li class='nav-item'><a class='nav-link' href='#'><span>About us</span></a></li>
-                <li class='nav-item'><a class='nav-link' href='#'><span>Contact us</span></a></li>
-                <li class='nav-item'><a class='nav-link' href='#'><span>Login</span></a></li>
-                <li class='nav-item'><a class='nav-link' href='#'><span>Register</span></a></li>
-                <li class='nav-item'><a class='nav-link' href='#'><span>Account</span></a></li>
+                <li class='nav-item'><a class='nav-link".isActive($nav, "home")."' href='index.php'>
+                    <span>Home</span>
+                </a></li>
+                <li class='nav-item'><a class='nav-link".isActive($nav, "about")."' href='about.php'>
+                    <span>About us</span>
+                </a></li>
+                <li class='nav-item'><a class='nav-link".isActive($nav, "contact")."' href='contact.php'>
+                    <span>Contact us</span>
+                </a></li>
+                <li class='nav-item'><a class='nav-link".isActive($nav, "signin")."' href='signin.php'>
+                    <span>Sign in</span>
+                </a></li>
+                <li class='nav-item'><a class='nav-link".isActive($nav, "register")."' href='register.php'>
+                    <span>Register</span>
+                </a></li>
+                <li class='nav-item'><a class='nav-link".isActive($nav, "account")."' href='account.php'>
+                    <span>Account</span>
+                </a></li>
             </ul>
             </div>
         </div>
