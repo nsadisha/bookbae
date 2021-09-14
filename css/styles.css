@@ -1,6 +1,12 @@
 /* Poppins google font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,100&display=swap');
 
+/* SF Pro font */
+@font-face {
+    font-family: 'SF Pro'; /*a name to be used later*/
+    src: url('../assets/fonts/SF.ttf'); /*URL to font*/
+}
+
 body{
     padding: 0;
     margin: 0;
@@ -10,4 +16,8 @@ body{
 
 h1,h2,h3,h4,h5,h6{
     color: #050505;
+    font-family: 'SF Pro';
+}
+p{
+    font-family: 'SF Pro';
 }
