@@ -1,11 +1,36 @@
 <?php include "components/footer.php" ?>
 <?php include "components/navbar.php" ?>
+<?php include "components/book.php" ?>
 <?php include "components/filter.php" ?>
 
 <?php
     $isSearched = false;
-    if(isset($_REQUEST["search"])){
+    $q = "";
+    $search = "";
+
+
+    if(isset($_REQUEST["q"])){
         $isSearched = true;
+        $q = $_REQUEST["q"];
+        $search = str_replace(" ", "+", $q);
+    }
+
+
+    //add to fav
+    if(isset($_REQUEST["fav"])){
+        if(!isSigned()){
+            addToFav($_REQUEST["fav"]);
+        }else{
+            header("Location: signin.php");
+        }
+    }
+    //add to cart
+    if(isset($_REQUEST["cart"])){
+        if(!isSigned()){
+            addToCart($_REQUEST["cart"]);
+        }else{
+            header("Location: signin.php");
+        }
     }
 ?>
 
@@ -31,9 +56,9 @@
     <section class="mt-2 <?php echo !$isSearched?"d-block":"d-none" ?>">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="get" class="col-md-4">
+                <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="get" class="col-5 col-md-4">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search" name="search">
+                        <input type="text" class="form-control" placeholder="Search" name="q">
                         <button class="btn btn-outline-secondary" type="submit">search</button>
                     </div>
                 </form>
@@ -46,37 +71,33 @@
             <h4>New arrivals</h4>
         </div>
     </section>
+
     <!-- search products -->
     <section class=" mt-2 <?php echo $isSearched?"d-block":"d-none" ?>">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 px-4 py-4 sticky-top">
-                <?php showFilter(); ?>
+            <div class="col-md-3 px-4 d-none d-md-block">
+                <div class="position-sticky top-0  py-4">
+                    <?php showFilter(); ?>
+                </div>
             </div>
 
             <div class="col-md-9">
                 <div class="row">
                     <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="get" class="col-md-7 m-0">
                         <div class="input-group">
-                            <input type="text" class="form-control m-0" placeholder="Search" name="search">
+                            <input type="text" class="form-control m-0" placeholder="Search" name="q" value="<?php echo $q; ?>">
                             <button class="btn btn-outline-secondary" type="submit">search</button>
                         </div>
                     </form>
                 </div>
                 <p class="mb-3">Showing 25 results</p>
-                <h1>Books</h1>
-                <h1>Books</h1>
-                <h1>Books</h1>
-                <h1>Books</h1>
-                <h1>Books</h1>
-                <h1>Books</h1>
-                <h1>Books</h1>
-                <h1>Books</h1>
-                <h1>Books</h1>
-                <h1>Books</h1>
-                <h1>Books</h1>
+                <div class="row g-2">
+                    <?php book("12321354565856"); ?>
+                    <?php book("12321354598856"); ?>
+                </div>
             
-                <div class="row justify-content-center">
+                <div class="row justify-content-center mt-3">
                     <div class="col-auto">
                         <nav aria-label="...">
                             <ul class="pagination">
