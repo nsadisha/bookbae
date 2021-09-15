@@ -13,6 +13,10 @@
     src: url('../assets/fonts/SF.ttf'); /*URL to font*/
 }
 
+*{
+    transition: 0.2s;
+}
+
 body{
     padding: 0;
     margin: 0;
@@ -44,46 +48,4 @@ label{
 .filter-btns input[type=submit]{
     color: white;
     background: #87574b;
-}
-
-/* Books */
-.book{
-    position: relative;
-    border-radius: 5px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    font-family: 'SF Pro';
-    transition: 0.2s;
-    /* border: solid 1px rgb(221, 221, 221); */
-}
-.book:hover{
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 20px;
-    border-radius: 5px;
-}
-.book:hover > .book-img{transform: scale(1.03);}
-.book .book-img{
-    width: 100%;
-    margin-bottom: 1rem;
-    transition: 0.2s;
-}
-.book .book-btn{
-    margin-top: 1rem;
-    background-color: #87574b;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-.book .book-btn:hover{
-    background-color: #6e473e;
-}
-.book .book-btn .book-cart-icon{
-    stroke: white;
-    width: 17px;
-}
-.book .fav-btn{
-    border: none;
-    background-color: transparent;
-    padding: 0.5rem;
 }
