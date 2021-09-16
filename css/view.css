@@ -21,7 +21,22 @@ h1{
 .card{
     margin: 0 auto; 
     position: relative;
-  
- 
 }
-
+.container .description{
+    background-color: #EDE0D4;
+    margin: 5%;
+    border-radius: 1rem;
+    width: 90%;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 6%;
+    padding-bottom: 3%;
+}
+.description .row{
+    padding-bottom: 3%;
+}
+button{
+    background-color: #B08968;
+    border-radius: 2rem;
+}

@@ -25,7 +25,7 @@
 
     <!-- Page content starts -->
     <div class="container">
-        <h1 class="text-center">Rotten school and great smelling bee</h1>
+        
         <div class="swiper myswiper">
             <div class="swiper-wrapper" style="height: fit-content;">
                 <div class="card swiper-slide" style="width: 18rem;">
@@ -43,12 +43,88 @@
             </div><br>
             <div class="swiper-pagination"></div>
         </div>
-        <div class="container">
-            <table>
-                <tr>
-                    <th>ISBN</th>
-                    <td>12131</th>
-                </tr>
+        <h1 class="text-center">Rotten school and great smelling bee</h1>
+        <div class="container description">
+            <div class="row ">
+                <div class="col-6">
+                    ISBN
+                </div>
+                <div class="col-6">
+                    1235
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    Author
+                </div>
+                <div class="col-6">
+                    R.L Stine
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6 ">
+                    Language
+                </div>
+                <div class="col-6">
+                    English
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6 ">
+                    Year
+                </div>
+                <div class="col-6">
+                    2014
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6 ">
+                    Edition
+                </div>
+                <div class="col-6">
+                    six
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6 ">
+                    Publisher
+                </div>
+                <div class="col-6">
+                    1235
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <p>Rotten School is a children's book series by R. L. Stine 
+                        concerning the adventures of children at a boarding school.
+                        Each book is written from the perspective of Bernie Bridges,
+                        a fourth-grader who lives in his dormitory at Rotten School 
+                        with his pals Belzer, Feenman and Crench, Beast, Chipmunk, 
+                        Nosebleed, Billy The Brain and others. Their rivals are Sherman
+                        Oaks, a rich spoiled brat, and his buddies Wes Updood and Joe
+                        Sweety, from the Nyce House dormitory. 
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 ">
+                    Price
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-4 ">
+                    <h3>$25.34</h3>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary" type="submit">Add to cart</button>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary" type="submit">Buy now</button>
+                </div>
+            </div>    
+
+            </div>
         </div>
 
     </div>
