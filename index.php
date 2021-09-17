@@ -7,6 +7,7 @@
     $isSearched = false;
     $q = "";
     $search = "";
+    $totalResults = 0;
 
 
     if(isset($_REQUEST["q"])){
@@ -32,6 +33,19 @@
             header("Location: signin.php");
         }
     }
+
+    function showBooks(){
+        global $totalResults;
+        $books = getAllBooks();
+        if($books){
+            $totalResults = $books->num_rows;
+            foreach($books as $book){
+                book($book["isbn"]);
+            }
+        }else{
+            echo "<h1 class='text-center my-5'>No result found!</h1>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -50,13 +64,24 @@
     <?php navbar('home'); ?>
     <!-- Navbar ends -->
 
+    <div class="modal fade" id="filterModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <?php showFilter(); ?>
+            </div>
+        </div>
+    </div>
+
     <!-- Page content starts -->
 
     <!-- search bar -->
     <section class="mt-2 <?php echo !$isSearched?"d-block":"d-none" ?>">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="get" class="col-5 col-md-4">
+                <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="get" class="col-sm-7 col-md-4">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Search" name="q">
                         <button class="btn btn-outline-secondary" type="submit">search</button>
@@ -84,25 +109,27 @@
 
             <div class="col-md-9">
                 <div class="row">
-                    <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="get" class="col-md-7 m-0">
+                    <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="get" class="col-md-6 m-0">
                         <div class="input-group">
                             <input type="text" class="form-control m-0" placeholder="Search" name="q" value="<?php echo $q; ?>">
                             <button class="btn btn-outline-secondary" type="submit">search</button>
                         </div>
                     </form>
+                    <div class="col-auto d-flex align-items-center"><a href="index.php" class="clear-search px-2">&times; Clear search</a></div>
+                    <div class="col-auto d-block d-md-none ms-auto py-2"><button class="btn filter-icon-btn" data-bs-toggle="modal" data-bs-target="#filterModal"><i class="bi bi-funnel-fill"></i></button></div>
                 </div>
-                <p class="mb-3">Showing 25 results</p>
+                <p class="mb-3">Showing <?php echo $totalResults; ?> results</p>
                 <div class="row g-2">
-                    <?php book("12321354565856"); ?>
-                    <?php book("12321354598856"); ?>
+                    <?php showBooks();?>
                 </div>
             
+                <!-- Pagination -->
                 <div class="row justify-content-center mt-3">
                     <div class="col-auto">
                         <nav aria-label="...">
                             <ul class="pagination">
                                 <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&lt; Previous</a>
                                 </li>
                                 <li class="page-item"><a class="page-link" href="#">1</a></li>
                                 <li class="page-item active" aria-current="page">
@@ -110,7 +137,7 @@
                                 </li>
                                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                                 <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
+                                    <a class="page-link" href="#">Next &gt;</a>
                                 </li>
                             </ul>
                         </nav>
