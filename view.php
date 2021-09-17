@@ -20,7 +20,7 @@
 <body>
 
     <!-- Navbar starts -->
-  
+    <?php navbar(""); ?>
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
@@ -132,7 +132,7 @@
     <!-- Page content ends -->
 
     <!-- Footer starts -->
-    
+    <?php footer(); ?>
     <!-- Footer ends -->
 
 
