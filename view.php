@@ -27,7 +27,7 @@
     <div class="container">
         
         <div class="swiper myswiper">
-            <div class="swiper-wrapper" style="height: fit-content;">
+            <div class="swiper-wrapper" style="height: min-content;">
                 <div class="card swiper-slide" style="width: 18rem;">
                     <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                 </div>
@@ -95,7 +95,10 @@
             </div>
 
             <div class="row">
-                <div class="col-12">
+                <div class="col-6 ">
+                    Description
+                </div>
+                <div class="col-12 col-sm-6">
                     <p>Rotten School is a children's book series by R. L. Stine 
                         concerning the adventures of children at a boarding school.
                         Each book is written from the perspective of Bernie Bridges,
