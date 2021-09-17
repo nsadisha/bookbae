@@ -22,11 +22,9 @@
 
   //add to cart
   function addToCart($isbn){
-    echo "item added $isbn";
   }
   //add to favlist
   function addToFav($isbn){
-    echo "item added to fav $isbn";
   }
 
   // is signin
@@ -37,5 +35,11 @@
     if(isSigned()){
       return $_SESSION["email"];
     }
+  }
+
+  //get all books
+  function getAllBooks(){
+    $books = execute("SELECT * FROM books");
+    return $books;
   }
 ?>
