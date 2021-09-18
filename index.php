@@ -14,6 +14,8 @@
         $isSearched = true;
         $q = $_REQUEST["q"];
         $search = str_replace(" ", "+", $q);
+    }else{
+        header("Location: landing.php");
     }
 
 
@@ -40,7 +42,7 @@
         if($books){
             $totalResults = $books->num_rows;
             foreach($books as $book){
-                book($book["isbn"]);
+                book($book["isbn"],3);
             }
         }else{
             echo "<h1 class='text-center my-5'>No result found!</h1>";
@@ -84,21 +86,16 @@
                 <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="get" class="col-sm-7 col-md-4">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Search" name="q">
-                        <button class="btn btn-outline-secondary" type="submit">search</button>
+                        <button class="btn btn-outline text-white bg-brown" type="submit"><strong>Search</strong></button>
                     </div>
                 </form>
             </div>
         </div>
     </section>
     <!-- landing -->
-    <section class="<?php echo !$isSearched?"d-block":"d-none" ?>">
-        <div class="container-fluid">
-            <h4>New arrivals</h4>
-        </div>
-    </section>
 
     <!-- search products -->
-    <section class=" mt-2 <?php echo $isSearched?"d-block":"d-none" ?>">
+    <section class=" mt-2">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 px-4 d-none d-md-block">
@@ -112,7 +109,7 @@
                     <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="get" class="col-md-6 m-0">
                         <div class="input-group">
                             <input type="text" class="form-control m-0" placeholder="Search" name="q" value="<?php echo $q; ?>">
-                            <button class="btn btn-outline-secondary" type="submit">search</button>
+                            <button class="btn btn-outline text-white bg-brown" type="submit"><strong>Search</strong></button>
                         </div>
                     </form>
                     <div class="col-auto d-flex align-items-center"><a href="index.php" class="clear-search px-2">&times; Clear search</a></div>
