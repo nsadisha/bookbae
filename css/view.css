@@ -1,7 +1,6 @@
 body{
     margin: 0;
     padding: 0%;
-    display: flex;
     justify-content: center;
     align-items: center;
 
@@ -12,16 +11,11 @@ h1{
     padding: 2%;
  
 }
-.carousel{
-    width: 932px;
-    height: 345px;
-    align-items: center;
-    
-}
 .card{
     margin: 0 auto; 
     position: relative;
 }
+
 .container .description{
     background-color: #EDE0D4;
     margin: 5%;

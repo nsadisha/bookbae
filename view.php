@@ -20,29 +20,30 @@
 <body>
 
     <!-- Navbar starts -->
-  
+    <?php navbar(""); ?>
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
     <div class="container">
-        
+        <!-- slide swiper -->
         <div class="swiper myswiper">
-            <div class="swiper-wrapper" style="height: fit-content;">
-                <div class="card swiper-slide" style="width: 18rem;">
+            <div class="swiper-wrapper mt-3" style="height: fit-content;">
+                <div class="card swiper-slide" style="width: 15rem;">
                     <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                 </div>
-                <div class="card swiper-slide" style="width: 18rem;">
+                <div class="card swiper-slide" style="width: 15rem;">
                     <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                 </div>
-                <div class="card swiper-slide" style="width: 18rem;">
+                <div class="card swiper-slide" style="width: 15rem;">
                     <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                 </div>
-                <div class="card swiper-slide" style="width: 18rem;">
+                <div class="card swiper-slide" style="width: 15rem;">
                     <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                 </div>
             </div><br>
             <div class="swiper-pagination"></div>
         </div>
+        <!-- Page descriptin -->
         <h1 class="text-center">Rotten school and great smelling bee</h1>
         <div class="container description">
             <div class="row ">
@@ -127,12 +128,59 @@
             </div>
         </div>
 
+        <!--related items -->
+        <div class="container related-items">
+            <h3>Related Items</h3>
+            <div class="block row">
+                <div class="col-3 ">
+                    <div class="card" style="width: 12rem;">
+                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title">The school is haunted</h6>
+                            <p class="card-text">Price $30.32</p>
+                            <a href="#" class="btn btn-primary">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 ">
+                    <div class="card" style="width: 12rem;">
+                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title">The school is haunted</h6>
+                            <p class="card-text">Price $30.32</p>
+                            <a href="#" class="btn btn-primary">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 ">
+                    <div class="card" style="width: 12rem;">
+                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title">The school is haunted</h6>
+                            <p class="card-text">Price $30.32</p>
+                            <a href="#" class="btn btn-primary">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 ">
+                    <div class="card" style="width: 12rem;">
+                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title">The school is haunted</h6>
+                            <p class="card-text">Price $30.32</p>
+                            <a href="#" class="btn btn-primary">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
     
     <!-- Page content ends -->
 
     <!-- Footer starts -->
-    
+    <?php footer(); ?>
     <!-- Footer ends -->
 
 
