@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/view.css">
 
     <!-- bootstrap -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <!-- swiper css -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
@@ -124,10 +125,10 @@
                     <h3>$25.34</h3>
                 </div>
                 <div class="col-4">
-                    <button class="btn btn-primary" type="submit">Add to cart</button>
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-cart3"></i>Add to cart</button>
                 </div>
                 <div class="col-4">
-                    <button class="btn btn-primary" type="submit">Buy now</button>
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-coin"></i>Buy now</button>
                 </div>
             </div>    
 
@@ -144,7 +145,7 @@
                         <div class="card-body">
                             <h6 class="card-title m-0">The school is haunted</h6>
                             <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1 bg-brown">Add to cart</a>
+                            <a href="#" class="btn btn-primary p-1 m-1 bg-brown"><i class="bi bi-cart3"></i>Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -154,7 +155,7 @@
                         <div class="card-body">
                             <h6 class="card-title m-0">The school is haunted</h6>
                             <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1">Add to cart</a>
+                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3"></i>Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -164,7 +165,7 @@
                         <div class="card-body">
                             <h6 class="card-title m-0">The school is haunted</h6>
                             <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1">Add to cart</a>
+                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3"></i>Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -174,7 +175,7 @@
                         <div class="card-body">
                             <h6 class="card-title m-0">The school is haunted</h6>
                             <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1"><span class="material-icons-outlined">shopping_cart</span>Add to cart</a>
+                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3"></i>Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -197,7 +198,7 @@
     <!-- Page content ends -->
 
     <!-- Footer starts -->
-    <?php footer(); ?>
+        <?php footer(); ?>
     <!-- Footer ends -->
 
 
