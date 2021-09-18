@@ -15,6 +15,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <!-- swiper css -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <!--google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab&display=swap" rel="stylesheet">
+    
     <title>BookBae | Register</title>
 </head>
 <body>
@@ -26,6 +31,7 @@
     <!-- Page content starts -->
     <div class="container">
         <!-- slide swiper -->
+        <h1 class="text-center">Rotten school and great smelling bee</h1>
         <div class="swiper myswiper">
             <div class="swiper-wrapper mt-3" style="height: fit-content;">
                 <div class="card swiper-slide" style="width: 15rem;">
@@ -44,7 +50,7 @@
             <div class="swiper-pagination"></div>
         </div>
         <!-- Page descriptin -->
-        <h1 class="text-center">Rotten school and great smelling bee</h1>
+        
         <div class="container description">
             <div class="row ">
                 <div class="col-6">
@@ -130,15 +136,15 @@
 
         <!--related items -->
         <div class="container related-items">
-            <h3>Related Items</h3>
+            <h3 class="m-3">Related Items</h3>
             <div class="block row">
                 <div class="col-3 ">
                     <div class="card" style="width: 12rem;">
                         <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h6 class="card-title">The school is haunted</h6>
-                            <p class="card-text">Price $30.32</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
+                            <h6 class="card-title m-0">The school is haunted</h6>
+                            <p class="card-text m-0">Price $30.32</p>
+                            <a href="#" class="btn btn-primary p-1 m-1 bg-brown">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -146,9 +152,9 @@
                     <div class="card" style="width: 12rem;">
                         <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h6 class="card-title">The school is haunted</h6>
-                            <p class="card-text">Price $30.32</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
+                            <h6 class="card-title m-0">The school is haunted</h6>
+                            <p class="card-text m-0">Price $30.32</p>
+                            <a href="#" class="btn btn-primary p-1 m-1">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -156,9 +162,9 @@
                     <div class="card" style="width: 12rem;">
                         <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h6 class="card-title">The school is haunted</h6>
-                            <p class="card-text">Price $30.32</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
+                            <h6 class="card-title m-0">The school is haunted</h6>
+                            <p class="card-text m-0">Price $30.32</p>
+                            <a href="#" class="btn btn-primary p-1 m-1">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -166,16 +172,27 @@
                     <div class="card" style="width: 12rem;">
                         <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h6 class="card-title">The school is haunted</h6>
-                            <p class="card-text">Price $30.32</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
+                            <h6 class="card-title m-0">The school is haunted</h6>
+                            <p class="card-text m-0">Price $30.32</p>
+                            <a href="#" class="btn btn-primary p-1 m-1"><span class="material-icons-outlined">shopping_cart</span>Add to cart</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+        <div class="container gif m-5 p-5">
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <img src="assets/images/view page/gif.gif" class="card-img-top" alt="...">
+                </div>
+                <div class="col-6 p-4">
+                    <p>"Books are the quietest and most constant of friends; they are the most accessible and wisest of counselors, and the most patient of teachers."</p>
+                    <p>-Charles W. Eliot</p>
+                </div>
+            </div>
+        </div>
     </div>
+    
     
     <!-- Page content ends -->
 
