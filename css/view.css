@@ -1,20 +1,21 @@
 body{
     margin: 0;
-    padding: 0;
+    padding: 0%;
+    justify-content: center;
+    align-items: center;
+
 }
 h1{
     /* text-align: center; */
     padding: 2%;
-}
-.carousel{
-    width: 932px;
-    height: 345px;
-    align-items: center;
+    font-family: 'Roboto Slab', serif;
+ 
 }
 .card{
     margin: 0 auto; 
     position: relative;
 }
+
 .container .description{
     background-color: #EDE0D4;
     margin: 5%;
@@ -32,4 +33,24 @@ h1{
 button{
     background-color: #B08968;
     border-radius: 2rem;
+}
+.related-items h3{
+    font-weight: bold;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5rem;
+}
+.related-items p{
+    font-weight: bold;
+    color: darkgray;
+}
+.gif{
+    border-color: darkgray;
+    border-width: 3rem;
+    
+}
+.gif p{
+    text-align: center;
+    font-size: 1.5rem;
+    color: darkgray;
+    font-family: 'Pacifico', cursive;
 }
