@@ -1,54 +1,6 @@
 <?php include "components/footer.php" ?>
 <?php include "components/navbar.php" ?>
 <?php include "components/book.php" ?>
-<?php include "components/filter.php" ?>
-
-<?php
-    $isSearched = false;
-    $q = "";
-    $search = "";
-    $totalResults = 0;
-
-
-    if(isset($_REQUEST["q"])){
-        $isSearched = true;
-        $q = $_REQUEST["q"];
-        $search = str_replace(" ", "+", $q);
-    }else{
-        header("Location: landing.php");
-    }
-
-
-    //add to fav
-    if(isset($_REQUEST["fav"])){
-        if(!isSigned()){
-            addToFav($_REQUEST["fav"]);
-        }else{
-            header("Location: signin.php");
-        }
-    }
-    //add to cart
-    if(isset($_REQUEST["cart"])){
-        if(!isSigned()){
-            addToCart($_REQUEST["cart"]);
-        }else{
-            header("Location: signin.php");
-        }
-    }
-
-    function showBooks(){
-        global $totalResults;
-        $books = getAllBooks();
-        if($books){
-            $totalResults = $books->num_rows;
-            foreach($books as $book){
-                book($book["isbn"],3);
-            }
-        }else{
-            echo "<h1 class='text-center my-5'>No result found!</h1>";
-        }
-    }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,99 +8,115 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- custom css -->
+    <title>Document</title>
     <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
-    <title>BookBae | Home</title>
 </head>
 <body>
 
+<div class="landing">
     <!-- Navbar starts -->
-    <?php navbar('home'); ?>
+    <?php navbar("home"); ?>
     <!-- Navbar ends -->
 
-    <div class="modal fade" id="filterModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <section class="position-relative mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-grid align-content-center order-2 order-md-1">
+                    <div class="mx-auto mx-md-0 text-center text-md-start">
+                        <h1>Hello there...!</h1>
+                        <p>This is a paragraph.</p>
+                        <a href="search.php?q=" class="btn px-3 shop-now-btn">
+                            <strong>Shop now</strong> <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                
                 </div>
-                <?php showFilter(); ?>
+                <div class="col-md-6 d-flex justify-content-center order-1">
+                    <img src="assets/images/reading.png" alt="" width="80%">
+                </div>
             </div>
         </div>
-    </div>
+        <div class="round-1 d-none d-md-block"></div>
+    </section>
 
-    <!-- Page content starts -->
-
-    <!-- search bar -->
-    <section class="mt-2 <?php echo !$isSearched?"d-block":"d-none" ?>">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="get" class="col-sm-7 col-md-4">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search" name="q">
-                        <button class="btn btn-outline text-white bg-brown" type="submit"><strong>Search</strong></button>
+    <section class="position-relative my-5 py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card card-1">
+                        <div class="card-icon"><i class="bi bi-truck"></i></div>
+                        <h4>Worldwide delivery</h4>
                     </div>
-                </form>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card card-2">
+                        <div class="card-icon"><i class="bi bi-book"></i></div>
+                        <h4>150,000+ books</h4>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card card-3">
+                        <div class="card-icon"><i class="bi bi-wallet"></i></div>
+                        <h4>100% secure payments</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- landing -->
 
-    <!-- search products -->
-    <section class=" mt-2">
-    <div class="container-fluid">
+    <section class="container-fluid my-5">
+        <h3 class="mb-1">Featured products</h3>
+        <div class="mb-4 hr"></div>
         <div class="row">
-            <div class="col-md-3 px-4 d-none d-md-block">
-                <div class="position-sticky top-0  py-4">
-                    <?php showFilter(); ?>
-                </div>
-            </div>
+            <?php book("12321354565856",2); ?>
+            <?php book("987456123654",2); ?>
+            <?php book("12321354598856",2); ?>
+            <?php book("456987456321",2); ?>
+            <?php book("987456123654",2); ?>
+            <?php book("556987456321",2); ?>
+        </div>
+    </section>
 
-            <div class="col-md-9">
-                <div class="row">
-                    <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="get" class="col-md-6 m-0">
-                        <div class="input-group">
-                            <input type="text" class="form-control m-0" placeholder="Search" name="q" value="<?php echo $q; ?>">
-                            <button class="btn btn-outline text-white bg-brown" type="submit"><strong>Search</strong></button>
-                        </div>
-                    </form>
-                    <div class="col-auto d-flex align-items-center"><a href="index.php" class="clear-search px-2">&times; Clear search</a></div>
-                    <div class="col-auto d-block d-md-none ms-auto py-2"><button class="btn filter-icon-btn" data-bs-toggle="modal" data-bs-target="#filterModal"><i class="bi bi-funnel-fill"></i></button></div>
+    <section class="container-fluid my-5">
+        <h3 class="mb-1">New arrivals</h3>
+        <div class="mb-4 hr"></div>
+        <div class="row">
+            <?php book("12321354565856",2); ?>
+            <?php book("987456123654",2); ?>
+            <?php book("12321354598856",2); ?>
+            <?php book("456987456321",2); ?>
+            <?php book("987456123654",2); ?>
+            <?php book("556987456321",2); ?>
+        </div>
+    </section>
+
+    <section>
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                    <img src="assets/svg/subscribe.svg" alt="" style="width: 70%;">
                 </div>
-                <p class="mb-3">Showing <?php echo $totalResults; ?> results</p>
-                <div class="row g-2">
-                    <?php showBooks();?>
-                </div>
-            
-                <!-- Pagination -->
-                <div class="row justify-content-center mt-3">
-                    <div class="col-auto">
-                        <nav aria-label="...">
-                            <ul class="pagination">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&lt; Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active" aria-current="page">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next &gt;</a>
-                                </li>
-                            </ul>
-                        </nav>
+                <div class="col-md-6 d-flex align-items-center justify-content-center mt-5 mt-md-0">
+                    <div>
+                        <h1 class="mb-0">Subscribe us</h1>
+                        <div class="hr mb-3"></div>
+                        <p>sdfdsdfsdsdfsdfsdsdf</p>
+                        <form action="" method="post">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="username@example.com" name="subscribeEmail">
+                                <button class="btn btn-outline text-white bg-brown" type="submit"><strong>Subscribe</strong></button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </section>
-    <!-- Page content ends -->
 
     <!-- Footer starts -->
     <?php footer(); ?>
     <!-- Footer ends -->
+</div>
     
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
