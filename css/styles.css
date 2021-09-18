@@ -39,6 +39,16 @@ label{
     font-family: 'SF Pro';
     margin-bottom: 0;
 }
+/* necesssary */
+.bg-brown{
+    background-color: #87574b;
+}
+.bg-brown:hover{
+    background-color: #87574b;
+}
+.text-white{
+    color: white;
+}
 
 /* Home page(index.php) */
 .clear-search{
@@ -75,4 +85,74 @@ label{
     color: white !important;
     background-color: #87574b !important;
     border-color: #87574b !important;
+}
+
+/* landing */
+.landing section{
+    overflow: hidden;
+}
+.landing .round-1{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -25vw;
+    width: 70vw;
+    height: 70vw;
+    background-color: #87574b20;
+    clip-path: circle();
+    z-index: -10;
+}
+.landing .shop-now-btn{
+    cursor: pointer;
+    background-color: #87574b;
+    color: white;
+    border: solid 2px #87574b;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.landing section .card{
+    border: none;
+    display: grid;
+    align-items: center;
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.07) 0 0 30px;
+    text-align: center;
+}
+.landing section .card i{
+    font-size: 2rem;
+    background-color: #eee;
+    padding: 1.5rem;
+    clip-path: circle();
+}
+.landing section .card-1 i{
+    color: #48aeff;
+}
+.landing section .card-1:hover > .card-icon i{
+    color: #eee;
+    background-color: #48aeff;
+}
+.landing section .card-2 i{
+    color: #ffa76e;
+}
+.landing section .card-2:hover > .card-icon i{
+    color: #eee;
+    background-color: #ffa76e;
+}
+.landing section .card-3 i{
+    color: #e80368;
+}
+.landing section .card-3:hover > .card-icon i{
+    color: #eee;
+    background-color: #e80368;
+}
+.landing section .card h4{
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+
+.landing .hr{
+    width: 100px;
+    height: 3px;
+    background-color: #87574b;
 }
