@@ -58,7 +58,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- custom css -->
     <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
-    <title>BookBae | Home</title>
+    <title>BookBae | Search</title>
 </head>
 <body>
 
