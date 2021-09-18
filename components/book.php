@@ -17,6 +17,14 @@
   .book a{
     text-decoration: none;
   }
+  .book .book-name{
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .book .book-price{
+    font-size: 1rem;
+    color: #555;
+  }
   .book a:hover > .book-name{
     text-decoration: none;
     color: #87574b;
@@ -67,9 +75,9 @@ function book($isbn, $size){
         <div class=\"row align-items-center\">
           <div class=\"col\">
             <a href=\"view.php?isbn=$isbn\"><h5 class=\"mb-0 book-name\">".$data["name"]."</h5></a>
-            <span>Rs. ".number_format($data["price"], 2)."</span>
+            <span class=\"book-price\">Rs. ".number_format($data["price"], 2)."</span>
           </div>
-          <div class=\"col-auto\">
+          <div class=\"col-auto d-none\">
             <form action=".$_SERVER['PHP_SELF']." method=\"get\" class=\"d-grid mb-0\">
               <input type=\"hidden\" name=\"fav\" value=\"$isbn\">
               <input type=\"hidden\" name=\"q\" value=\"$q\">
