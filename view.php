@@ -52,7 +52,7 @@
         </div>
         <!-- Page descriptin -->
         
-        <div class="container description">
+        <div class="container description mx-auto">
             <div class="row ">
                 <div class="col-6">
                     ISBN
@@ -103,7 +103,10 @@
             </div>
 
             <div class="row">
-                <div class="col-12">
+                <div class="col-6 ">
+                    Description
+                </div>
+                <div class="col-12 col-sm-6">
                     <p>Rotten School is a children's book series by R. L. Stine 
                         concerning the adventures of children at a boarding school.
                         Each book is written from the perspective of Bernie Bridges,
@@ -139,8 +142,8 @@
         <div class="container related-items">
             <h3 class="m-3">Related Items</h3>
             <div class="block row">
-                <div class="col-3 ">
-                    <div class="card" style="width: 12rem;">
+                <div class="col-sm-3 ">
+                    <div class="card" >
                         <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h6 class="card-title m-0">The school is haunted</h6>
@@ -149,8 +152,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 ">
-                    <div class="card" style="width: 12rem;">
+                <div class="col-sm-3">
+                    <div class="card" >
                         <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h6 class="card-title m-0">The school is haunted</h6>
@@ -159,8 +162,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 ">
-                    <div class="card" style="width: 12rem;">
+                <div class="col-sm-3">
+                    <div class="card" >
                         <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h6 class="card-title m-0">The school is haunted</h6>
@@ -169,8 +172,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 ">
-                    <div class="card" style="width: 12rem;">
+                <div class="col-sm-3">
+                    <div class="card" >
                         <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h6 class="card-title m-0">The school is haunted</h6>
@@ -181,12 +184,12 @@
                 </div>
             </div>
         </div>
-        <div class="container gif m-5 p-5">
+        <div class="container gif mx-auto p-5  m-3">
             <div class="row align-items-center">
-                <div class="col-6">
+                <div class="col-md-6 ">
                     <img src="assets/images/view page/gif.gif" class="card-img-top" alt="...">
                 </div>
-                <div class="col-6 p-4">
+                <div class="col-md-6 p-4 ">
                     <p>"Books are the quietest and most constant of friends; they are the most accessible and wisest of counselors, and the most patient of teachers."</p>
                     <p>-Charles W. Eliot</p>
                 </div>
