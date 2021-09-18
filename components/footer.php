@@ -52,7 +52,7 @@ function footer(){
       </div>
       <div class='container text-center copy'>
           <hr>
-          Copyright &copy; www.bookbae.com $year
+          Copyright &copy; www.bookbae.store $year
       </div>
     </footer>
   ";
