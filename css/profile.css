@@ -1,0 +1,22 @@
+.navbar{
+    background-color: #EDE0D4;
+}
+.dp{
+    height: 12rem;
+    clip-path: circle();
+}
+.header{
+    background-color: #EDE0D4;
+}
+.heading p{
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'SF Pro';
+    font-weight: bold;
+   
+}
+.sub-heading p{
+    text-align: center;
+    font-size: 1.2rem;
+    color: darkgrey;
+}
