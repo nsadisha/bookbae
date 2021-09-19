@@ -12,9 +12,15 @@
     <link rel="stylesheet" href="css/view.css">
 
     <!-- bootstrap -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <!-- swiper css -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <!--google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab&display=swap" rel="stylesheet">
+    
     <title>BookBae | Register</title>
 </head>
 <body>
@@ -25,26 +31,28 @@
 
     <!-- Page content starts -->
     <div class="container">
-        
+        <!-- slide swiper -->
+        <h1 class="text-center">Rotten school and great smelling bee</h1>
         <div class="swiper myswiper">
-            <div class="swiper-wrapper" style="height: min-content;">
-                <div class="card swiper-slide" style="width: 18rem;">
+            <div class="swiper-wrapper mt-3" style="height: fit-content;">
+                <div class="card swiper-slide" style="width: 15rem;">
                     <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                 </div>
-                <div class="card swiper-slide" style="width: 18rem;">
+                <div class="card swiper-slide" style="width: 15rem;">
                     <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                 </div>
-                <div class="card swiper-slide" style="width: 18rem;">
+                <div class="card swiper-slide" style="width: 15rem;">
                     <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                 </div>
-                <div class="card swiper-slide" style="width: 18rem;">
+                <div class="card swiper-slide" style="width: 15rem;">
                     <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                 </div>
             </div><br>
             <div class="swiper-pagination"></div>
         </div>
-        <h1 class="text-center">Rotten school and great smelling bee</h1>
-        <div class="container description">
+        <!-- Page descriptin -->
+        
+        <div class="container description mx-auto">
             <div class="row ">
                 <div class="col-6">
                     ISBN
@@ -120,22 +128,80 @@
                     <h3>$25.34</h3>
                 </div>
                 <div class="col-4">
-                    <button class="btn btn-primary" type="submit">Add to cart</button>
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-cart3"></i>Add to cart</button>
                 </div>
                 <div class="col-4">
-                    <button class="btn btn-primary" type="submit">Buy now</button>
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-coin"></i>Buy now</button>
                 </div>
             </div>    
 
             </div>
         </div>
 
+        <!--related items -->
+        <div class="container related-items">
+            <h3 class="m-3">Related Items</h3>
+            <div class="block row">
+                <div class="col-sm-3 ">
+                    <div class="card" >
+                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title m-0">The school is haunted</h6>
+                            <p class="card-text m-0">Price $30.32</p>
+                            <a href="#" class="btn btn-primary p-1 m-1 bg-brown"><i class="bi bi-cart3"></i>Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" >
+                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title m-0">The school is haunted</h6>
+                            <p class="card-text m-0">Price $30.32</p>
+                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3"></i>Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" >
+                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title m-0">The school is haunted</h6>
+                            <p class="card-text m-0">Price $30.32</p>
+                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3"></i>Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" >
+                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title m-0">The school is haunted</h6>
+                            <p class="card-text m-0">Price $30.32</p>
+                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3"></i>Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container gif mx-auto p-5  m-3">
+            <div class="row align-items-center">
+                <div class="col-md-6 ">
+                    <img src="assets/images/view page/gif.gif" class="card-img-top" alt="...">
+                </div>
+                <div class="col-md-6 p-4 ">
+                    <p>"Books are the quietest and most constant of friends; they are the most accessible and wisest of counselors, and the most patient of teachers."</p>
+                    <p>-Charles W. Eliot</p>
+                </div>
+            </div>
+        </div>
     </div>
+    
     
     <!-- Page content ends -->
 
     <!-- Footer starts -->
-    <?php footer(); ?>
+        <?php footer(); ?>
     <!-- Footer ends -->
 
 
