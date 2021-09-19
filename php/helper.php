@@ -42,4 +42,9 @@
     $books = execute("SELECT * FROM books");
     return $books;
   }
+  //get all searched books
+  function getAllBooksByName($q){
+    $books = execute("SELECT * FROM books WHERE 'name' LIKE '%$q%'");
+    return $books;
+  }
 ?>

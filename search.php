@@ -7,7 +7,7 @@
     $isSearched = false;
     $q = "";
     $search = "";
-    $totalResults = 0;
+    $totalResults = getAllBooks()->num_rows;
 
 
     if(isset($_REQUEST["q"])){
@@ -37,16 +37,18 @@
     }
 
     function showAllBooks(){
-        global $totalResults;
         $books = getAllBooks();
         if($books){
-            $totalResults = $books->num_rows;
             foreach($books as $book){
                 book($book["isbn"],3);
             }
         }else{
             echo "<h1 class='text-center my-5'>No result found!</h1>";
         }
+    }
+    function showSearchedBooks($q){
+        $books = getAllBooksByName($q);
+        var_dump($books->fetch_assoc());
     }
 ?>
 
@@ -120,7 +122,7 @@
 
                     <?php 
                         if(!$isSearched){
-                            echo "under development";
+                            showSearchedBooks($q);
                         }else{
                             showAllBooks();
                         }
