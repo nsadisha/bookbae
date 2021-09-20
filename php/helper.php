@@ -38,9 +38,30 @@
   }
 
   //get all books
-  function getAllBooks(){
+  function showAllBooks(){
+    global $totalResults;
     $books = execute("SELECT * FROM books");
-    return $books;
+    //$totalResults = $books->num_rows;
+    if($books->num_rows!=0){
+      foreach($books as $book){
+          book($book["isbn"],3);
+      }
+    }else{
+        echo "<h2 class='text-center my-5'>No result found!</h2>";
+    }
+  }
+  //get search results
+  function showSearchResults($search){
+    global $totalResults;
+    $books = execute("SELECT * FROM books WHERE name LIKE \"%$search%\"");
+    //$totalResults = $books->num_rows;
+    if($books->num_rows!=0){
+      foreach($books as $book){
+          book($book["isbn"],3);
+      }
+    }else{
+        echo "<h2 class='text-center my-5'>No search result found!</h2>";
+    }
   }
   //get all searched books
   function getAllBooksByName($q){

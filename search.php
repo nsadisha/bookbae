@@ -7,7 +7,7 @@
     $isSearched = false;
     $q = "";
     $search = "";
-    $totalResults = getAllBooks()->num_rows;
+    // $totalResults = 0;
 
 
     if(isset($_REQUEST["q"])){
@@ -35,21 +35,7 @@
             header("Location: signin.php");
         }
     }
-
-    function showAllBooks(){
-        $books = getAllBooks();
-        if($books){
-            foreach($books as $book){
-                book($book["isbn"],3);
-            }
-        }else{
-            echo "<h1 class='text-center my-5'>No result found!</h1>";
-        }
-    }
-    function showSearchedBooks($q){
-        $books = getAllBooksByName($q);
-        var_dump($books->fetch_assoc());
-    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -117,12 +103,12 @@
                     <div class="col-auto <?php echo !$isSearched?"d-flex":"d-none"; ?> align-items-center"><a href="search.php?q=" class="clear-search px-2">&times; Clear search</a></div>
                     <div class="col-auto d-block d-md-none ms-auto py-2"><button class="btn filter-icon-btn" data-bs-toggle="modal" data-bs-target="#filterModal"><i class="bi bi-funnel-fill"></i></button></div>
                 </div>
-                <p class="mb-3">Showing <?php echo $totalResults; ?> results</p>
-                <div class="row g-2">
+                <!-- <p class="mb-3">Showing <?php //echo $totalResults; ?> results</p> -->
+                <div class="row g-2 mt-4">
 
                     <?php 
                         if(!$isSearched){
-                            showSearchedBooks($q);
+                            showSearchResults($q);
                         }else{
                             showAllBooks();
                         }
