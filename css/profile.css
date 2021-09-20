@@ -1,13 +1,11 @@
-.navbar{
-    background-color: #EDE0D4;
-}
+@import url("styles.css");
+
+
 .dp{
-    height: 12rem;
+    
     clip-path: circle();
 }
-.header{
-    background-color: #EDE0D4;
-}
+
 .heading p{
     text-align: center;
     font-size: 3rem;
@@ -18,5 +16,16 @@
 .sub-heading p{
     text-align: center;
     font-size: 1.2rem;
+    color: darkgrey;
+}
+h4{
+    font-weight: bold;
+}
+
+.orders{
+    background-color:#F8F9FA;
+    border-radius: 2rem;
+}
+.link-to-orders p{
     color: darkgrey;
 }
