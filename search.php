@@ -36,7 +36,8 @@
         }
     }
 
-    function showAllBooks(){
+    //showing all books
+    function showAllBooksd(){
         global $totalResults;
         $books = getAllBooks();
         if($books){
@@ -48,6 +49,8 @@
             echo "<h1 class='text-center my-5'>No result found!</h1>";
         }
     }
+    //showing search results
+    
 ?>
 
 <!DOCTYPE html>
@@ -120,7 +123,7 @@
 
                     <?php 
                         if(!$isSearched){
-                            echo "under development";
+                            showSearchResults($q);
                         }else{
                             showAllBooks();
                         }
