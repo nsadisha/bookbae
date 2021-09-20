@@ -29,3 +29,19 @@ h4{
 .link-to-orders p{
     color: darkgrey;
 }
+.coupons{
+    background-color:#F8F9FA;
+    border-radius: 2rem;
+}
+.profile,.address, .cards{
+    background-color:#F8F9FA;
+    border-radius: 2rem;
+}
+.row2 .btn-primary-outline {
+    background-color: transparent;
+    /* border-color: #ccc; */
+  }
+  .row2 i{
+      color: #B08968;
+      
+  }

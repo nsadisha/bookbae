@@ -31,7 +31,7 @@
     <!-- Page content starts -->
     <div class="container-fluid header">
         <div class="row">
-            <div class="col-md-4  d-flex justify-content-center ">
+            <div class="col-md-4  d-flex justify-content-center">
                 <img src="assets\images\profile\dp.png" class="dp" style="width:12rem; height:12rem;">
             </div>
             <div class="col-md-8 m-auto">
@@ -40,9 +40,9 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid components my-5">
-        <div class="row">
-            <div class="col-md-4 orders m-auto p-4">
+    <div class="container-fluid components p-3">
+        <div class="row my-5">
+            <div class="col-md-4 orders mx-auto p-4">
                 <h4 class="text-center" style="font-weight:bold;">My orders</h4>
                 <p class="text-center" style="color:#495057;">Manage your orders and track your last order</p>
                 <h5 style="font-weight:bold;">My next delivery</h5>
@@ -57,11 +57,45 @@
                 </div>
                 
             </div>
-            <div class="col-md-4 justify-content-center orders m-auto">
-                <h4>My orders</h4>
-                <p>Manage your orders and track your last order</p>
-                <h5>My last order</h5>
-                <p>Manage your orders and track your last order</p>
+            <div class="col-md-4 coupons p-4 mx-auto  justify-content-center">
+                <h4 class="text-center" style="font-weight:bold;">My coupon wallet</h4>
+                <p class="text-center" style="color:#495057;">View and manage your coupons</p>
+                <button class="btn btn-primary mx-auto" type="submit"><i class="bi bi-pin-map p-1"></i>track order</button>
+            </div>
+        </div>
+        <div class="row row2">
+            <div class="col-md-3 profile p-3 mx-auto">
+                <div class="row align-items-center">
+                    <div class="col-sm-10">
+                    <h5  style="font-weight:bold;">Personal Details</h5>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary-outline" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-arrow-right-circle-fill"></i></button>
+                    </div>
+                </div>
+                <p  style="color:#495057;">Manage your personal and security details</p>
+            </div>
+            <div class="col-md-3 address p-3 mx-auto">
+                <div class="row align-items-center">
+                    <div class="col-sm-10">
+                    <h5  style="font-weight:bold;">Address</h5>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary-outline" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-arrow-right-circle-fill"></i></button>
+                    </div>
+                </div>
+                <p  style="color:#495057;">Manage your delivery and billing details</p>
+            </div>
+            <div class="col-md-3 cards p-3 mx-auto">
+                <div class="row align-items-center">
+                    <div class="col-sm-10">
+                    <h5  style="font-weight:bold;">Payment cards</h5>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary-outline" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-arrow-right-circle-fill"></i></button>
+                    </div>
+                </div>
+                <p  style="color:#495057;">Manage your payment card details</p>
             </div>
         </div>
     </div>
