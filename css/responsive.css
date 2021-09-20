@@ -1,0 +1,132 @@
+@media(max-width: 1050px) {
+    .form-main {
+        max-width: 900px;
+    }
+
+    .vertical-tab .section article {
+        min-width: 445px;
+    }
+}
+
+@media(max-width: 900px) {
+    .form-main {
+        max-width: 768px;
+    }
+
+    .vertical-tab .section article {
+        min-width: 400px;
+        left: 175px;
+    }
+
+    .vertical-tab .section label {
+        width: 134px;
+        font-size: 15px;
+        padding: 34px 20px;
+    }
+}
+
+@media(max-width: 768px) {
+    .form-main {
+        max-width: 575px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .vertical-tab {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media(max-width: 600px) {
+    .form-main {
+        max-width: 500px;
+    }
+
+    .vertical-tab .section article {
+        min-width: 365px;
+        left: 135px;
+    }
+
+    .vertical-tab .section label {
+        width: 114px;
+        font-size: 15px;
+        padding: 31px 10px;
+    }
+}
+
+@media(max-width: 480px) {
+    .vertical-tab .section article {
+        min-width: 291px;
+        left: 109px;
+    }
+
+    .vertical-tab .section label {
+        width: 89px;
+        font-size: 14px;
+        padding: 26.8px 10px;
+    }
+
+    .form-main {
+        max-width: 400px;
+    }
+
+    .form-main form {
+        margin-left: -35px;
+        padding: 1.5em;
+    }
+
+    .submit {
+        font-size: 14px;
+    }
+
+    .input input {
+        font-size: 13px;
+    }
+
+    .input {
+        padding: 12px 12px;
+    }
+
+    a.forgot-pwd {
+        margin-top: 3em;
+    }
+}
+
+@media(max-width: 414px) {
+    .form-main {
+        max-width: 320px;
+    }
+
+    .vertical-tab .section article {
+        position: static;
+    }
+
+    .vertical-tab .section label {
+        width: 100%;
+        font-size: 14px;
+        padding: 20px 0;
+        border-right: none;
+        border-bottom: 1px solid #dcdcdc;
+        border-top: 1px solid #dcdcdc;
+    }
+
+    .vertical-tab input[name="sections"]:checked+label {
+        border-right: none;
+        border-bottom: 1px solid #000;
+        border-top: none;
+    }
+}
+
+@media(max-width: 320px) {
+    .form-main {
+        max-width: 270px;
+    }
+
+    .vertical-tab .section article {
+        min-width: 270px;
+    }
+}

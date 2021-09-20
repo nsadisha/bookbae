@@ -63,4 +63,9 @@
         echo "<h2 class='text-center my-5'>No search result found!</h2>";
     }
   }
+  //get all searched books
+  function getAllBooksByName($q){
+    $books = execute("SELECT * FROM books WHERE 'name' LIKE '%$q%'");
+    return $books;
+  }
 ?>
