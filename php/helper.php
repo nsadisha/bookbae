@@ -41,26 +41,26 @@
   function showAllBooks(){
     global $totalResults;
     $books = execute("SELECT * FROM books");
-    if($books){
-      $totalResults = $books->num_rows;
+    //$totalResults = $books->num_rows;
+    if($books->num_rows!=0){
       foreach($books as $book){
           book($book["isbn"],3);
       }
     }else{
-        echo "<h1 class='text-center my-5'>No result found!</h1>";
+        echo "<h2 class='text-center my-5'>No result found!</h2>";
     }
   }
   //get search results
   function showSearchResults($search){
     global $totalResults;
     $books = execute("SELECT * FROM books WHERE name LIKE \"%$search%\"");
-    if($books){
-      $totalResults = $books->num_rows;
+    //$totalResults = $books->num_rows;
+    if($books->num_rows!=0){
       foreach($books as $book){
           book($book["isbn"],3);
       }
     }else{
-        echo "<h1 class='text-center my-5'>No search result found!</h1>";
+        echo "<h2 class='text-center my-5'>No search result found!</h2>";
     }
   }
 ?>
