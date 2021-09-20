@@ -40,6 +40,12 @@ label{
     margin-bottom: 0;
 }
 /* necesssary */
+.font-sf-pro{
+    font-family: 'SF Pro', sans-serif !important;
+}
+.font-quicksand{
+    font-family: 'Quicksand', sans-serif !important;
+}
 .bg-brown{
     background-color: #87574b;
 }
@@ -48,6 +54,11 @@ label{
 }
 .text-white{
     color: white;
+}
+.hr{
+    width: calc(40px + 5vw);
+    height: 3px;
+    background-color: #87574b;
 }
 
 /* Home page(index.php) */
@@ -108,7 +119,7 @@ label{
     color: white;
     border: solid 2px #87574b;
     align-items: center;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
 }
 
 .landing section .card{
@@ -149,10 +160,4 @@ label{
 .landing section .card h4{
     margin-top: 1.5rem;
     font-weight: 600;
-}
-
-.landing .hr{
-    width: 100px;
-    height: 3px;
-    background-color: #87574b;
 }
