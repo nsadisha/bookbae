@@ -35,21 +35,6 @@
             header("Location: signin.php");
         }
     }
-
-    //showing all books
-    function showAllBooksd(){
-        global $totalResults;
-        $books = getAllBooks();
-        if($books){
-            $totalResults = $books->num_rows;
-            foreach($books as $book){
-                book($book["isbn"],3);
-            }
-        }else{
-            echo "<h1 class='text-center my-5'>No result found!</h1>";
-        }
-    }
-    //showing search results
     
 ?>
 
