@@ -1,0 +1,18 @@
+@import url('styles.css');
+
+.cart-bottom-section{
+    border-radius: 20px;
+    background-color: #87574b10;
+}
+.cart-bottom-section .total-table{
+    font-size: .9rem;
+}
+.cart-bottom-section .proceed-to-checkout-btn{
+    cursor: pointer;
+    background-color: #87574b;
+    color: white;
+    border: solid 2px #87574b;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
