@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab&display=swap" rel="stylesheet">
     
-    <title>BookBae | Register</title>
+    <title>BookBae | View</title>
 </head>
 <body>
 
