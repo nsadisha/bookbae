@@ -21,7 +21,12 @@
 h4{
     font-weight: bold;
 }
-
+.components button{
+    font-size:1rem;
+    background-color: #B08968;
+    border:none;
+    align-self: center;
+}
 .orders{
     background-color:#F8F9FA;
     border-radius: 2rem;
@@ -29,6 +34,7 @@ h4{
 .link-to-orders p{
     color: darkgrey;
 }
+
 .coupons{
     background-color:#F8F9FA;
     border-radius: 2rem;
