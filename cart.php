@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1 class="mb-2">My Cart</h1>
+                <h2 class="mb-2">My Cart</h2>
                 <div class="hr mb-3 mb-md-4"></div>
             </div>
             <div class="col-auto d-flex align-items-center d-none d-md-block">
