@@ -50,7 +50,7 @@
                 <p style="color:#495057;">Tuesday 19th January 2021</p>
                 <div class="row align-items-center">
                     <div class="col-sm-6 ">
-                        <button class="btn btn-primary mx-auto text-center" type="submit"><i class="bi bi-pin-map p-1"></i>track order</button>
+                        <button class="btn btn-primary mx-auto text-center" data-bs-toggle="modal" data-bs-target="#trackOrder"><i class="bi bi-pin-map p-1"></i>track order</button>
                     </div>
                     <div class="col-sm-6">
                         <a src="orders.php" class="link-to-orders"><button type="button" class="btn btn-outline-primary">See all orders</button></a>
@@ -203,6 +203,20 @@
         </div>
     </div>
 
+    <!--track order-->
+    <div class="modal" tabindex="-1" id="trackOrder">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><strong>Package is in Transit</strong></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets\images\profile\unnamed2.jpg" style="width:90%">
+                </div>
+            </div>
+        </div>
+    </div>
         <!-- Footer starts -->
         <?php footer(); ?>
     <!-- Footer ends -->
