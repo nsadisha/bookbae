@@ -1,22 +1,53 @@
-.navbar{
-    background-color: #EDE0D4;
+@import url("styles.css");
+
+label{
+    margin-bottom: 3px !important;
 }
+
 .dp{
-    height: 12rem;
     clip-path: circle();
-}
-.header{
-    background-color: #EDE0D4;
-}
-.heading p{
-    text-align: center;
-    font-size: 3rem;
-    font-family: 'SF Pro';
-    font-weight: bold;
-   
 }
 .sub-heading p{
     text-align: center;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     color: darkgrey;
+}
+h4{
+    font-weight: bold;
+}
+.components button{
+    font-size:1rem;
+    color: white;
+    background-color: #B08968;
+    border:none;
+    align-self: center;
+}
+.row1 button:hover{
+    background-color: #b07d62;
+}
+.orders{
+    background-color:#F8F9FA;
+    border-radius: 2rem;
+}
+.link-to-orders button{
+    color: white;
+    background-color: none;
+    border-color: #B08968;
+}
+
+.coupons{
+    background-color:#F8F9FA;
+    border-radius: 2rem;
+}
+.profile,.address, .cards{
+    background-color:#F8F9FA;
+    border-radius: 2rem;
+}
+.row2 .btn-primary-outline {
+    background-color: transparent;
+    /* border-color: #ccc; */
+  }
+.row2 i{
+    color: #B08968;
+    
 }

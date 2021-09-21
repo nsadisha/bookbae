@@ -1,5 +1,6 @@
 <?php include "components/footer.php" ?>
 <?php include "components/navbar.php" ?>
+<?php include "components/book.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab&display=swap" rel="stylesheet">
     
-    <title>BookBae | View</title>
+    <title>BookBae | View </title>
 </head>
 <body>
 
@@ -128,10 +129,10 @@
                     <h3>$25.34</h3>
                 </div>
                 <div class="col-4">
-                    <button class="btn btn-primary" type="submit"><i class="bi bi-cart3"></i>Add to cart</button>
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-cart3 p-1"></i>Add to cart</button>
                 </div>
                 <div class="col-4">
-                    <button class="btn btn-primary" type="submit"><i class="bi bi-coin"></i>Buy now</button>
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-coin p-1"></i>Buy now</button>
                 </div>
             </div>    
 
@@ -139,6 +140,18 @@
         </div>
 
         <!--related items -->
+        <section class="container-fluid my-5">
+        <h3 class="mb-1">Featured products</h3>
+        <div class="mb-4 hr"></div>
+        <div class="row">
+            <?php book("12321354565856",2); ?>
+            <?php book("987456123654",2); ?>
+            <?php book("12321354598856",2); ?>
+            <?php book("456987456321",2); ?>
+            <?php book("987456123654",2); ?>
+            <?php book("556987456321",2); ?>
+        </div>
+        </section>
         <div class="container related-items">
             <h3 class="m-3">Related Items</h3>
             <div class="block row">
@@ -148,7 +161,7 @@
                         <div class="card-body">
                             <h6 class="card-title m-0">The school is haunted</h6>
                             <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1 bg-brown"><i class="bi bi-cart3"></i>Add to cart</a>
+                            <a href="#" class="btn btn-primary p-1 m-1 bg-brown"><i class="bi bi-cart3 p-1"></i>Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -158,7 +171,7 @@
                         <div class="card-body">
                             <h6 class="card-title m-0">The school is haunted</h6>
                             <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3"></i>Add to cart</a>
+                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3 p-1"></i>Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -168,17 +181,17 @@
                         <div class="card-body">
                             <h6 class="card-title m-0">The school is haunted</h6>
                             <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3"></i>Add to cart</a>
+                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3 p-1"></i>Add to cart</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" >
-                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                        <img src="assets/images/view page/1.jpg" class="card-img-top " alt="...">
                         <div class="card-body">
                             <h6 class="card-title m-0">The school is haunted</h6>
                             <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3"></i>Add to cart</a>
+                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3 p-1"></i>Add to cart</a>
                         </div>
                     </div>
                 </div>
