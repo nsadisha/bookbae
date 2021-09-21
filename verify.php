@@ -22,18 +22,18 @@
     <title>BookBae | Verify</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container p-5">
         <div class="row">
             <div class="col-md-6">
-                <img src="assets\images\profile\undraw_verified_re_4io7.png">
+                <img src="assets\images\profile\undraw_verified_re_4io7.png" style="width:80%">
             </div>
             <div class="col-md-6 justify-content-center">
-                <div class="row">
-                    <img src="assets\images\profile\undraw_Mail_sent_re_0ofv.png">
-                </div>
-                <div class="row">
-                    <p>Before creating account, we need toverify your email ID <strong>example@gmail.com</strong><p> 
-                </div>
+                <img src="assets\images\profile\undraw_Mail_sent_re_0ofv.png" style="width:40%"><br>
+                <p>Before creating account, we need toverify your email ID <strong>example@gmail.com</strong><p> 
+                <p>We have sent you a verification code to your email address.</p>
+                <input type="text" id="pin" name="pin" style="width: 30%;"><br><br>
+                <p>Didn't get the pin. <a href="">Resend pin</a></p>
+                <button type="button" class="btn " >Click to verify</button>
             </div>
         </div>
     </div>

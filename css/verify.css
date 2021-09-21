@@ -1,2 +1,8 @@
 @import url("styles.css");
 
+p{
+    text-align: center;
+}
+button{
+    background-color: #b07d62;
+}
