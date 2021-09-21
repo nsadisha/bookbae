@@ -30,8 +30,8 @@
     
     <!-- Page content starts -->
     <div class="container-fluid header">
-        <div class="row">
-            <div class="col-md-4 d-flex justify-content-center">
+        <div class="row ">
+            <div class="col-md-4 d-flex justify-content-md-end">
                 <img src="assets\images\profile\dp.png" class="dp" style="width:12rem; height:12rem;">
             </div>
             <div class="col-md-8 m-auto">
@@ -41,7 +41,8 @@
         </div>
     </div>
     <div class="container-fluid components p-3">
-        <div class="row my-5">
+        <div class="row row1 my-5">
+            <div class="col-md-1"></div>
             <div class="col-md-4 orders mx-auto p-4 my-1">
                 <h4 class="text-center" style="font-weight:bold;">My orders</h4>
                 <p class="text-center" style="color:#495057;">Manage your orders and track your last order</p>
@@ -52,18 +53,19 @@
                         <button class="btn btn-primary mx-auto text-center" type="submit"><i class="bi bi-pin-map p-1"></i>track order</button>
                     </div>
                     <div class="col-sm-6">
-                        <a src="orders.php" class="link-to-orders">See all orders</a>
+                        <a src="orders.php" class="link-to-orders"><button type="button" class="btn btn-outline-primary">See all orders</button></a>
                     </div>
                 </div>
-                
             </div>
             <div class="col-md-4 coupons p-4 mx-auto  my-1 justify-content-center display-grid align-items-center">
                 <h4 class="text-center" style="font-weight:bold;">My coupon wallet</h4>
                 <p class="text-center" style="color:#495057;">View and manage your coupons</p>
                 <div class="trackButton d-flex justify-content-center"><button class="btn btn-primary mx-auto" type="submit">See all coupons</button></div>
             </div>
+            <div class="col-md-1"></div>
         </div>
         <div class="row row2">
+            <div class="col-md-1"></div>
             <div class="col-md-3 profile p-3 mx-auto my-1">
                 <div class="row align-items-center">
                     <div class="col-sm-10">
@@ -97,6 +99,7 @@
                 </div>
                 <p  style="color:#495057;">Manage your payment card details</p>
             </div>
+            <div class="col-md-1"></div>
         </div>
     </div>
     <div class="container">

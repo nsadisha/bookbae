@@ -27,12 +27,17 @@ h4{
     border:none;
     align-self: center;
 }
+.row1 button:hover{
+    background-color: #b07d62;
+}
 .orders{
     background-color:#F8F9FA;
     border-radius: 2rem;
 }
-.link-to-orders p{
-    color: darkgrey;
+.link-to-orders button{
+    color: white;
+    background-color: none;
+    border-color: #B08968;
 }
 
 .coupons{
@@ -47,7 +52,7 @@ h4{
     background-color: transparent;
     /* border-color: #ccc; */
   }
-  .row2 i{
-      color: #B08968;
-      
-  }
+.row2 i{
+    color: #B08968;
+    
+}
