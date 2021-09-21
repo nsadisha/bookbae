@@ -55,6 +55,9 @@ label{
 .text-white{
     color: white;
 }
+.text-brown{
+    color: #87574b;
+}
 .hr{
     width: calc(40px + 5vw);
     height: 3px;
