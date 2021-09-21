@@ -1,6 +1,7 @@
 <?php include "./php/db.php" ?>
 <?php include "./php/helper.php" ?>
 
+<!-- Cart item -->
 <style>
     .cart-item .cart-item-name{
         color: black;
@@ -95,6 +96,71 @@ function cartItem(){
     ";
 
     echo $item;
+}
+
+?>
+
+<!-- Order item -->
+<style>
+
+</style>
+
+<?php
+
+function orderItem($orderID, $date, $itemCount, $price, $note, $status){
+    $price = number_format($price, 2);
+    $statusClass = getStatus($status);
+    $item = "
+        <tr class='order-item'>
+            <td><a href='viewOrder.php?id=$orderID'><strong>#$orderID</strong></a></td>
+            <td><strong>$date</strong></td>
+            <td><strong>$itemCount</strong></td>
+            <td><strong>RS. $price</strong></td>
+            <td><button class='btn' data-bs-toggle='modal' data-bs-target='#$orderID'><i class='bi bi-stickies'></i></button></td>
+            <td><span class='badge $statusClass'><strong>$status</strong></span></td>
+        </tr>
+
+        <!-- Modal -->
+        <div class='modal fade' id='$orderID' tabindex='-1' aria-labelledby='".$orderID."Label' aria-hidden='true'>
+            <div class='modal-dialog'>
+                <div class='modal-content'>
+                <div class='modal-header'>
+                    <h5 class='modal-title' id='".$orderID."Label'>#$orderID Notes</h5>
+                    <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                </div>
+                <div class='modal-body'>
+                    $note
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn bg-brown text-white' data-bs-dismiss='modal'><strong>Close</strong></button>
+                </div>
+                </div>
+            </div>
+        </div>
+    ";
+
+    echo $item;
+}
+
+function getStatus($status){
+    switch ($status) {
+        case 'Delivered':
+            return "bg-success";
+            break;
+        case 'Shipped':
+            return "bg-warning";
+            break;
+        case 'Processing':
+            return "bg-info";
+            break;
+        case 'Cancelled':
+            return "bg-danger";
+            break;
+        
+        default:
+            return "";
+            break;
+    }
 }
 
 ?>
