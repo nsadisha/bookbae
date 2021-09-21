@@ -74,10 +74,10 @@
   //random order id generator
   function generateOrderId(){
     $idLength = 12;
-    $id = "";
     $charArray = array("0123456789", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    $id = $charArray[rand(1,2)][rand(0,25)];
 
-    for($i=0; $i<$idLength; $i++){
+    for($i=0; $i<$idLength-1; $i++){
       $array = $charArray[rand(0, 2)];
       $arrayLen = strlen($array)-1;
       $randomChar = $array[rand(0, $arrayLen)];
