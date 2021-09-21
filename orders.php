@@ -10,12 +10,12 @@
         foreach($orders as $order) {
             $id = $order["order_id"];
             $date = explode(" ", $order["date"])[0];
-            $itemCount = 5;
+            $itemCount = execute("SELECT SUM(quantity) 'count' FROM order_items WHERE order_id=\"$id\"")->fetch_assoc()['count'];
             $total = $order["total_price"];
             $note = $order["note"];
             $status = $order["status"];
             
-            orderItem($id, $date, $itemCount, $total, $note, $status);
+            orderItem($id, $date, $itemCount?$itemCount:0, $total, $note, $status);
         }
     }
 ?>
