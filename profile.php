@@ -81,7 +81,7 @@
                     <h5  style="font-weight:bold;">Address</h5>
                     </div>
                     <div class="col-sm-2">
-                        <button type="button" class="btn btn-primary-outline" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-arrow-right-circle-fill"></i></button>
+                        <button type="button" class="btn btn-primary-outline" data-bs-toggle="modal" data-bs-target="#delivery-details-form"><i class="bi bi-arrow-right-circle-fill"></i></button>
                     </div>
                 </div>
                 <p  style="color:#495057;">Manage your delivery and billing details</p>
@@ -139,6 +139,53 @@
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Edit the changes</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!--address details model-->
+    <div class="modal fade" id="delivery-details-form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-truck p-3"></i><strong>Delivery details</strong></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputLine1" class="form-label">Address line 1</label>
+                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="current address 1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputLine2" class="form-label">Address line 2</label>
+                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="current address 2">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputState" class="form-label">State / Province</label>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="current state" disabled>
+                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputCity" class="form-label">City</label>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="current city" disabled>
+                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputZip" class="form-label">Zip code</label>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="current zip" disabled>
+                        
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
