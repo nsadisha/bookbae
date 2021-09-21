@@ -17,9 +17,7 @@
     <!-- swiper css -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
     <!--google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab&display=swap" rel="stylesheet">
+    
     
     <title>BookBae | Profile</title>
 </head>
@@ -49,18 +47,18 @@
                 <h5 style="font-weight:bold;">My next delivery</h5>
                 <p style="color:#495057;">Tuesday 19th January 2021</p>
                 <div class="row align-items-center">
-                    <div class="col-sm-6 ">
-                        <button class="btn btn-primary mx-auto text-center" data-bs-toggle="modal" data-bs-target="#trackOrder"><i class="bi bi-pin-map p-1"></i>track order</button>
+                    <div class="col-6 ">
+                        <button class="btn  mx-auto text-center" data-bs-toggle="modal" data-bs-target="#trackOrder"><i class="bi bi-pin-map p-1"></i>track order</button>
                     </div>
-                    <div class="col-sm-6">
-                        <a src="orders.php" class="link-to-orders"><button type="button" class="btn btn-outline-primary">See all orders</button></a>
+                    <div class="col-6">
+                        <a src="orders.php" class="link-to-orders"><button type="button" class="btn btn-outline">See all orders</button></a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 coupons p-4 mx-auto  my-1 justify-content-center display-grid align-items-center">
                 <h4 class="text-center" style="font-weight:bold;">My coupon wallet</h4>
                 <p class="text-center" style="color:#495057;">View and manage your coupons</p>
-                <div class="trackButton d-flex justify-content-center"><button class="btn btn-primary mx-auto" type="submit">See all coupons</button></div>
+                <div class="trackButton d-flex justify-content-center"><button class="btn  mx-auto" type="submit">See all coupons</button></div>
             </div>
             <div class="col-md-1"></div>
         </div>

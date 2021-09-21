@@ -9,7 +9,7 @@
 .heading p{
     text-align: center;
     font-size: 3rem;
-    font-family: 'SF Pro';
+    font-family: 'Quicksand';
     font-weight: bold;
    
 }
@@ -23,6 +23,7 @@ h4{
 }
 .components button{
     font-size:1rem;
+    color: white;
     background-color: #B08968;
     border:none;
     align-self: center;
