@@ -1,21 +1,15 @@
 @import url("styles.css");
 
-
-.dp{
-    
-    clip-path: circle();
+label{
+    margin-bottom: 3px !important;
 }
 
-.heading p{
-    text-align: center;
-    font-size: 3rem;
-    font-family: 'Quicksand';
-    font-weight: bold;
-   
+.dp{
+    clip-path: circle();
 }
 .sub-heading p{
     text-align: center;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     color: darkgrey;
 }
 h4{

@@ -8,37 +8,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- custom css -->
-   
-    <link rel="stylesheet" href="css/profile.css">
-
-    <!-- bootstrap -->
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <!-- swiper css -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
-    <!--google fonts -->
-    
+    <link rel="stylesheet" href="css/profile.css">    
     
     <title>BookBae | Profile</title>
 </head>
 <body>
     <!-- Navbar starts -->
-    <?php navbar(""); ?>
+    <?php navbar("account"); ?>
     <!-- Navbar ends -->
     
     <!-- Page content starts -->
     <div class="container-fluid header">
-        <div class="row ">
-            <div class="col-md-4 d-flex justify-content-md-end">
+        <div class="row">
+            <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
                 <img src="assets\images\profile\dp.png" class="dp" style="width:12rem; height:12rem;">
             </div>
-            <div class="col-md-8 m-auto">
-                <div class="heading"><p>Welcome Ada shelby!</p></div>
+            <div class="col-md-8 m-auto mt-3 mt-md-auto">
+                <div class="text-center"><h1>Welcome Ada shelby!</h1></div>
                 <div class="sub-heading"><P id="sub-heading">Here's where you'll find all your account details as well as your shopping history</p></div>
             </div>
         </div>
     </div>
-    <div class="container-fluid components p-3">
+    <div class="container-fluid components p-4">
         <div class="row row1 my-5">
             <div class="col-md-1"></div>
             <div class="col-md-4 orders mx-auto p-4 my-1">
@@ -46,19 +37,21 @@
                 <p class="text-center" style="color:#495057;">Manage your orders and track your last order</p>
                 <h5 style="font-weight:bold;">My next delivery</h5>
                 <p style="color:#495057;">Tuesday 19th January 2021</p>
-                <div class="row align-items-center">
-                    <div class="col-6 ">
+                <div class="row">
+                    <div class="col-6 d-grid justify-content-center">
                         <button class="btn  mx-auto text-center" data-bs-toggle="modal" data-bs-target="#trackOrder"><i class="bi bi-pin-map p-1"></i>track order</button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 d-grid justify-content-center">
                         <a src="orders.php" class="link-to-orders"><button type="button" class="btn btn-outline">See all orders</button></a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 coupons p-4 mx-auto  my-1 justify-content-center display-grid align-items-center">
-                <h4 class="text-center" style="font-weight:bold;">My coupon wallet</h4>
-                <p class="text-center" style="color:#495057;">View and manage your coupons</p>
-                <div class="trackButton d-flex justify-content-center"><button class="btn  mx-auto" type="submit">See all coupons</button></div>
+            <div class="col-md-4 coupons p-4 mx-auto  my-1 justify-content-center d-grid align-items-center">
+                <div>
+                    <h4 class="text-center" style="font-weight:bold;">My coupon wallet</h4>
+                    <p class="text-center" style="color:#495057;">View and manage your coupons</p>
+                    <div class="trackButton d-flex justify-content-center"><button class="btn  mx-auto" type="submit">See all coupons</button></div>
+                </div>
             </div>
             <div class="col-md-1"></div>
         </div>
@@ -66,10 +59,10 @@
             <div class="col-md-1"></div>
             <div class="col-md-3 profile p-3 mx-auto my-1">
                 <div class="row align-items-center">
-                    <div class="col-sm-10">
+                    <div class="col-10">
                     <h5  style="font-weight:bold;">Personal Details</h5>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-2">
                         <button type="button" class="btn btn-primary-outline" data-bs-toggle="modal" data-bs-target="#personal-details-form"><i class="bi bi-arrow-right-circle-fill"></i></button>
                     </div>
                 </div>
@@ -77,10 +70,10 @@
             </div>
             <div class="col-md-3 address p-3 mx-auto my-1">
                 <div class="row align-items-center">
-                    <div class="col-sm-10">
+                    <div class="col-10">
                     <h5  style="font-weight:bold;">Address</h5>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-2">
                         <button type="button" class="btn btn-primary-outline" data-bs-toggle="modal" data-bs-target="#delivery-details-form"><i class="bi bi-arrow-right-circle-fill"></i></button>
                     </div>
                 </div>
@@ -88,10 +81,10 @@
             </div>
             <div class="col-md-3 cards p-3 mx-auto my-1">
                 <div class="row align-items-center">
-                    <div class="col-sm-10">
+                    <div class="col-10">
                     <h5  style="font-weight:bold;">Payment cards</h5>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-2">
                         <button type="button" class="btn btn-primary-outline" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-arrow-right-circle-fill"></i></button>
                     </div>
                 </div>
@@ -101,9 +94,9 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 mx-auto">
-                <img src="assets\images\profile\online-registration-sign-up-concept-young-woman-signing-login-to-account-huge-smartphone-user-interface-secure-password-194944746.jpg" style="width:25rem">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <img src="assets\images\profile\sitting.jpg" class="mw-100">
             </div>
         </div>
     </div>
@@ -117,38 +110,53 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="php/updateProfile.php" method="post">
+                    <h4>Edit personal info</h4>
                     <div class="mb-3">
                         <label for="exampleInputFname" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="current first name">
+                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="First name" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputLname" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="current last name">
+                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="Last name" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input class="form-control" id="disabledInput" type="text" placeholder="example@gmail.com" disabled>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="example@gmail.com" disabled required>
                         <div id="emailHelp" class="form-text">You can't change your email address.</div>
                     </div>
                     <label for="exampleContactNumber" class="form-label">Contact Number</label>
                     <div class="input-group mb-3">
                         
                         <span class="input-group-text" id="basic-addon1">+94</span>
-                        <input type="text" class="form-control" placeholder="contact" aria-label="contact" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" placeholder="Phone" aria-label="contact" aria-describedby="basic-addon1" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <div class="mb-3 form-check">
+                    <div class="mb-3 form-check d-none">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Edit the changes</label>
                     </div>
+                    <div class="mb-3 form-check d-flex">
+                        <button type="submit" class="btn bg-brown text-white ms-auto"><strong>Save changes</strong></button>
+                    </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <form action="php/changePassword.php" method="post">
+                    <h4>Change password</h4>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Current password</label>
+                        <input type="password" name="currentPassword" class="form-control" id="exampleInputPassword1" placeholder="Current password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword2" class="form-label">New password</label>
+                        <input type="password" name="newPassword" class="form-control" id="exampleInputPassword2" placeholder="New password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword3" class="form-label">Confirm password</label>
+                        <input type="password" name="confirmPassword" class="form-control" id="exampleInputPassword3" placeholder="Confirm password" required>
+                    </div>
+                    <div class="mb-3 form-check d-flex">
+                        <button type="submit" class="btn bg-brown text-white ms-auto"><strong>Change password</strong></button>
+                    </div>
+                </form>
             </div>
             </div>
         </div>
@@ -163,40 +171,39 @@
                 <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-truck p-3"></i><strong>Delivery details</strong></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <form>
+            <form action="php/updateAddress.php" method="post">
+                <div class="modal-body">
                     <div class="mb-3">
                         <label for="exampleInputLine1" class="form-label">Address line 1</label>
-                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="current address 1">
+                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="Address line 1" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputLine2" class="form-label">Address line 2</label>
-                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="current address 2">
+                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="Address line 2" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputState" class="form-label">State / Province</label>
-                        <input class="form-control" id="disabledInput" type="text" placeholder="current state" disabled>
-                        
+                        <input class="form-control" id="disabledInput" type="text" placeholder="State/Province" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputCity" class="form-label">City</label>
-                        <input class="form-control" id="disabledInput" type="text" placeholder="current city" disabled>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="City" required>
                         
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputZip" class="form-label">Zip code</label>
-                        <input class="form-control" id="disabledInput" type="text" placeholder="current zip" disabled>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="Zip code" required>
                         
                     </div>
-                    <div class="mb-3 form-check">
+                    <div class="mb-3 form-check d-none">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Edit the changes</label>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+                    <div class="mb-3 form-check d-flex">
+                        <button type="submit" class="btn bg-brown text-white ms-auto"><strong>Save changes</strong></button>
+                    </div>
+                </div>
+            </form>
             </div>
         </div>
     </div>
@@ -215,8 +222,9 @@
             </div>
         </div>
     </div>
-        <!-- Footer starts -->
-        <?php footer(); ?>
+
+    <!-- Footer starts -->
+    <?php footer(); ?>
     <!-- Footer ends -->
 
 </body>
