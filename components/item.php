@@ -142,25 +142,4 @@ function orderItem($orderID, $date, $itemCount, $price, $note, $status){
     echo $item;
 }
 
-function getStatus($status){
-    switch ($status) {
-        case 'Delivered':
-            return "bg-success";
-            break;
-        case 'Shipped':
-            return "bg-warning";
-            break;
-        case 'Processing':
-            return "bg-info";
-            break;
-        case 'Cancelled':
-            return "bg-danger";
-            break;
-        
-        default:
-            return "";
-            break;
-    }
-}
-
 ?>
