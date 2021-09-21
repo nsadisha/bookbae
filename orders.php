@@ -2,6 +2,24 @@
 <?php include "components/navbar.php" ?>
 <?php include "components/item.php" ?>
 
+<?php
+    $orders = execute("SELECT * FROM orders");
+
+    function showOrders(){
+        global $orders;
+        foreach($orders as $order) {
+            $id = $order["order_id"];
+            $date = explode(" ", $order["date"])[0];
+            $itemCount = 5;
+            $total = $order["total_price"];
+            $note = $order["note"];
+            $status = $order["status"];
+            
+            orderItem($id, $date, $itemCount, $total, $note, $status);
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,47 +47,22 @@
                 <a href="search.php?q=" class="btn bg-brown text-white"><i class="bi bi-arrow-left"></i> <strong>Continue shopping</strong></a>
             </div>
         </div>
-        <h2 class="text-center my-5 d-none">You dont have any orders yet...!</h2>
-        <div class="table-responsive">
+        <h2 class="text-center my-5 <?php echo $orders->num_rows!=0?"d-none":""; ?>">You dont have any orders yet...!</h2>
+        <div class="table-responsive <?php echo $orders->num_rows==0?"d-none":""; ?>">
             <table class="table table-hover overflow-scroll">
                 <thead class="text-secondary">
                     <tr>
-                    <th scope="col">ORDER ID</th>
-                    <th scope="col">DATE</th>
-                    <th scope="col">NO. OF ITEMS</th>
-                    <th scope="col">TOTAL</th>
+                    <th scope="col" style="min-width:9rem;">ORDER ID</th>
+                    <th scope="col" style="min-width:7rem;">DATE</th>
+                    <th scope="col" style="min-width:7rem;">NO. OF ITEMS</th>
+                    <th scope="col" style="min-width:5rem;">TOTAL</th>
+                    <th scope="col" style="min-width:3rem;">NOTES</th>
                     <th scope="col">STATUS</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="order-item">
-                        <td><a href="#"><strong>#<?php echo generateOrderId(); ?></strong></a></td>
-                        <td><strong>2021/09/21</strong></td>
-                        <td><strong>5</strong></td>
-                        <td><strong>RS. 150.00</strong></td>
-                        <td><span class="badge bg-success"><strong>Delivered</strong></span></td>
-                    </tr>
-                    <tr class="order-item">
-                        <td><a href="#"><strong>#<?php echo generateOrderId(); ?></strong></a></td>
-                        <td><strong>2021/09/21</strong></td>
-                        <td><strong>5</strong></td>
-                        <td><strong>RS. 150.00</strong></td>
-                        <td><span class="badge bg-warning"><strong>Shipped</strong></span></td>
-                    </tr>
-                    <tr class="order-item">
-                        <td><a href="#"><strong>#<?php echo generateOrderId(); ?></strong></a></td>
-                        <td><strong>2021/09/21</strong></td>
-                        <td><strong>5</strong></td>
-                        <td><strong>RS. 150.00</strong></td>
-                        <td><span class="badge bg-info"><strong>Processing</strong></span></td>
-                    </tr>
-                    <tr class="order-item">
-                        <td><a href="#"><strong>#<?php echo generateOrderId(); ?></strong></a></td>
-                        <td><strong>2021/09/21</strong></td>
-                        <td><strong>5</strong></td>
-                        <td><strong>RS. 150.00</strong></td>
-                        <td><span class="badge bg-danger"><strong>Cancelled</strong></span></td>
-                    </tr>
+                    <?php showOrders(); ?>
+                    <?php //orderItem("123123", "Date", 5, 385, "note", "Cancelled"); ?>
                 </tbody>
             </table>
         </div>
