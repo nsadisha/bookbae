@@ -2,6 +2,34 @@
 <?php include "components/navbar.php" ?>
 <?php include "components/item.php" ?>
 
+<?php
+$email = "example@example.com";
+$deliveryFee = 300;
+$subTotal = 0;
+$grandTotal = $subTotal + $deliveryFee;
+function showCartItems(){
+    global $email, $subTotal, $grandTotal, $deliveryFee;
+    $items = execute("SELECT C.isbn, B.name, B.author, B.price, C.quantity, B.price*C.quantity 'total' FROM cart C RIGHT OUTER JOIN books B ON C.isbn=B.isbn WHERE email=\"$email\"");
+    foreach ($items as $item) {
+        //book details
+        $isbn = $item["isbn"];
+        $name = $item["name"];
+        $author = $item["author"];
+        $price = $item["price"];
+        $quantity = $item["quantity"];
+        $itemTotal = $item["total"];
+        
+        //calculating sub total
+        $subTotal += $itemTotal;
+        
+        cartItem($isbn, $name, $author, $price, $quantity, $itemTotal);
+    }
+    //calculating grand total
+    $grandTotal = $subTotal + $deliveryFee;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,9 +69,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php cartItem(); ?>
-                    <?php cartItem(); ?>
-                    <?php cartItem(); ?>
+                    <?php showCartItems(); ?>
                 </tbody>
             </table>
         </div>
@@ -61,20 +87,20 @@
                     <table class="w-100 total-table">
                         <tr>
                             <th class="text-secondary">Subtotal</th>
-                            <th class="text-end">Rs. 1500.00</th>
+                            <th class="text-end">Rs. <?php echo number_format($subTotal, 2); ?></th>
                         </tr>
                         <tr>
-                            <th class="text-secondary">Shipping</th>
-                            <th class="text-end">Rs. 150.00</th>
+                            <th class="text-secondary">Delivery</th>
+                            <th class="text-end">Rs. <?php echo number_format($deliveryFee, 2); ?></th>
                         </tr>
                         <tr><td colspan="2"><hr></td></tr>
                         <tr>
                             <th class="text-secondary">Total</th>
-                            <th class="text-end">Rs. 1650.00</th>
+                            <th class="text-end">Rs. <?php echo number_format($grandTotal, 2); ?></th>
                         </tr>
                     </table>
 
-                    <a href="php/checkout.php" class="btn proceed-to-checkout-btn mt-3 py-1"><strong>Proceed to checkout</strong></a>
+                    <a href="checkout.php" class="btn proceed-to-checkout-btn mt-3 py-1"><strong>Proceed to checkout</strong></a>
                     <div></div>
                 </div>
             </div>
