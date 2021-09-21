@@ -1,3 +1,5 @@
+<?php include 'db.php' ?>
+
 <?php
   // function to go back
   function goBack(){
@@ -26,6 +28,27 @@
   //add to favlist
   function addToFav($isbn){
   }
+  //get order status class
+  function getStatus($status){
+    switch ($status) {
+        case 'Delivered':
+            return "bg-success";
+            break;
+        case 'Shipped':
+            return "bg-warning";
+            break;
+        case 'Processing':
+            return "bg-info";
+            break;
+        case 'Cancelled':
+            return "bg-danger";
+            break;
+        
+        default:
+            return "";
+            break;
+    }
+}
 
   // is signin
   function isSigned(){
@@ -67,5 +90,30 @@
   function getAllBooksByName($q){
     $books = execute("SELECT * FROM books WHERE 'name' LIKE '%$q%'");
     return $books;
+  }
+
+  //random order id generator
+  function generateOrderId(){
+    $idLength = 12;
+    $charArray = array("0123456789", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    $id = $charArray[rand(1,2)][rand(0,25)];
+
+    for($i=0; $i<$idLength-1; $i++){
+      $array = $charArray[rand(0, 2)];
+      $arrayLen = strlen($array)-1;
+      $randomChar = $array[rand(0, $arrayLen)];
+      $id = $id.$randomChar;
+    }
+    if(isIdAvailable($id)){
+      return $id;
+    }else{
+      generateOrderId();
+    }
+  }
+  //checking whether the order id is available or not
+  function isIdAvailable($id){
+    //need to change this sql
+    $result = execute("SELECT * FROM books WHERE isbn=\"$id\"");
+    return $result->num_rows==0;
   }
 ?>

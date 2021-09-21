@@ -58,7 +58,7 @@ function navbar($nav){
                     <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
                         <li><a class='dropdown-item".isActive($nav, "account")."' href='account.php'>Account</a></li>
                         <li><a class='dropdown-item".isActive($nav, "cart")."' href='cart.php'>My cart</a></li>
-                        <li><a class='dropdown-item".isActive($nav, "orders")."' href='#'>Orders</a></li>
+                        <li><a class='dropdown-item".isActive($nav, "orders")."' href='orders.php'>Orders</a></li>
                         <li><a class='dropdown-item".isActive($nav, "favourites")."' href='#'>Favourite books</a></li>
                         <li><hr class='dropdown-divider'></li>
                         <li><a class='dropdown-item text-danger' href='#'>Sign out</a></li>

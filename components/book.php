@@ -69,7 +69,7 @@ function book($isbn, $size){
   global $q;
   $data = get("SELECT * FROM books WHERE isbn=$isbn");
   $book = "
-    <div class=\"col-6 col-sm-4 col-lg-$size\">
+    <div class=\"col-6 col-sm-4 col-lg-$size mb-2\">
       <div class=\"book border d-grid p-3\">
         <a href=\"view.php?isbn=$isbn\"><img src=\"assets/images/book.png\" class=\"book-img\" alt=\"image\"></a>
         <div class=\"row align-items-center\">
