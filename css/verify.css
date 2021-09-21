@@ -3,6 +3,13 @@
 p{
     text-align: center;
 }
-button{
+.content button{
+    background-color: #B08968;
+    border-color: #B08968;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius: 5rem;
+}
+.content button:hover{
     background-color: #b07d62;
 }
