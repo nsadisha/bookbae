@@ -37,7 +37,7 @@
     <!-- Navbar ends -->
     
     <!-- Page content starts -->
-    <div class="container">
+    <div class="container my-3">
         <div class="row">
             <div class="col">
                 <h2 class="mb-2">My Orders</h2>
