@@ -5,17 +5,24 @@
         goBack();
     }
 
+    $email = "example@example.com";
+
     $submitMethod = $_REQUEST["submit"];
     $isbn = $_REQUEST["isbn"];
 
     if($submitMethod == "update"){
         //code to update the quantity of a book in cart
         $quantity = $_REQUEST["quantity"];
-        echo "$isbn update";
+        $result = execute("UPDATE cart SET quantity=\"$quantity\" WHERE email=\"$email\" AND isbn=\"$isbn\"");
+        //go back to cart
+        header("Location: ../cart.php");
     }
-
+    
     if($submitMethod =="remove"){
         //code to remove a book from the cart
-        echo "$isbn removed";
+        $result = execute("DELETE FROM cart WHERE email=\"$email\" AND isbn=\"$isbn\"");
+        //go back to cart
+        header("Location: ../cart.php");
+
     }
 ?>

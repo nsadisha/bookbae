@@ -7,9 +7,9 @@ $email = "example@example.com";
 $deliveryFee = 300;
 $subTotal = 0;
 $grandTotal = $subTotal + $deliveryFee;
+$items = execute("SELECT C.isbn, B.name, B.author, B.price, C.quantity, B.price*C.quantity 'total' FROM cart C RIGHT OUTER JOIN books B ON C.isbn=B.isbn WHERE email=\"$email\"");
 function showCartItems(){
-    global $email, $subTotal, $grandTotal, $deliveryFee;
-    $items = execute("SELECT C.isbn, B.name, B.author, B.price, C.quantity, B.price*C.quantity 'total' FROM cart C RIGHT OUTER JOIN books B ON C.isbn=B.isbn WHERE email=\"$email\"");
+    global $items, $email, $subTotal, $grandTotal, $deliveryFee;
     foreach ($items as $item) {
         //book details
         $isbn = $item["isbn"];
@@ -57,7 +57,8 @@ function showCartItems(){
                 <a href="search.php?q=" class="btn bg-brown text-white"><i class="bi bi-arrow-left"></i> <strong>Continue shopping</strong></a>
             </div>
         </div>
-        <div class="table-responsive">
+        <h2 class="text-center my-5 <?php echo $items->num_rows!=0?"d-none":""; ?>">You don't have any cart items yet...!</h2>
+        <div class="table-responsive <?php echo $items->num_rows==0?"d-none":""; ?>">
             <table class="table table-hover overflow-scroll">
                 <thead class="text-secondary">
                     <tr>
@@ -74,7 +75,7 @@ function showCartItems(){
             </table>
         </div>
 
-        <section class="cart-bottom-section my-4 p-4 px-5">
+        <section class="cart-bottom-section my-4 p-4 px-5 <?php echo $items->num_rows==0?"d-none":""; ?>">
             <div class="row">
                 <div class="col-sm-5 mb-4 mb-md-0">
                     <h4>Order notes</h4>
