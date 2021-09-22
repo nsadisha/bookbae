@@ -56,7 +56,10 @@
   }
   function getSignedEmail(){
     if(isSigned()){
-      return $_SESSION["email"];
+      // return $_SESSION["email"];
+      return "example@example.com";
+    }else{
+      return null;
     }
   }
 
