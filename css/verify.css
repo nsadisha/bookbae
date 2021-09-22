@@ -3,6 +3,11 @@
 p{
     text-align: center;
 }
+.input-pin{
+    background-color: #F8F9FA;
+    border-radius: 4rem;
+   
+}
 .content button{
     background-color: #B08968;
     border-color: #B08968;
@@ -12,4 +17,20 @@ p{
 }
 .content button:hover{
     background-color: #b07d62;
+}
+.input-pin{
+    padding:4rem;
+    position: relative;
+}
+.mail img{
+    top: -25%;
+    position: absolute;
+}
+@media only screen and (max-width:450px){
+    .mail img{
+        top: -15%;
+        position: absolute;
+    }
+  
+     
 }
