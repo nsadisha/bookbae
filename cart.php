@@ -28,6 +28,14 @@ function showCartItems(){
     $grandTotal = $subTotal + $deliveryFee;
 }
 
+$user = get("SELECT U.fname, U.lname, A.* FROM users U RIGHT OUTER JOIN user_addresses A ON U.email=A.email WHERE A.email=\"$email\"");
+$name = $user["fname"]." ".$user["lname"];
+$line1 = $user["line1"];
+$line2 = $user["line2"];
+$city = $user["city"];
+$province = $user["province"];
+$zip = $user["zip"];
+
 ?>
 
 <!DOCTYPE html>
@@ -78,10 +86,10 @@ function showCartItems(){
         <section class="cart-bottom-section my-4 p-4 px-5 <?php echo $items->num_rows==0?"d-none":""; ?>">
             <div class="row">
                 <div class="col-sm-5 mb-4 mb-md-0">
-                    <h4>Order notes</h4>
-                    <div class="input-group">
-                        <textarea class="form-control font-sf-pro" rows="3" name="orderNotes" placeholder="Add custon notes"></textarea>
-                    </div>
+                    <h4>Address</h4>
+                    <p class="text-secondary">
+                        <?php echo "$name<br>$line1, $line2, $city,<br>$province.<br>$zip"; ?>
+                    </p>
                 </div>
                 <div class="col"></div>
                 <div class="col-sm-5 col-md-3 d-grid">
