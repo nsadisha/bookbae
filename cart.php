@@ -2,6 +2,42 @@
 <?php include "components/navbar.php" ?>
 <?php include "components/item.php" ?>
 
+<?php
+$email = "example@example.com";
+$deliveryFee = 300;
+$subTotal = 0;
+$grandTotal = $subTotal + $deliveryFee;
+$items = execute("SELECT C.isbn, B.name, B.author, B.price, C.quantity, B.price*C.quantity 'total' FROM cart C RIGHT OUTER JOIN books B ON C.isbn=B.isbn WHERE email=\"$email\"");
+function showCartItems(){
+    global $items, $email, $subTotal, $grandTotal, $deliveryFee;
+    foreach ($items as $item) {
+        //book details
+        $isbn = $item["isbn"];
+        $name = $item["name"];
+        $author = $item["author"];
+        $price = $item["price"];
+        $quantity = $item["quantity"];
+        $itemTotal = $item["total"];
+        
+        //calculating sub total
+        $subTotal += $itemTotal;
+        
+        cartItem($isbn, $name, $author, $price, $quantity, $itemTotal);
+    }
+    //calculating grand total
+    $grandTotal = $subTotal + $deliveryFee;
+}
+
+$user = get("SELECT U.fname, U.lname, A.* FROM users U RIGHT OUTER JOIN user_addresses A ON U.email=A.email WHERE A.email=\"$email\"");
+$name = $user["fname"]." ".$user["lname"];
+$line1 = $user["line1"];
+$line2 = $user["line2"];
+$city = $user["city"];
+$province = $user["province"];
+$zip = $user["zip"];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +65,8 @@
                 <a href="search.php?q=" class="btn bg-brown text-white"><i class="bi bi-arrow-left"></i> <strong>Continue shopping</strong></a>
             </div>
         </div>
-        <div class="table-responsive">
+        <h2 class="text-center my-5 <?php echo $items->num_rows!=0?"d-none":""; ?>">You don't have any cart items yet...!</h2>
+        <div class="table-responsive <?php echo $items->num_rows==0?"d-none":""; ?>">
             <table class="table table-hover overflow-scroll">
                 <thead class="text-secondary">
                     <tr>
@@ -41,40 +78,38 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php cartItem(); ?>
-                    <?php cartItem(); ?>
-                    <?php cartItem(); ?>
+                    <?php showCartItems(); ?>
                 </tbody>
             </table>
         </div>
 
-        <section class="cart-bottom-section my-4 p-4 px-5">
+        <section class="cart-bottom-section my-4 p-4 px-5 <?php echo $items->num_rows==0?"d-none":""; ?>">
             <div class="row">
                 <div class="col-sm-5 mb-4 mb-md-0">
-                    <h4>Order notes</h4>
-                    <div class="input-group">
-                        <textarea class="form-control font-sf-pro" rows="3" name="orderNotes" placeholder="Add custon notes"></textarea>
-                    </div>
+                    <h4>Address</h4>
+                    <p class="text-secondary">
+                        <?php echo "$name<br>$line1, $line2, $city,<br>$province.<br>$zip"; ?>
+                    </p>
                 </div>
                 <div class="col"></div>
                 <div class="col-sm-5 col-md-3 d-grid">
                     <table class="w-100 total-table">
                         <tr>
                             <th class="text-secondary">Subtotal</th>
-                            <th class="text-end">Rs. 1500.00</th>
+                            <th class="text-end">Rs. <?php echo number_format($subTotal, 2); ?></th>
                         </tr>
                         <tr>
-                            <th class="text-secondary">Shipping</th>
-                            <th class="text-end">Rs. 150.00</th>
+                            <th class="text-secondary">Delivery</th>
+                            <th class="text-end">Rs. <?php echo number_format($deliveryFee, 2); ?></th>
                         </tr>
                         <tr><td colspan="2"><hr></td></tr>
                         <tr>
                             <th class="text-secondary">Total</th>
-                            <th class="text-end">Rs. 1650.00</th>
+                            <th class="text-end">Rs. <?php echo number_format($grandTotal, 2); ?></th>
                         </tr>
                     </table>
 
-                    <a href="php/checkout.php" class="btn proceed-to-checkout-btn mt-3 py-1"><strong>Proceed to checkout</strong></a>
+                    <a href="checkout.php" class="btn proceed-to-checkout-btn mt-3 py-1"><strong>Proceed to checkout</strong></a>
                     <div></div>
                 </div>
             </div>

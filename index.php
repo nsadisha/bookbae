@@ -23,8 +23,8 @@
             <div class="row">
                 <div class="col-md-6 d-grid align-content-center order-2 order-md-1">
                     <div class="mx-auto mx-md-0 text-center text-md-start">
-                        <h1>Hello there...!</h1>
-                        <p>This is a paragraph.</p>
+                        <h1>Reading is dreaming with open eyes!</h1>
+                        <p class="text-secondary">Explore your favorite books for an affordable price and feel your dream world.</p>
                         <a href="search.php?q=" class="btn px-3 shop-now-btn">
                             <strong>Shop now</strong> <i class="bi bi-arrow-right"></i>
                         </a>
@@ -45,7 +45,7 @@
                 <div class="col-md-4 mb-3 mb-md-0">
                     <div class="card card-1">
                         <div class="card-icon"><i class="bi bi-truck"></i></div>
-                        <h4>Worldwide delivery</h4>
+                        <h4>Islandwide delivery</h4>
                     </div>
                 </div>
                 <div class="col-md-4 mb-3 mb-md-0">
@@ -97,13 +97,13 @@
                     <img src="assets/svg/subscribe.svg" alt="" style="width: 70%;">
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-center mt-5 mt-md-0">
-                    <div>
+                    <div class="col-11 col-md-10 col-lg-8">
                         <h1 class="mb-0">Subscribe us</h1>
                         <div class="hr mb-3"></div>
-                        <p>sdfdsdfsdsdfsdfsdsdf</p>
-                        <form action="" method="post">
+                        <p class="text-secondary">Hello, Sign up it only takes a second to be thefirst to find out about our latest books and promotions.</p>
+                        <form action="php/subscribe.php" method="post">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="username@example.com" name="subscribeEmail">
+                                <input type="email" class="form-control" placeholder="username@example.com" name="email" required>
                                 <button class="btn btn-outline text-white bg-brown" type="submit"><strong>Subscribe</strong></button>
                             </div>
                         </form>

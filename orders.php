@@ -47,7 +47,7 @@
                 <a href="search.php?q=" class="btn bg-brown text-white"><i class="bi bi-arrow-left"></i> <strong>Continue shopping</strong></a>
             </div>
         </div>
-        <h2 class="text-center my-5 <?php echo $orders->num_rows!=0?"d-none":""; ?>">You dont have any orders yet...!</h2>
+        <h2 class="text-center my-5 <?php echo $orders->num_rows!=0?"d-none":""; ?>">You don't have any orders yet...!</h2>
         <div class="table-responsive <?php echo $orders->num_rows==0?"d-none":""; ?>">
             <table class="table table-hover overflow-scroll">
                 <thead class="text-secondary">

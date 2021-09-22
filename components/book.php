@@ -85,9 +85,9 @@ function book($isbn, $size){
             </form>
           </div>
         </div>
-          <form action=".$_SERVER['PHP_SELF']." method=\"get\" class=\"d-grid mb-0\">
-            <input type=\"hidden\" name=\"cart\" value=\"$isbn\">
-            <input type=\"hidden\" name=\"q\" value=\"$q\">
+          <form action=\"php/addToCart.php\" method=\"get\" target=\"_blank\" class=\"d-grid mb-0\">
+            <input type=\"hidden\" name=\"isbn\" value=\"$isbn\">
+            <input type=\"hidden\" name=\"quantity\" value=\"1\">
             <button type=\"submit\" value=\"Submit\" class=\"d-flex align-items-center justify-content-center p-1 book-btn\">
               <object data=\"assets/svg/cart.svg\" type=\"image/svg+xml\" class=\"book-cart-icon\"></object>&nbsp;Add to cart
             </button>
