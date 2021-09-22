@@ -52,7 +52,7 @@
 
   // is signin
   function isSigned(){
-    return isset($_SESSION["email"]);
+    return !isset($_SESSION["email"]);
   }
   function getSignedEmail(){
     if(isSigned()){
