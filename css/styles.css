@@ -40,6 +40,12 @@ label{
     margin-bottom: 0;
 }
 /* necesssary */
+.font-sf-pro{
+    font-family: 'SF Pro', sans-serif !important;
+}
+.font-quicksand{
+    font-family: 'Quicksand', sans-serif !important;
+}
 .bg-brown{
     background-color: #87574b;
 }
