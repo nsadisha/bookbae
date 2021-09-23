@@ -11,14 +11,10 @@ h1{
     font-family: 'Roboto Slab', serif;
  
 }
-.card{
-    margin: 0 auto; 
-    position: relative;
-}
 
-.container .description{
-    background-color: #EDE0D4;
-    margin: 5%;
+.container-fluid .description{
+    border-color: #B08968;
+    border-width: 1rem;
     border-radius: 1rem;
     width: 90%;
     justify-content: center;
@@ -30,9 +26,21 @@ h1{
 .description .row{
     padding-bottom: 3%;
 }
-button{
+.description button{
     background-color: #B08968;
-    border-radius: 2rem;
+    border-radius: 1rem;
+    border: none;
+}
+.description button:hover{
+    background-color: #b07d62;
+   
+}
+.description input{
+    width: 65%;
+}
+.about {
+    background-color: #dee2e6;
+  
 }
 .related-items h3{
     font-weight: bold;

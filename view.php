@@ -30,7 +30,8 @@
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <div class="container-fluid">
+    <h1 class="text-center">Rotten school and great smelling bee</h1>
+    <div class="container-fluid pb-5">
         <div class="row mt-3">
             <div class="col-lg-6 justify-content-end">
                 <div class="row">
@@ -97,20 +98,23 @@
                         1235
                     </div>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-12 ">
+                <div class="row justify-content-center pt-2">
+                    <div class="col-6 ">
                         Price
                     </div>
+                    <div class="col-6 ">
+                        <strong>LKR978.21</strong>
+                    </div>
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center pt-2">
                     <div class="col-4 ">
-                        <h3>$25.34</h3>
+                        <input type="text" placeholder="Qty">
                     </div>
                     <div class="col-4">
                         <button class="btn btn-primary" type="submit"><i class="bi bi-cart3 p-1"></i>Add to cart</button>
                     </div>
                     <div class="col-4">
-                        <button class="btn btn-primary" type="submit"><i class="bi bi-coin p-1"></i>Buy now</button>
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-wallet-fill p-1"></i>Buy now</button>
                     </div>
                 </div>    
 
@@ -121,10 +125,10 @@
 
 
     <!-- Page description -->
-        <div class="container about">
-          <div class="row mt-5">
-                <div class="col-lg-12">
-                  <h4><strong>Description</strong></h4>
+        <div class="container-fluid about pt-2 pb-1">
+          <div class="row mt-5 justify-content-center">
+                <div class="col-8 ">
+                  <h4 class="text-center"><strong>Description</strong></h4>
                   <p>Rotten School is a children's book series by R. L. Stine 
                       concerning the adventures of children at a boarding school.
                       Each book is written from the perspective of Bernie Bridges,
