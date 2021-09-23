@@ -119,6 +119,24 @@
         </div>   
     </div>
 
+
+    <!-- Page description -->
+        <div class="container about">
+          <div class="row mt-5">
+                <div class="col-lg-12">
+                  <h4><strong>Description</strong></h4>
+                  <p>Rotten School is a children's book series by R. L. Stine 
+                      concerning the adventures of children at a boarding school.
+                      Each book is written from the perspective of Bernie Bridges,
+                      a fourth-grader who lives in his dormitory at Rotten School 
+                      with his pals Belzer, Feenman and Crench, Beast, Chipmunk, 
+                      Nosebleed, Billy The Brain and others. Their rivals are Sherman
+                      Oaks, a rich spoiled brat, and his buddies Wes Updood and Joe
+                      Sweety, from the Nyce House dormitory. 
+                  </p>
+                </div>
+            </div>
+        </div>
         <!--related items -->
         <div class="container related-items">
             <h3 class="m-3">Related Items</h3>
