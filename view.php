@@ -30,10 +30,24 @@
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <div class="container">
-    
-        <!-- Page descriptin -->
-        
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-lg-6 justify-content-end">
+                <div class="row">
+                    <div class="col-6 d-flex justify-content-end">
+                        <div class="card " style="width: 12rem;">
+                            <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card " style="width: 12rem;">
+                            <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page description-->
         <div class="container description mx-auto">
             <div class="row ">
                 <div class="col-6">
