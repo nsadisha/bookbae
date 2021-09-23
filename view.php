@@ -46,83 +46,78 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Page description-->
-        <div class="container description mx-auto">
-            <div class="row ">
-                <div class="col-6">
-                    ISBN
+            <!-- Page description-->
+        <div class="col-lg-6">
+            <div class="container description mx-auto">
+                <div class="row ">
+                    <div class="col-6">
+                        ISBN
+                    </div>
+                    <div class="col-6">
+                        1235
+                    </div>
                 </div>
-                <div class="col-6">
-                    1235
+                <div class="row">
+                    <div class="col-6">
+                        Author
+                    </div>
+                    <div class="col-6">
+                        R.L Stine
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    Author
+                <div class="row justify-content-center">
+                    <div class="col-6 ">
+                        Language
+                    </div>
+                    <div class="col-6">
+                        English
+                    </div>
                 </div>
-                <div class="col-6">
-                    R.L Stine
+                <div class="row justify-content-center">
+                    <div class="col-6 ">
+                        Year
+                    </div>
+                    <div class="col-6">
+                        2014
+                    </div>
                 </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-6 ">
-                    Language
+                <div class="row justify-content-center">
+                    <div class="col-6 ">
+                        Edition
+                    </div>
+                    <div class="col-6">
+                        six
+                    </div>
                 </div>
-                <div class="col-6">
-                    English
+                <div class="row justify-content-center">
+                    <div class="col-6 ">
+                        Publisher
+                    </div>
+                    <div class="col-6">
+                        1235
+                    </div>
                 </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-6 ">
-                    Year
+                <div class="row justify-content-center">
+                    <div class="col-12 ">
+                        Price
+                    </div>
                 </div>
-                <div class="col-6">
-                    2014
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-6 ">
-                    Edition
-                </div>
-                <div class="col-6">
-                    six
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-6 ">
-                    Publisher
-                </div>
-                <div class="col-6">
-                    1235
-                </div>
-            </div>
+                <div class="row justify-content-center">
+                    <div class="col-4 ">
+                        <h3>$25.34</h3>
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-cart3 p-1"></i>Add to cart</button>
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-coin p-1"></i>Buy now</button>
+                    </div>
+                </div>    
 
-            <div class="row">
-                <div class="col-6 ">
-                    Description
-                </div>
-                
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-12 ">
-                    Price
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-4 ">
-                    <h3>$25.34</h3>
-                </div>
-                <div class="col-4">
-                    <button class="btn btn-primary" type="submit"><i class="bi bi-cart3"></i>Add to cart</button>
-                </div>
-                <div class="col-4">
-                    <button class="btn btn-primary" type="submit"><i class="bi bi-coin"></i>Buy now</button>
-                </div>
-            </div>    
-
-            </div>
-        </div>
+        </div>   
+    </div>
 
         <!--related items -->
         <div class="container related-items">
