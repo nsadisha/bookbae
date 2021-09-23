@@ -9,8 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- custom css -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/responsive.css">	
+	<link rel="stylesheet" href="css/signin.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <title>BookBae | Sign in</title>
+    <!-- <script src="js/signin.js"></script> -->
+
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+    }
+    </script>
 </head>
 <body>
 
@@ -19,70 +33,49 @@
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <h1 class="text-center">Account</h1>
-    <!-- //////////////////////////////// -->
-    <div class="form-main">
-			<!-- vertical tabs -->
-			<div class="vertical-tab">
-				<div id="section1" class="section">
-					<input type="radio" name="sections" id="option1" checked>
-					<label for="option1" class="form-icon"><span class="fa fa-user-circle" aria-hidden="true"></span>Login</label>
-					<article>
-						<form action="#" method="post">
-							<h3 class="form-head">Login Here</h3>
-							<div class="input">
-								<span class="fa fa-envelope-o" aria-hidden="true"></span>
-								<input type="email" placeholder="Email" name="email" required />
-							</div>
-							<div class="input">
-								<span class="fa fa-key" aria-hidden="true"></span>
-								<input type="password" placeholder="Password" name="password" required />
-							</div>
-							<button type="submit" class="btn submit">Login</button>
-							<a href="#" class="forgot-pwd">Forgot Password?</a>
-						</form>
-					</article>
-				</div>
-				<div id="section2" class="section">
-					<input type="radio" name="sections" id="option2">
-					<label for="option2" class="form-icon"><span class="fa fa-pencil-square" aria-hidden="true"></span>Register</label>
-					<article>
-						<form action="#" method="post">
-							<h3 class="form-head">Register Here</h3>
-							<div class="input">
-								<span class="fa fa-user-o" aria-hidden="true"></span>
-								<input type="text" placeholder="Username" name="name" required />
-							</div>
-							<div class="input">
-								<span class="fa fa-mail" aria-hidden="true"></span>
-								<input type="text" placeholder="Email" name="email" required />
-							</div>
-							<div class="input">
-								<span class="fa fa-key" aria-hidden="true"></span>
-								<input type="password" placeholder="Password" name="password" required />
-							</div>
-							<div class="input">
-								<span class="fa fa-key" aria-hidden="true"></span>
-								<input type="password" placeholder="Confirm Password" name="password" required />
-							</div>
-							<button type="submit" class="btn submit">Register</button>
-						</form>
-					</article>
-				</div>
-			</div>
-			<!-- //vertical tabs -->
-			<div class="clear"></div>
-	</div>
+    <div class="form">
+        
+        
+        <div class="tab-content">
+        <div id="login">   
+            <h1>Welcome Back!</h1>
+            
+            <form action="/" method="post">
+            
+                <div class="field-wrap">
+                <label>
+                Email Address<span class="req">*</span>
+                </label>
+                <input type="email"required autocomplete="off"/>
+            </div>
+            
+            <div class="field-wrap">
+                <label>
+                Password<span class="req">*</span>
+                </label>
+                <input type="password"required autocomplete="off"/>
+            </div>
+            
+            <p class="forgot"><a href="#">Forgot Password?</a></p>
+            
+            <button class="button button-block"/>Log In</button>
+            
+            </form>
 
-    <!-- /////////////////////////////// -->
+            </div>
+            
+            <div>
+            </div>
+            
+        </div><!-- tab-content -->
+      
+    </div> <!-- /form -->
     <!-- Page content ends -->
 
     <!-- Footer starts -->
-    <div class="login-footer">
-		<?php footer(); ?>
-	</div>
+    <?php footer(); ?>
     <!-- Footer ends -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
