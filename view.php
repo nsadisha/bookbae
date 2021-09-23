@@ -31,114 +31,117 @@
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <div class="container">
-        <!-- slide swiper -->
-        <h1 class="text-center">Rotten school and great smelling bee</h1>
-        <div class="swiper myswiper">
-            <div class="swiper-wrapper mt-3" style="height: fit-content;">
-                <div class="card swiper-slide" style="width: 15rem;">
-                    <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+    <h1 class="text-center">Rotten school and great smelling bee</h1>
+    <div class="container-fluid pb-5">
+        <div class="row mt-3">
+            <div class="col-lg-6 justify-content-end">
+                <div class="row">
+                    <div class="col-6 d-flex justify-content-end">
+                        <div class="card " style="width: 13rem;">
+                            <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card " style="width: 13rem;">
+                            <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                        </div>
+                    </div>
                 </div>
-                <div class="card swiper-slide" style="width: 15rem;">
-                    <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+            </div>
+            <!-- Page description-->
+        <div class="col-lg-6">
+            <div class="container description mx-auto">
+                <div class="row ">
+                    <div class="col-6">
+                        ISBN
+                    </div>
+                    <div class="col-6">
+                        1235
+                    </div>
                 </div>
-                <div class="card swiper-slide" style="width: 15rem;">
-                    <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                <div class="row">
+                    <div class="col-6">
+                        Author
+                    </div>
+                    <div class="col-6">
+                        R.L Stine
+                    </div>
                 </div>
-                <div class="card swiper-slide" style="width: 15rem;">
-                    <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
+                <div class="row justify-content-center">
+                    <div class="col-6 ">
+                        Language
+                    </div>
+                    <div class="col-6">
+                        English
+                    </div>
                 </div>
-            </div><br>
-            <div class="swiper-pagination"></div>
+                <div class="row justify-content-center">
+                    <div class="col-6 ">
+                        Year
+                    </div>
+                    <div class="col-6">
+                        2014
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-6 ">
+                        Edition
+                    </div>
+                    <div class="col-6">
+                        six
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-6 ">
+                        Publisher
+                    </div>
+                    <div class="col-6">
+                        1235
+                    </div>
+                </div>
+                <div class="row justify-content-center pt-2">
+                    <div class="col-6 ">
+                        Price
+                    </div>
+                    <div class="col-6 ">
+                        <strong>LKR978.21</strong>
+                    </div>
+                </div>
+                <div class="row justify-content-center pt-2">
+                    <div class="col-4">
+                        <input type="text" placeholder="Qty">
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-cart3 p-1"></i>Add to cart</button>
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-wallet-fill p-1"></i>Buy now</button>
+                    </div>
+                </div>    
+
+                </div>
+            </div>
+        </div>   
+    </div>
+
+
+    <!-- Page description -->
+        <div class="container-fluid about pt-2 pb-1">
+          <div class="row mt-5 justify-content-center">
+                <div class="col-8 ">
+                  <h4 class="text-center"><strong>Description</strong></h4>
+                  <p>Rotten School is a children's book series by R. L. Stine 
+                      concerning the adventures of children at a boarding school.
+                      Each book is written from the perspective of Bernie Bridges,
+                      a fourth-grader who lives in his dormitory at Rotten School 
+                      with his pals Belzer, Feenman and Crench, Beast, Chipmunk, 
+                      Nosebleed, Billy The Brain and others. Their rivals are Sherman
+                      Oaks, a rich spoiled brat, and his buddies Wes Updood and Joe
+                      Sweety, from the Nyce House dormitory. 
+                  </p>
+                </div>
+            </div>
         </div>
-        <!-- Page descriptin -->
-        
-        <div class="container description mx-auto">
-            <div class="row ">
-                <div class="col-6">
-                    ISBN
-                </div>
-                <div class="col-6">
-                    1235
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    Author
-                </div>
-                <div class="col-6">
-                    R.L Stine
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-6 ">
-                    Language
-                </div>
-                <div class="col-6">
-                    English
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-6 ">
-                    Year
-                </div>
-                <div class="col-6">
-                    2014
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-6 ">
-                    Edition
-                </div>
-                <div class="col-6">
-                    six
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-6 ">
-                    Publisher
-                </div>
-                <div class="col-6">
-                    1235
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-6 ">
-                    Description
-                </div>
-                <div class="col-12 col-sm-6">
-                    <p>Rotten School is a children's book series by R. L. Stine 
-                        concerning the adventures of children at a boarding school.
-                        Each book is written from the perspective of Bernie Bridges,
-                        a fourth-grader who lives in his dormitory at Rotten School 
-                        with his pals Belzer, Feenman and Crench, Beast, Chipmunk, 
-                        Nosebleed, Billy The Brain and others. Their rivals are Sherman
-                        Oaks, a rich spoiled brat, and his buddies Wes Updood and Joe
-                        Sweety, from the Nyce House dormitory. 
-                    </p>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-12 ">
-                    Price
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-4 ">
-                    <h3>$25.34</h3>
-                </div>
-                <div class="col-4">
-                    <button class="btn btn-primary" type="submit"><i class="bi bi-cart3 p-1"></i>Add to cart</button>
-                </div>
-                <div class="col-4">
-                    <button class="btn btn-primary" type="submit"><i class="bi bi-coin p-1"></i>Buy now</button>
-                </div>
-            </div>    
-
-            </div>
-        </div>
-
         <!--related items -->
         <section class="container-fluid my-5">
         <h3 class="mb-1">Featured products</h3>
