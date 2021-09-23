@@ -55,6 +55,14 @@ label{
 .text-white{
     color: white;
 }
+.text-brown{
+    color: #87574b;
+}
+.hr{
+    width: calc(40px + 5vw);
+    height: 3px;
+    background-color: #87574b;
+}
 
 /* Home page(index.php) */
 .clear-search{
@@ -114,7 +122,7 @@ label{
     color: white;
     border: solid 2px #87574b;
     align-items: center;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
 }
 
 .landing section .card{
@@ -162,4 +170,3 @@ label{
     height: 3px;
     background-color: #87574b;
 }
-
