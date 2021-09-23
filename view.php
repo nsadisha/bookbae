@@ -31,25 +31,7 @@
 
     <!-- Page content starts -->
     <div class="container">
-        <!-- slide swiper -->
-        <h1 class="text-center">Rotten school and great smelling bee</h1>
-        <div class="swiper myswiper">
-            <div class="swiper-wrapper mt-3" style="height: fit-content;">
-                <div class="card swiper-slide" style="width: 15rem;">
-                    <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
-                </div>
-                <div class="card swiper-slide" style="width: 15rem;">
-                    <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
-                </div>
-                <div class="card swiper-slide" style="width: 15rem;">
-                    <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
-                </div>
-                <div class="card swiper-slide" style="width: 15rem;">
-                    <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
-                </div>
-            </div><br>
-            <div class="swiper-pagination"></div>
-        </div>
+    
         <!-- Page descriptin -->
         
         <div class="container description mx-auto">
