@@ -36,12 +36,12 @@
             <div class="col-lg-6 justify-content-end">
                 <div class="row">
                     <div class="col-6 d-flex justify-content-end">
-                        <div class="card " style="width: 12rem;">
+                        <div class="card " style="width: 13rem;">
                             <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class="card " style="width: 12rem;">
+                        <div class="card " style="width: 13rem;">
                             <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-center pt-2">
-                    <div class="col-4 ">
+                    <div class="col-4">
                         <input type="text" placeholder="Qty">
                     </div>
                     <div class="col-4">
