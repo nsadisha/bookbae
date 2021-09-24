@@ -16,7 +16,6 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     
-    
     <title>BookBae | View </title>
 </head>
 <body>
@@ -36,7 +35,7 @@
                             <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 d-flex justify-content-start">
                         <div class="card " style="width: 13rem;">
                             <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                         </div>
@@ -124,9 +123,9 @@
 
 
     <!-- Page description -->
-        <div class="container-fluid about pt-2 pb-1">
-          <div class="row mt-5 justify-content-center">
-                <div class="col-8 ">
+        <div class="container about pt-2 pb-2">
+          <div class="row  justify-content-center align-content-center">
+                <div class="col-10 ">
                   <h4 class="text-center"><strong>Description</strong></h4>
                   <p>Rotten School is a children's book series by R. L. Stine 
                       concerning the adventures of children at a boarding school.
