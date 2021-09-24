@@ -128,14 +128,14 @@ function showUnpaiedOrders(){
                 <div class="cCard">
                     <i class="bi bi-cart-check"></i>
                     <h5><strong>Total Orders</strong></h5>
-                    <strong class="text-secondary"><?php echo getTotalUsersCount(); ?></strong>
+                    <strong class="text-secondary"><?php echo getTotalOrdersCount(); ?></strong>
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-3">
                 <div class="cCard">
                     <i class="bi bi-people"></i>
                     <h5><strong>Total Users</strong></h5>
-                    <strong class="text-secondary"><?php echo getTotalOrdersCount(); ?></strong>
+                    <strong class="text-secondary"><?php echo getTotalUsersCount(); ?></strong>
                 </div>
             </div>
             <div class="col-6 col-md-3 mb-3">
@@ -170,7 +170,7 @@ function showUnpaiedOrders(){
                 
             </div>
             <div class="col-12 col-lg-6 mt-4 mt-lg-0">
-                <h4><strong>Unpayed orders</strong></h4>
+                <h4><strong>Unpaid orders</strong></h4>
 
                 <?php showUnpaiedOrders(); ?>
                 
@@ -178,7 +178,7 @@ function showUnpaiedOrders(){
         </div>
     </section>
 
-    <section class="container mt-4">
+    <section class="container my-5">
         <div class="row">
             <h4 class="mb-3"><strong>Quick Access Links</strong></h4>
             <div class="col-6 col-lg-3 mb-3 d-flex">
