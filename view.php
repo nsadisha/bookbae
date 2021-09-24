@@ -102,6 +102,9 @@
                         <strong>LKR978.21</strong>
                     </div>
                 </div>
+                <div class="row justify-content-center pt-2 favourite">
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-heart-fill p-1"></i>Add to favourites</button>
+                </div>
                 <div class="row justify-content-center pt-2">
                     <div class="col-4">
                         <input type="text" placeholder="Qty">
@@ -138,62 +141,20 @@
             </div>
         </div>
         <!--related items -->
-        <section class="container-fluid my-5">
-        <h3 class="mb-1">Featured products</h3>
-        <div class="mb-4 hr"></div>
-        <div class="row">
-            <?php book("12321354565856",2); ?>
-            <?php book("987456123654",2); ?>
-            <?php book("12321354598856",2); ?>
-            <?php book("456987456321",2); ?>
-            <?php book("987456123654",2); ?>
-            <?php book("556987456321",2); ?>
-        </div>
-        </section>
+        
         <div class="container related-items">
-            <h3 class="m-3">Related Items</h3>
-            <div class="block row">
-                <div class="col-sm-3 ">
-                    <div class="card" >
-                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title m-0">The school is haunted</h6>
-                            <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1 bg-brown"><i class="bi bi-cart3 p-1"></i>Add to cart</a>
-                        </div>
-                    </div>
+            <section class="container-fluid my-5">
+                <h3 class="mb-1">Featured products</h3>
+                <div class="mb-4 hr"></div>
+                <div class="row">
+                    <?php book("12321354565856",2); ?>
+                    <?php book("987456123654",2); ?>
+                    <?php book("12321354598856",2); ?>
+                    <?php book("456987456321",2); ?>
+                    
                 </div>
-                <div class="col-sm-3">
-                    <div class="card" >
-                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title m-0">The school is haunted</h6>
-                            <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3 p-1"></i>Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" >
-                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title m-0">The school is haunted</h6>
-                            <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3 p-1"></i>Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" >
-                        <img src="assets/images/view page/1.jpg" class="card-img-top " alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title m-0">The school is haunted</h6>
-                            <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3 p-1"></i>Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
+            
         </div>
         <div class="container gif mx-auto p-5  m-3">
             <div class="row align-items-center">
