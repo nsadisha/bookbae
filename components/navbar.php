@@ -30,7 +30,7 @@ function navbar($nav){
     $navbar = "
     <nav class='navbar navbar-expand-md navbar-light bg-none'>
         <div class='container-fluid'>
-            <a class='navbar-brand' href='#'><img src='assets/images/logo.png' alt='logo' width='120'></a>
+            <a class='navbar-brand' href='./'><img src='assets/images/logo.png' alt='logo' width='130px'></a>
             <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
                 <span class='navbar-toggler-icon'></span>
             </button>
