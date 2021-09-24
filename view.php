@@ -15,12 +15,7 @@
     <!-- bootstrap -->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <!-- swiper css -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
-    <!--google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab&display=swap" rel="stylesheet">
+    
     
     <title>BookBae | View </title>
 </head>
@@ -107,6 +102,9 @@
                         <strong>LKR978.21</strong>
                     </div>
                 </div>
+                <div class="row justify-content-center pt-2 favourite">
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-heart-fill p-1"></i>Add to favourites</button>
+                </div>
                 <div class="row justify-content-center pt-2">
                     <div class="col-4">
                         <input type="text" placeholder="Qty">
@@ -143,62 +141,20 @@
             </div>
         </div>
         <!--related items -->
-        <section class="container-fluid my-5">
-        <h3 class="mb-1">Featured products</h3>
-        <div class="mb-4 hr"></div>
-        <div class="row">
-            <?php book("12321354565856",2); ?>
-            <?php book("987456123654",2); ?>
-            <?php book("12321354598856",2); ?>
-            <?php book("456987456321",2); ?>
-            <?php book("987456123654",2); ?>
-            <?php book("556987456321",2); ?>
-        </div>
-        </section>
+        
         <div class="container related-items">
-            <h3 class="m-3">Related Items</h3>
-            <div class="block row">
-                <div class="col-sm-3 ">
-                    <div class="card" >
-                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title m-0">The school is haunted</h6>
-                            <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1 bg-brown"><i class="bi bi-cart3 p-1"></i>Add to cart</a>
-                        </div>
-                    </div>
+            <section class="container-fluid my-5">
+                <h3 class="mb-1">Featured products</h3>
+                <div class="mb-4 hr"></div>
+                <div class="row">
+                    <?php book("12321354565856",3); ?>
+                    <?php book("987456123654",3); ?>
+                    <?php book("12321354598856",3); ?>
+                    <?php book("456987456321",3); ?>
+                    
                 </div>
-                <div class="col-sm-3">
-                    <div class="card" >
-                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title m-0">The school is haunted</h6>
-                            <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3 p-1"></i>Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" >
-                        <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title m-0">The school is haunted</h6>
-                            <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3 p-1"></i>Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" >
-                        <img src="assets/images/view page/1.jpg" class="card-img-top " alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title m-0">The school is haunted</h6>
-                            <p class="card-text m-0">Price $30.32</p>
-                            <a href="#" class="btn btn-primary p-1 m-1"><i class="bi bi-cart3 p-1"></i>Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
+            
         </div>
         <div class="container gif mx-auto p-5  m-3">
             <div class="row align-items-center">
@@ -223,8 +179,5 @@
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="js/view.js"></script>
 </html>
