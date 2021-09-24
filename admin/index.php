@@ -37,6 +37,34 @@ function showAdmins(){
         echo "<strong class='text-secondary'>You are the only admin.</strong>";
     }
 }
+
+function showUnpaiedOrders(){
+    $orders = execute("SELECT order_id, email, total_price FROM placed_orders");
+    if($orders->num_rows !=0){
+        foreach($orders as $order){
+            // admin details
+            $id = $order["order_id"];
+            $total = number_format($order["total_price"], 2);
+            $email = $order["email"];
+            
+
+            $adminRecord = "
+                <div class='w-75 d-flex border-bottom admin'>
+                    <div class='text-secondary'>
+                        <strong>#$id - Rs. $total</strong><br>
+                        <small>$email</small>
+                    </div>
+                    <a href='removeUnpaidOrder.php?id=$id' class='btn ms-auto'><strong>&times;</strong></a>
+                </div>
+            ";
+
+            echo $adminRecord;
+        }
+        echo "<div class='mt-3 text-center'><a href='removeUnpaidOrder.php?id=all' class='btn-sm bg-brown text-white text-decoration-none text-center'><strong>Remove all</strong></a></div>";
+    }else{
+        echo "<strong class='text-secondary'>No unpaid orders.</strong>";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -139,18 +167,20 @@ function showAdmins(){
                 <h4><strong>Otehr Admins</strong></h4>
 
                 <?php showAdmins(); ?>
-
+                
             </div>
-            <div class="col-12 col-lg-6">
-                <h4><strong>Something</strong></h4>
-                Something
+            <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+                <h4><strong>Unpayed orders</strong></h4>
+
+                <?php showUnpaiedOrders(); ?>
+                
             </div>
         </div>
     </section>
 
-    <section class="container mt-3">
+    <section class="container mt-4">
         <div class="row">
-            <h4><strong>Quick Access Links</strong></h4>
+            <h4 class="mb-3"><strong>Quick Access Links</strong></h4>
             <div class="col-6 col-lg-3 mb-3 d-flex">
                 <button class="btn quick-link"><strong>All books</strong></button>
             </div>
