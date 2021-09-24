@@ -9,6 +9,46 @@ if(!isAdminSigned()){
 $email = getSignedAdminEmail();
 $isSuper = isSuperAdmin($email);
 
+//check req parameters
+if(!isset($_REQUEST["earnings"])){
+    header("Location: ./?earnings=week&orders=week");
+}
+if(!isset($_REQUEST["orders"])){
+    header("Location: ./?earnings=week&orders=week");
+}
+
+//calculating earnings and orders
+$earnings = $_REQUEST["earnings"];
+$orders = $_REQUEST["orders"];
+
+//db result
+$earningData = "";
+switch ($earnings) {
+    case 'week':
+        $earningData = execute("select $earnings(date) date, SUM(total_price) total from orders group by $earnings(date)");
+        break;
+    case 'month':
+        $earningData = execute("select $earnings(date) date, SUM(total_price) total from orders group by $earnings(date)");
+        break;
+    case 'year':
+        $earningData = execute("select $earnings(date) date, SUM(total_price) total from orders group by $earnings(date)");
+        break;
+    
+    default:
+        $earningData = execute("select CAST(date as date) date, SUM(total_price) total from orders group by CAST(date as date)");
+        break;
+}
+//array
+$earningDataSet = array(array(), array());
+//pushing to the array
+foreach($earningData as $earning){
+    // array_push($earningDataSet, array("date"=>$earning["date"], "total"=>$earning["total"]));
+    array_push($earningDataSet[0], $earning["date"]);
+    array_push($earningDataSet[1], $earning["total"]);
+}
+
+//-------------------------------------------
+
 function showAdmins(){
     global $email;
     $admins = execute("SELECT email, fname, lname, type FROM admins WHERE email!=\"$email\"");
@@ -65,6 +105,9 @@ function showUnpaiedOrders(){
         echo "<strong class='text-secondary'>No unpaid orders.</strong>";
     }
 }
+
+// $today = date("Y-m-d H:i:s");
+// echo $today;
 ?>
 
 <!DOCTYPE html>
@@ -150,15 +193,33 @@ function showUnpaiedOrders(){
     </section>
 
     <section class="container mt-3">
-        <div class="row">
-            <h4><strong>Overview</strong></h4>
-            <div class="col-12 col-lg-6">
-                <canvas id="myChart" height="200px"></canvas>
+        <form action="./" method="get" class="row" id="charts">
+            <div class="row">
+                <h4><strong>Overview</strong></h4>
+                <div class="col-12 col-lg-6">
+                    <div class="col-4 col-sm-3 ms-auto">
+                        <select class="form-select form-select-sm" name="earnings" onchange="document.getElementById('charts').submit();">
+                            <option value="week" <?php echo $earnings=="week"?"selected":""; ?>>Last week</option>
+                            <option value="month" <?php echo $earnings=="month"?"selected":""; ?>>Last month </option>
+                            <option value="year" <?php echo $earnings=="year"?"selected":""; ?>>Last year</option>
+                            <option value="all" <?php echo $earnings=="all"?"selected":""; ?>>Lifetime</option>
+                        </select>
+                    </div>
+                    <canvas id="myChart" height="200px"></canvas>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="col-4 col-sm-3 ms-auto">
+                        <select class="form-select form-select-sm" name="orders" onchange="document.getElementById('charts').submit();">
+                            <option value="week" <?php echo $orders=="week"?"selected":""; ?>>Last week</option>
+                            <option value="month" <?php echo $orders=="month"?"selected":""; ?>>Last month </option>
+                            <option value="year" <?php echo $orders=="year"?"selected":""; ?>>Last year</option>
+                            <option value="all" <?php echo $orders=="all"?"selected":""; ?>>Lifetime</option>
+                        </select>
+                    </div>
+                    <canvas id="myChart2" height="200px"></canvas>
+                </div>
             </div>
-            <div class="col-12 col-lg-6">
-                <canvas id="myChart2" height="200px"></canvas>
-            </div>
-        </div>
+        </form>
     </section>
 
     <section class="container mt-3">
@@ -251,5 +312,13 @@ function showUnpaiedOrders(){
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js" integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/admin.js"></script>
+<script>
+
+    //encode php array to json array
+    var earningData = <?php echo(json_encode($earningDataSet)); ?>;
+    //display earnings chart
+    chart1(earningData[0], earningData[1]);
+
+</script>
 </body>
 </html>
