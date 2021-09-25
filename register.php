@@ -26,23 +26,71 @@
         <div class="row my-5">
             
             
-            <div class="col-md-6 justify-content-center input-pin">
+            <div class="col-md-6  input-pin">
                 <div class="col-md-12 d-flex justify-content-center mail">
                     <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
                 </div>
-                <p>Before creating account, we need toverify your email ID <strong>example@gmail.com</strong><p> 
-                <p>We have sent you a verification code to your email address.</p>
-                <div class="col-md-12 d-flex justify-content-center">
-                    <input type="text" id="pin" name="pin" style="width: 30%;">
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <p><strong>First Name</strong><p> 
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-6">
+                        <input type="text" placeholder="Type your first name" name='fname'>
+                    </div>
                 </div>
-                <p>Didn't get the pin. <a href="">Resend pin</a></p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p><strong>Last Name</strong><p> 
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <input type="text" placeholder="Type your last name" name='lname'>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p><strong>Email address</strong><p> 
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <input type="email" placeholder="Type your email" name='email'>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p><strong>Contact details</strong><p> 
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <input type="text" placeholder="Contact number" name='contact'>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p><strong>Password</strong><p> 
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <input type="password"  name='password' placeholder="Password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p><strong>Confirm Password</strong><p> 
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <input type="password" placeholder="Confirm password" >
+                    </div>
+                </div>
                 <div class="col-md-12 d-flex justify-content-center">
                     <button type="button" class="btn btn-primary " >Click to verify</button>
                 </div>
             </div>
             <div class="col-md-6 image">
-                <div class="col-md-12 d-flex justify-content-center ">
-                    <img src="assets\images\profile\undraw_verified_re_4io7.png" style="width:80%">
+                <div class="col-md-12 d-flex justify-content-end ">
+                    <img src="assets\images\register\undraw_Access_account_re_8spm.png" style="width:80%">
                 </div>
                
             </div>
