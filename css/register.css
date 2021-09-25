@@ -1,0 +1,37 @@
+@import url("styles.css");
+
+
+.input-data{
+    background-color: #F8F9FA;
+    border-radius: 4rem;
+   padding:2rem;
+    position: relative;
+}
+.content button{
+    background-color: #B08968;
+    border-color: #B08968;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius: 5rem;
+    font-size: 1.2rem;
+}
+.content button:hover{
+    background-color: #b07d62;
+}
+.input-data input{
+    width:15rem;
+    background-color:#F8F9FA ;
+    text-align: center;
+}
+.main-pic img{
+    top: -25%;
+    position: absolute;
+}
+@media only screen and (max-width:450px){
+    .main-pic img{
+        top: -15%;
+        position: absolute;
+    }
+  
+     
+}
