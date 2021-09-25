@@ -9,7 +9,7 @@ if(isset($_REQUEST['submit'])){
     $contact=$_REQUEST['contact'];
     $password=$_REQUEST['password'];
 
-    $sql="Insert into users values(\"$email\",\"$fname\",\"$lname\",\"$contact\")";
+    $sql="INSERT into users values(\"$email\",\"$fname\",\"$lname\",\"$password\",\"$contact\")";
 
     $result=$conn->query($sql);
     if($result)
