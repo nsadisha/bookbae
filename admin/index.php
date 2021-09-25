@@ -28,19 +28,19 @@ $earningData = "";
 switch ($earnings) {
     case 'week':
         $start = date("Y-m-d",strtotime("-7 days"));
-        $end = date("Y-m-d", strtotime("now"));
+        $end = date("Y-m-d", strtotime("tomorrow"));
         $earningData = execute("SELECT day(date) date, SUM(total_price) total FROM orders WHERE date BETWEEN\"$start\" AND \"$end\" GROUP BY day(date)");
         break;
 
     case 'month':
         $start = date("Y-m-d", strtotime("last month"));
-        $end = date("Y-m-d", strtotime("now"));
+        $end = date("Y-m-d", strtotime("tomorrow"));
         $earningData = execute("SELECT day(date) date, SUM(total_price) total FROM orders WHERE date BETWEEN\"$start\" AND \"$end\" GROUP BY day(date)");
         break;
         
     case 'year':
         $start = date("Y-m-d", strtotime("last year"));
-        $end = date("Y-m-d", strtotime("now"));
+        $end = date("Y-m-d", strtotime("tomorrow"));
         $earningData = execute("SELECT month(date) date, SUM(total_price) total FROM orders WHERE date BETWEEN\"$start\" AND \"$end\" GROUP BY month(date)");
         break;
     
@@ -61,19 +61,19 @@ $ordersData = "";
 switch ($orders) {
     case 'week':
         $start = date("Y-m-d",strtotime("-7 days"));
-        $end = date("Y-m-d", strtotime("now"));
+        $end = date("Y-m-d", strtotime("tomorrow"));
         $ordersData = execute("SELECT day(date) date, COUNT(*) total FROM orders WHERE date BETWEEN\"$start\" AND \"$end\" GROUP BY day(date)");
         break;
 
     case 'month':
         $start = date("Y-m-d", strtotime("last month"));
-        $end = date("Y-m-d", strtotime("now"));
+        $end = date("Y-m-d", strtotime("tomorrow"));
         $ordersData = execute("SELECT day(date) date, COUNT(*) total FROM orders WHERE date BETWEEN\"$start\" AND \"$end\" GROUP BY day(date)");
         break;
         
     case 'year':
         $start = date("Y-m-d", strtotime("last year"));
-        $end = date("Y-m-d", strtotime("now"));
+        $end = date("Y-m-d", strtotime("tomorrow"));
         $ordersData = execute("SELECT month(date) date, COUNT(*) total FROM orders WHERE date BETWEEN\"$start\" AND \"$end\" GROUP BY month(date)");
         break;
     
@@ -285,7 +285,7 @@ function showUnpaiedOrders(){
         <div class="row">
             <h4 class="mb-3"><strong>Quick Access Links</strong></h4>
             <div class="col-6 col-lg-3 mb-3 d-flex">
-                <button class="btn quick-link"><strong>All books</strong></button>
+                <a href="../search.php?q=" class="btn quick-link"><strong>All books</strong></a>
             </div>
             <div class="col-6 col-lg-3 mb-3 d-flex">
                 <button class="btn quick-link" data-bs-toggle="modal" data-bs-target="#newAdmin" <?php echo !$isSuper?"disabled":""; ?>><strong>+ New admin</strong></button>
