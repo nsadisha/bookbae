@@ -22,6 +22,8 @@ p{
 }
 .input-data input{
     width:16rem;
+    background-color:#F8F9FA ;
+    text-align: center;
 }
 .main-pic img{
     top: -25%;

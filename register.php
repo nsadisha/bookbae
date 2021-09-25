@@ -18,74 +18,76 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
     <!--google fonts -->
     
-    
     <title>BookBae | Register</title>
 </head>
 <body>
     <div class="container pt-5 content">
         <div class="row my-5">
-            <div class="col-md-6  input-data">
-                <div class="col-md-12 d-flex justify-content-center main-pic">
-                    <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
+            <form name="registerForm" action="user.php" method="post">
+                <div class="col-md-6  input-data">
+                    <div class="col-md-12 d-flex justify-content-center main-pic">
+                        <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="col-md-4 ">
+                            <p><strong>First Name</strong><p> 
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-6">
+                            <input type="text" placeholder="Type your first name" name='fname'>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p><strong>Last Name</strong><p> 
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+                            <input type="text" placeholder="Type your last name" name='lname'>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p><strong>Email address</strong><p> 
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+                            <input type="email" placeholder="Type your email" name='email'>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p><strong>Contact details</strong><p> 
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+                            <input type="text" placeholder="Contact number" name='contact'>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p><strong>Password</strong><p> 
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+                            <input type="password"  name='password' placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p><strong>Confirm Password</strong><p> 
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+                            <input type="password" placeholder="Confirm password" >
+                        </div>
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-center pt-3">
+                        <button type="button" class="btn btn-primary " >Register</button>
+                    </div>
                 </div>
-                <div class="row pt-4">
-                    <div class="col-md-4 ">
-                        <p><strong>First Name</strong><p> 
-                    </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-6">
-                        <input type="text" placeholder="Type your first name" name='fname'>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <p><strong>Last Name</strong><p> 
-                    </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-4">
-                        <input type="text" placeholder="Type your last name" name='lname'>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <p><strong>Email address</strong><p> 
-                    </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-4">
-                        <input type="email" placeholder="Type your email" name='email'>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <p><strong>Contact details</strong><p> 
-                    </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-4">
-                        <input type="text" placeholder="Contact number" name='contact'>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <p><strong>Password</strong><p> 
-                    </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-4">
-                        <input type="password"  name='password' placeholder="Password">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <p><strong>Confirm Password</strong><p> 
-                    </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-4">
-                        <input type="password" placeholder="Confirm password" >
-                    </div>
-                </div>
-                <div class="col-md-12 d-flex justify-content-center pt-2">
-                    <button type="button" class="btn btn-primary " >Register</button>
-                </div>
-            </div>
+            </form>
+            <!--second picture-->
             <div class="col-md-6 image">
                 <div class="col-md-12 d-flex justify-content-end ">
                     <img src="assets\images\register\undraw_Access_account_re_8spm.png" style="width:80%">
