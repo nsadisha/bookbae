@@ -22,19 +22,17 @@
     <title>BookBae | Register</title>
 </head>
 <body>
-    <div class="container p-5 content">
+    <div class="container pt-5 content">
         <div class="row my-5">
-            
-            
-            <div class="col-md-6  input-pin">
-                <div class="col-md-12 d-flex justify-content-center mail">
+            <div class="col-md-6  input-data">
+                <div class="col-md-12 d-flex justify-content-center main-pic">
                     <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
                 </div>
-                <div class="row">
+                <div class="row pt-4">
                     <div class="col-md-4 ">
                         <p><strong>First Name</strong><p> 
                     </div>
-                    <div class="col-md-2"></div>
+                    <div class="col-md-1"></div>
                     <div class="col-md-6">
                         <input type="text" placeholder="Type your first name" name='fname'>
                     </div>
@@ -43,7 +41,7 @@
                     <div class="col-md-4">
                         <p><strong>Last Name</strong><p> 
                     </div>
-                    <div class="col-md-2"></div>
+                    <div class="col-md-1"></div>
                     <div class="col-md-4">
                         <input type="text" placeholder="Type your last name" name='lname'>
                     </div>
@@ -52,7 +50,7 @@
                     <div class="col-md-4">
                         <p><strong>Email address</strong><p> 
                     </div>
-                    <div class="col-md-2"></div>
+                    <div class="col-md-1"></div>
                     <div class="col-md-4">
                         <input type="email" placeholder="Type your email" name='email'>
                     </div>
@@ -61,7 +59,7 @@
                     <div class="col-md-4">
                         <p><strong>Contact details</strong><p> 
                     </div>
-                    <div class="col-md-2"></div>
+                    <div class="col-md-1"></div>
                     <div class="col-md-4">
                         <input type="text" placeholder="Contact number" name='contact'>
                     </div>
@@ -70,7 +68,7 @@
                     <div class="col-md-4">
                         <p><strong>Password</strong><p> 
                     </div>
-                    <div class="col-md-2"></div>
+                    <div class="col-md-1"></div>
                     <div class="col-md-4">
                         <input type="password"  name='password' placeholder="Password">
                     </div>
@@ -79,13 +77,13 @@
                     <div class="col-md-4">
                         <p><strong>Confirm Password</strong><p> 
                     </div>
-                    <div class="col-md-2"></div>
+                    <div class="col-md-1"></div>
                     <div class="col-md-4">
                         <input type="password" placeholder="Confirm password" >
                     </div>
                 </div>
-                <div class="col-md-12 d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary " >Click to verify</button>
+                <div class="col-md-12 d-flex justify-content-center pt-2">
+                    <button type="button" class="btn btn-primary " >Register</button>
                 </div>
             </div>
             <div class="col-md-6 image">
