@@ -7,6 +7,11 @@
     $sql="select * from books where isbn=$isbn";
     $data=$conn->query($sql);
     $row=$data->fetch_array();
+    $author=$row['author'];
+    $sql2="select isbn from books where author=\"$author\" limit 0,4";
+    $featuredData=$conn->query($sql2);
+    $row2=$featuredData->fetch_array();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +36,7 @@
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <h1 class="text-center">Rotten school and great smelling bee</h1>
+    <h2 class="text-center p-3"><strong>Rotten school and great smelling bee</strong></h2>
     <div class="container-fluid pb-5">
         <div class="row mt-3">
             <div class="col-lg-6 justify-content-end">
@@ -151,12 +156,12 @@
             <section class="container-fluid my-5">
                 <h3 class="mb-1">Featured products</h3>
                 <div class="mb-4 hr"></div>
-                <div class="row">
-                    <?php book("12321354565856",3); ?>
-                    <?php book("987456123654",3); ?>
-                    <?php book("12321354598856",3); ?>
-                    <?php book("456987456321",3); ?>
-                    
+                <div class="row justify-content-center">
+                    <?php 
+                        foreach($featuredData as $book){
+                            book($row2['isbn'],3);
+                        }
+                    ?>
                 </div>
             </section>
             
