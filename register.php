@@ -23,8 +23,9 @@
 <body>
     <div class="container pt-5 content">
         <div class="row my-5">
-            <form name="registerForm" action="components/user.php" method="post">
-                <div class="col-md-6  input-data">
+            
+            <div class="col-md-6  input-data">
+                <form name="registerForm" action="components/user.php" method="post">
                     <div class="col-md-12 d-flex justify-content-center main-pic">
                         <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
                     </div>
@@ -85,8 +86,9 @@
                     <div class="col-md-12 d-flex justify-content-center ">
                         <button type="submit" class="btn btn-primary " name="submit" >Register</button>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
+            
             <!--second picture-->
             <div class="col-md-6 image">
                 <div class="col-md-12 d-flex justify-content-end ">
