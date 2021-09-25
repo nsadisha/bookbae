@@ -1,7 +1,20 @@
 <?php include "components/footer.php" ?>
 <?php include "components/navbar.php" ?>
 <?php include "components/book.php" ?>
+<?php
+    $conn=mysqli_connect('localhost','root','','bookbae');
+    if (isset ($_REQUEST['isbn'])){
+        $isbn=$_REQUEST['isbn'];
+    }
+    $sql="select * from books where isbn=$isbn";
+    $data=$conn->query($sql);
+    $row=$data->fetch_array();
+    $author=$row['author'];
+    $sql2="select isbn from books where author=\"$author\" limit 0,4";
+    $featuredData=$conn->query($sql2);
+    $row2=$featuredData->fetch_array();
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +29,6 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     
-    
     <title>BookBae | View </title>
 </head>
 <body>
@@ -26,7 +38,7 @@
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <h1 class="text-center">Rotten school and great smelling bee</h1>
+    <h2 class="text-center p-3"><strong>Rotten school and great smelling bee</strong></h2>
     <div class="container-fluid pb-5">
         <div class="row mt-3">
             <div class="col-lg-6 justify-content-end">
@@ -36,7 +48,7 @@
                             <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 d-flex justify-content-start">
                         <div class="card " style="width: 13rem;">
                             <img src="assets/images/view page/1.jpg" class="card-img-top" alt="...">
                         </div>
@@ -51,7 +63,7 @@
                         ISBN
                     </div>
                     <div class="col-6">
-                        1235
+                        <?php echo $isbn; ?>
                     </div>
                 </div>
                 <div class="row">
@@ -59,7 +71,7 @@
                         Author
                     </div>
                     <div class="col-6">
-                        R.L Stine
+                        <?php echo $row['author']; ?>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -67,7 +79,7 @@
                         Language
                     </div>
                     <div class="col-6">
-                        English
+                        <?php echo $row['language']; ?>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -75,7 +87,7 @@
                         Year
                     </div>
                     <div class="col-6">
-                        2014
+                        <?php echo $row['year']; ?>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -83,7 +95,7 @@
                         Edition
                     </div>
                     <div class="col-6">
-                        six
+                        <?php echo $row['edition']; ?>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -91,7 +103,7 @@
                         Publisher
                     </div>
                     <div class="col-6">
-                        1235
+                        <?php echo $row['publisher']; ?>
                     </div>
                 </div>
                 <div class="row justify-content-center pt-2">
@@ -99,7 +111,7 @@
                         Price
                     </div>
                     <div class="col-6 ">
-                        <strong>LKR978.21</strong>
+                        <strong>LKR<?php echo $row['price']; ?>.00</strong>
                     </div>
                 </div>
                 <div class="row justify-content-center pt-2 favourite">
@@ -124,10 +136,10 @@
 
 
     <!-- Page description -->
-        <div class="container-fluid about pt-2 pb-1">
-          <div class="row mt-5 justify-content-center">
-                <div class="col-8 ">
-                  <h4 class="text-center"><strong>Description</strong></h4>
+        <div class="container about pt-2 pb-2">
+          <div class="row  justify-content-center align-content-center">
+                <div class="col-10 ">
+                  <h4><strong>Description</strong></h4>
                   <p>Rotten School is a children's book series by R. L. Stine 
                       concerning the adventures of children at a boarding school.
                       Each book is written from the perspective of Bernie Bridges,
@@ -146,12 +158,12 @@
             <section class="container-fluid my-5">
                 <h3 class="mb-1">Featured products</h3>
                 <div class="mb-4 hr"></div>
-                <div class="row">
-                    <?php book("12321354565856",3); ?>
-                    <?php book("987456123654",3); ?>
-                    <?php book("12321354598856",3); ?>
-                    <?php book("456987456321",3); ?>
-                    
+                <div class="row justify-content-center">
+                    <?php 
+                        foreach($featuredData as $book){
+                            book($row2['isbn'],3);
+                        }
+                    ?>
                 </div>
             </section>
             
