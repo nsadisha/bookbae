@@ -1,12 +1,10 @@
 @import url("styles.css");
 
-p{
-    text-align: center;
-}
+
 .input-data{
     background-color: #F8F9FA;
     border-radius: 4rem;
-    padding:2rem;
+   padding:2rem;
     position: relative;
 }
 .content button{
@@ -21,7 +19,7 @@ p{
     background-color: #b07d62;
 }
 .input-data input{
-    width:16rem;
+    width:15rem;
     background-color:#F8F9FA ;
     text-align: center;
 }
