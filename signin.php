@@ -23,7 +23,7 @@
         <div class="row my-5">
             
             <div class="col-md-6  input-data">
-                <form name="registerForm" action="components/user.php" method="post">
+                <form name="registerForm" action="$_SERVER['PHP_SELF']" method="post">
                     <div class="col-md-12 d-flex justify-content-center main-pic">
                         <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
                     </div>
@@ -34,7 +34,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-6">
-                            <input type="email" placeholder="Type your first name" name='fname'>
+                            <input type="email" placeholder="Type your Email address" name='email'>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4 ">
-                            <input type="password" placeholder="Type your last name" name='lname'>
+                            <input type="password" placeholder="Type your password" name='password'>
                         </div>
                     </div>
                     
@@ -63,6 +63,13 @@
             
         </div>
     </div>
-
+    <?php
+    if(isset($_REQUEST['submit'])){
+        $conn=mysqli_connect('localhost','root','','bookbae');
+        $email=$_REQUEST['email'];
+        echo $email;
+    }
+        
+    ?>
 </body>
 </html>
