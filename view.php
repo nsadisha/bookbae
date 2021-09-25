@@ -1,7 +1,13 @@
 <?php include "components/footer.php" ?>
 <?php include "components/navbar.php" ?>
 <?php include "components/book.php" ?>
-
+<?php
+    $conn=mysqli_connect('localhost','root','','bookbae');
+    $isbn = "987456123654";
+    $sql="select * from books where isbn=$isbn";
+    $data=$conn->query($sql);
+    $row=$data->fetch_array();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +56,7 @@
                         ISBN
                     </div>
                     <div class="col-6">
-                        1235
+                        <?php echo $isbn; ?>
                     </div>
                 </div>
                 <div class="row">
@@ -58,7 +64,7 @@
                         Author
                     </div>
                     <div class="col-6">
-                        R.L Stine
+                        <?php echo $row['author']; ?>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -66,7 +72,7 @@
                         Language
                     </div>
                     <div class="col-6">
-                        English
+                        <?php echo $row['language']; ?>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -74,7 +80,7 @@
                         Year
                     </div>
                     <div class="col-6">
-                        2014
+                        <?php echo $row['year']; ?>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -82,7 +88,7 @@
                         Edition
                     </div>
                     <div class="col-6">
-                        six
+                        <?php echo $row['edition']; ?>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -90,7 +96,7 @@
                         Publisher
                     </div>
                     <div class="col-6">
-                        1235
+                        <?php echo $row['publisher']; ?>
                     </div>
                 </div>
                 <div class="row justify-content-center pt-2">
@@ -98,7 +104,7 @@
                         Price
                     </div>
                     <div class="col-6 ">
-                        <strong>LKR978.21</strong>
+                        <strong>LKR<?php echo $row['price']; ?>.00</strong>
                     </div>
                 </div>
                 <div class="row justify-content-center pt-2 favourite">
