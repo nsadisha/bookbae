@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- custom css -->
    
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/signin.css">
 
     <!-- bootstrap -->
 
@@ -27,7 +27,7 @@
                     <div class="col-md-12 d-flex justify-content-center main-pic">
                         <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
                     </div>
-                    <h3>Welcometo Bookbae!</h3>
+                    <h3 class="pt-5">Welcome to Bookbae!</h3>
                     <div class="row pt-4 p-2">
                         <div class="col-md-4 ">
                             <p><strong>Email</strong><p> 
@@ -56,7 +56,7 @@
             <!--second picture-->
             <div class="col-md-6 image">
                 <div class="col-md-12 d-flex justify-content-end ">
-                    <img src="assets\images\register\undraw_Access_account_re_8spm.png" style="width:80%">
+                    <img src="assets\images\register\undraw_Welcome_re_h3d9.png" style="width:80%">
                 </div>
                
             </div>
