@@ -3,7 +3,9 @@
 <?php include "components/book.php" ?>
 <?php
     $conn=mysqli_connect('localhost','root','','bookbae');
-    $isbn = "987456123654";
+    if (isset ($_REQUEST['isbn'])){
+        $isbn=$_REQUEST['isbn'];
+    }
     $sql="select * from books where isbn=$isbn";
     $data=$conn->query($sql);
     $row=$data->fetch_array();
@@ -137,7 +139,7 @@
         <div class="container about pt-2 pb-2">
           <div class="row  justify-content-center align-content-center">
                 <div class="col-10 ">
-                  <h4 class="text-center"><strong>Description</strong></h4>
+                  <h4><strong>Description</strong></h4>
                   <p>Rotten School is a children's book series by R. L. Stine 
                       concerning the adventures of children at a boarding school.
                       Each book is written from the perspective of Bernie Bridges,
