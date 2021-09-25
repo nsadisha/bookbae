@@ -29,20 +29,20 @@
                     </div>
                     <h3 class="pt-5">Welcome to Bookbae!</h3>
                     <div class="row pt-4 p-2">
-                        <div class="col-md-4 ">
+                        <div class="col-4 ">
                             <p><strong>Email</strong><p> 
                         </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-6">
+                        <div class="col-1"></div>
+                        <div class="col-6">
                             <input type="email" placeholder="Type your first name" name='fname'>
                         </div>
                     </div>
                     <div class="row p-2">
-                        <div class="col-md-4">
+                        <div class="col-4">
                             <p><strong>Password</strong><p> 
                         </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-4 ">
+                        <div class="col-1"></div>
+                        <div class="col-4 ">
                             <input type="password" placeholder="Type your last name" name='lname'>
                         </div>
                     </div>
