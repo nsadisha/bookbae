@@ -184,7 +184,7 @@ function showUnpaiedOrders(){
                         More
                     </a>
                     <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
-                        <li><a class='dropdown-item' href='#'>All books</a></li>
+                        <li><a class='dropdown-item' href='orders.php'>All orders</a></li>
                         <li><a class='dropdown-item <?php echo !$isSuper?"disabled":""; ?>' href='#' data-bs-toggle="modal" data-bs-target="#newAdmin">Add admin</a></li>
                         <li><a class='dropdown-item' href='#'>Add book</a></li>
                         <li><a class='dropdown-item' href='#'>Edit book</a></li>
@@ -285,7 +285,7 @@ function showUnpaiedOrders(){
         <div class="row">
             <h4 class="mb-3"><strong>Quick Access Links</strong></h4>
             <div class="col-6 col-lg-3 mb-3 d-flex">
-                <a href="../search.php?q=" class="btn quick-link"><strong>All books</strong></a>
+                <a href="orders.php" class="btn quick-link"><strong>All orders</strong></a>
             </div>
             <div class="col-6 col-lg-3 mb-3 d-flex">
                 <button class="btn quick-link" data-bs-toggle="modal" data-bs-target="#newAdmin" <?php echo !$isSuper?"disabled":""; ?>><strong>+ New admin</strong></button>
