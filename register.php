@@ -8,145 +8,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- custom css -->
-    <link rel="stylesheet" href="css/styles.css">
-	  <link rel="stylesheet" href="css/signin.css">
+   
+    <link rel="stylesheet" href="css/register.css">
 
-    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <!-- bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <!--google fonts -->
+    
+    
     <title>BookBae | Register</title>
-
-    <!-- <script src="js/signin.js"></script> -->
-
-    <script>
-        window.console = window.console || function(t) {};
-    </script>
-
-    <script>
-        if (document.location.search.match(/type=embed/gi)) {
-            window.parent.postMessage("resize", "*");
-    }
-    </script>
 </head>
 <body>
-
-    <!-- Navbar starts -->
-    <?php navbar("register"); ?>
-    <!-- Navbar ends -->
-
-    <!-- Page content starts -->
-    <div class="form">
-      
-        <!-- <ul class="tab-group">
-            <li class="tab active"><a href="#signup">Sign Up</a></li>
-            <li class="tab"><a href="#login">Log In</a></li>
-        </ul> -->
-        
-        <div class="tab-content">
-            <div id="signup">   
-            <h1>Sign Up for Free</h1>
+    <div class="container p-5 content">
+        <div class="row my-5">
             
-            <form action="/" method="post">
             
-            <div class="top-row">
-                <div class="field-wrap">
-                  <label>
-                      First Name<span class="req">*</span>
-                  </label>
-                  <input type="text" required autocomplete="off" />
+            <div class="col-md-6 justify-content-center input-pin">
+                <div class="col-md-12 d-flex justify-content-center mail">
+                    <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
                 </div>
-            
-                <div class="field-wrap">
-                  <label>
-                      Last Name<span class="req">*</span>
-                  </label>
-                  <input type="text"required autocomplete="off"/>
+                <p>Before creating account, we need toverify your email ID <strong>example@gmail.com</strong><p> 
+                <p>We have sent you a verification code to your email address.</p>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <input type="text" id="pin" name="pin" style="width: 30%;">
+                </div>
+                <p>Didn't get the pin. <a href="">Resend pin</a></p>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary " >Click to verify</button>
                 </div>
             </div>
-
-            <div class="field-wrap">
-                <label>
-                Email Address<span class="req">*</span>
-                </label>
-                <input type="email"required autocomplete="off"/>
-            </div>
-
-            <div class="field-wrap">
-                <label>
-                Mobile Number<span class="req">*</span>
-                </label>
-                <input type="text" required autocomplete="off" />
-            </div>
-            
-            <div class="field-wrap">
-                <label>
-                Password<span class="req">*</span>
-                </label>
-                <input type="password"required autocomplete="off"/>
-            </div>
-
-            <div class="field-wrap">
-                <label>
-                Confirm Password<span class="req">*</span>
-                </label>
-                <input type="password"required autocomplete="off"/>
-            </div>
-            <hr class="br-line"><br>
-
-            <div class="field-wrap">
-                <label>
-                Address Line 1<span class="req">*</span>
-                </label>
-                <input type="text"required autocomplete="off"/>
-            </div>
-
-            <div class="field-wrap">
-                <label>
-                Address Line 2
-                </label>
-                <input type="text" autocomplete="off"/>
-            </div>
-
-            <div class="field-wrap">
-                <label>
-                State / Provice<span class="req">*</span>
-                </label>
-                <input type="text" required autocomplete="off" />
-            </div>
-
-            <div class="top-row">
-                <div class="field-wrap">
-                  <label>
-                      City<span class="req">*</span>
-                  </label>
-                  <input type="text" required autocomplete="off" />
+            <div class="col-md-6 image">
+                <div class="col-md-12 d-flex justify-content-center ">
+                    <img src="assets\images\profile\undraw_verified_re_4io7.png" style="width:80%">
                 </div>
-            
-                <div class="field-wrap">
-                  <label>
-                      Zip Code<span class="req">*</span>
-                  </label>
-                  <input type="text"required autocomplete="off"/>
-                </div>
+               
             </div>
             
-            <!-- Submit button -->
-            <button type="submit" class="button button-block"/>Register</button>
-            
-            </form>
-            </div>
+        </div>
+    </div>
 
-            <div>
-            </div>
-            
-        </div><!-- tab-content -->
-      
-    </div> <!-- /form -->
-    <!-- Page content ends -->
-
-    <!-- Footer starts -->
-    <?php footer(); ?>
-    <!-- Footer ends -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
