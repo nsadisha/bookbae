@@ -22,20 +22,30 @@ $earnings = $_REQUEST["earnings"];
 $orders = $_REQUEST["orders"];
 
 //db result
+
+//earnings filter
 $earningData = "";
 switch ($earnings) {
     case 'week':
-        $earningData = execute("select $earnings(date) date, SUM(total_price) total from orders group by $earnings(date)");
+        $start = date("Y-m-d",strtotime("-7 days"));
+        $end = date("Y-m-d", strtotime("now"));
+        $earningData = execute("SELECT day(date) date, SUM(total_price) total FROM orders WHERE date BETWEEN\"$start\" AND \"$end\" GROUP BY day(date)");
         break;
+
     case 'month':
-        $earningData = execute("select $earnings(date) date, SUM(total_price) total from orders group by $earnings(date)");
+        $start = date("Y-m-d", strtotime("last month"));
+        $end = date("Y-m-d", strtotime("now"));
+        $earningData = execute("SELECT day(date) date, SUM(total_price) total FROM orders WHERE date BETWEEN\"$start\" AND \"$end\" GROUP BY day(date)");
         break;
+        
     case 'year':
-        $earningData = execute("select $earnings(date) date, SUM(total_price) total from orders group by $earnings(date)");
+        $start = date("Y-m-d", strtotime("last year"));
+        $end = date("Y-m-d", strtotime("now"));
+        $earningData = execute("SELECT month(date) date, SUM(total_price) total FROM orders WHERE date BETWEEN\"$start\" AND \"$end\" GROUP BY month(date)");
         break;
     
     default:
-        $earningData = execute("select CAST(date as date) date, SUM(total_price) total from orders group by CAST(date as date)");
+        $earningData = execute("SELECT CAST(date as date) date, SUM(total_price) total FROM orders GROUP BY CAST(date as date)");
         break;
 }
 //array
@@ -45,6 +55,38 @@ foreach($earningData as $earning){
     // array_push($earningDataSet, array("date"=>$earning["date"], "total"=>$earning["total"]));
     array_push($earningDataSet[0], $earning["date"]);
     array_push($earningDataSet[1], $earning["total"]);
+}
+//orders filter
+$ordersData = "";
+switch ($orders) {
+    case 'week':
+        $start = date("Y-m-d",strtotime("-7 days"));
+        $end = date("Y-m-d", strtotime("now"));
+        $ordersData = execute("SELECT day(date) date, COUNT(*) total FROM orders WHERE date BETWEEN\"$start\" AND \"$end\" GROUP BY day(date)");
+        break;
+
+    case 'month':
+        $start = date("Y-m-d", strtotime("last month"));
+        $end = date("Y-m-d", strtotime("now"));
+        $ordersData = execute("SELECT day(date) date, COUNT(*) total FROM orders WHERE date BETWEEN\"$start\" AND \"$end\" GROUP BY day(date)");
+        break;
+        
+    case 'year':
+        $start = date("Y-m-d", strtotime("last year"));
+        $end = date("Y-m-d", strtotime("now"));
+        $ordersData = execute("SELECT month(date) date, COUNT(*) total FROM orders WHERE date BETWEEN\"$start\" AND \"$end\" GROUP BY month(date)");
+        break;
+    
+    default:
+        $ordersData = execute("SELECT CAST(date as date) date, COUNT(*) total FROM orders GROUP BY CAST(date as date)");
+        break;
+}
+//array
+$ordersDataSet = array(array(), array());
+//pushing to the array
+foreach($ordersData as $order){
+    array_push($ordersDataSet[0], $order["date"]);
+    array_push($ordersDataSet[1], $order["total"]);
 }
 
 //-------------------------------------------
@@ -316,8 +358,12 @@ function showUnpaiedOrders(){
 
     //encode php array to json array
     var earningData = <?php echo(json_encode($earningDataSet)); ?>;
+    var ordersData = <?php echo(json_encode($ordersDataSet)); ?>;
+
     //display earnings chart
     chart1(earningData[0], earningData[1]);
+    //display orders chart
+    chart2(ordersData[0], ordersData[1]);
 
 </script>
 </body>

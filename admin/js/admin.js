@@ -49,6 +49,7 @@ function chart1(_dates, _values){
         },
         y: {
           display: true,
+          grace: '5%',
           title: {
             display: true,
             text: 'Income (Rs.)'
@@ -60,55 +61,61 @@ function chart1(_dates, _values){
   });
 }
 
-var myChart = new Chart(ctx2, {
+function chart2(_dates, _values){
+  var myChart = new Chart(ctx2, {
     type: 'line',
     data: {
-        labels: labels,
-        datasets: [
-            {
-                label: 'Orders',
-                data: datapoints,
-                borderColor: '#87574b',
-                backgroundColor: '#87574b',
-                fill: false,
-                cubicInterpolationMode: 'monotone',
-                tension: 0.4,
-                radius:5
-            }
-        ]
+      labels: _dates,
+      datasets: [
+        {
+          label: 'Orders',
+          data: _values,
+          borderColor: '#87574b',
+          backgroundColor: '#87574b',
+          fill: false,
+          cubicInterpolationMode: 'monotone',
+          tension: 0.4,
+          radius:5
+        }
+      ]
     },
     options: {
-    responsive: true,
-    plugins: {
-      title: {
-        display: true,
-        text: 'Weekly Sales'
-      },
-      legend: {
-        display: false
-      }
-    },
-    interaction: {
-      intersect: false,
-    },
-    scales: {
-      x: {
-        display: true,
-        title: {
-          display: true
-        }
-      },
-      y: {
-        display: true,
+      responsive: true,
+      plugins: {
         title: {
           display: true,
-          text: 'Sales'
+          text: 'Orders chart'
         },
-        suggestedMax: Math.max(datapoints)
+        legend: {
+          display: false
+        }
+      },
+      interaction: {
+        intersect: false,
+      },
+      scales: {
+        x: {
+          display: true,
+          title: {
+            display: true
+          }
+        },
+        y: {
+          display: true,
+          grace: '5%',
+          title: {
+            display: true,
+            text: 'Orders'
+          },
+          suggestedMin: 0,
+          ticks: {
+            stepSize: 1
+          }
+        }
       }
     }
-  }
-});
+  });
+}
 
 //validate add admin form
 function validateAddAdminForm() {
