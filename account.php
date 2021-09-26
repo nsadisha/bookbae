@@ -242,17 +242,17 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="php/updateProfile.php" method="post">
+                <form action="php/updateCard.php" method="post">
                     <div class="mb-3">
                         <label for="exampleInputFname" class="form-label">Credit / Debit Card</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="visa" id="flexRadioDefault1">
+                            <input class="form-check-input " type="radio" name="cardType" id="flexRadioDefault1" value="visa">
                             <label class="form-check-label" for="flexRadioDefault1">
                                 <i class="bi bi-credit-card-2-back-fill p-2"></i> Visa Card
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="master" id="flexRadioDefault2" >
+                            <input class="form-check-input" type="radio" name="cardType" id="flexRadioDefault2" value="Master">
                             <label class="form-check-label" for="flexRadioDefault2">
                                 <i class="bi bi-credit-card-2-front p-2"></i>Master Card
                             </label>
@@ -260,18 +260,18 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputLname" class="form-label">Name on card</label>
-                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="name on card" required>
+                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="Name on card" name="nameOnCard" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Card Number</label>
-                        <input class="form-control"  type="text" placeholder="card number" name="card number">
+                        <input class="form-control"  type="text" placeholder="cardNumber" name="cardNumber">
                         
                     </div>
                     <label for="exampleContactNumber" class="form-label">Expiration Date</label>
                     <div class="input-group mb-3">
                         
-                        <span class="input-group-text" id="basic-addon1"><input type="text" class="form-control" placeholder="mm" aria-label="contact" aria-describedby="basic-addon1" required></span>
-                        <span class="input-group-text" id="basic-addon2"><input type="text" class="form-control" placeholder="yy" aria-label="contact" aria-describedby="basic-addon1" required></span>
+                        <span class="input-group-text" id="basic-addon1"><input type="text" class="form-control" placeholder="mm" aria-label="contact" aria-describedby="basic-addon1" name="mm" required></span>
+                        <span class="input-group-text" id="basic-addon2"><input type="text" class="form-control" placeholder="yy" aria-label="contact" aria-describedby="basic-addon1" name="yy" required></span>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">CVV</label>
@@ -279,7 +279,7 @@
                         
                     </div>
                     <div class="mb-3 form-check d-flex">
-                        <button type="submit" class="btn bg-brown text-white ms-auto"><strong>Save changes</strong></button>
+                        <button type="submit" class="btn bg-brown text-white ms-auto" name="submitCard"><strong>Save changes</strong></button>
                     </div>
                 </form>
             </div>
