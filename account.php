@@ -135,7 +135,114 @@
             </div>
             <div class="modal-body">
                 <form action="php/updateProfile.php" method="post">
-                    <h4>Edit personal info</h4>
+                    
+                    <div class="mb-3">
+                        <label for="exampleInputFname" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="<?php echo $firstName;?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputLname" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="<?php echo $lastName;?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $email;?>" disabled required>
+                        <div id="emailHelp" class="form-text">You can't change your email address.</div>
+                    </div>
+                    <label for="exampleContactNumber" class="form-label">Contact Number</label>
+                    <div class="input-group mb-3">
+                        
+                        <span class="input-group-text" id="basic-addon1">+94</span>
+                        <input type="text" class="form-control" placeholder="<?php echo $contact;?>" aria-label="contact" aria-describedby="basic-addon1" required>
+                    </div>
+                    <div class="mb-3 form-check d-none">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Edit the changes</label>
+                    </div>
+                    <div class="mb-3 form-check d-flex">
+                        <button type="submit" class="btn bg-brown text-white ms-auto"><strong>Save changes</strong></button>
+                    </div>
+                </form>
+                <form action="php/changePassword.php" method="post">
+                    <h5>Change password</h5>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Current password</label>
+                        <input type="password" name="currentPassword" class="form-control" id="exampleInputPassword1" placeholder="Current password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword2" class="form-label">New password</label>
+                        <input type="password" name="newPassword" class="form-control" id="exampleInputPassword2" placeholder="New password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword3" class="form-label">Confirm password</label>
+                        <input type="password" name="confirmPassword" class="form-control" id="exampleInputPassword3" placeholder="Confirm password" required>
+                    </div>
+                    <div class="mb-3 form-check d-flex">
+                        <button type="submit" class="btn bg-brown text-white ms-auto"><strong>Change password</strong></button>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!--address details model-->
+    <div class="modal fade" id="delivery-details-form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-truck p-3"></i><strong>Delivery details</strong></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="php/updateAddress.php" method="post">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="exampleInputLine1" class="form-label">Address line 1</label>
+                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="<?php echo $line1;?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputLine2" class="form-label">Address line 2</label>
+                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="<?php echo $line2;?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputState" class="form-label">State / Province</label>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $province;?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputCity" class="form-label">City</label>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $city;?>" required>
+                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputZip" class="form-label">Zip code</label>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $zip;?>" required>
+                        
+                    </div>
+                    <div class="mb-3 form-check d-none">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Edit the changes</label>
+                    </div>
+                    <div class="mb-3 form-check d-flex">
+                        <button type="submit" class="btn bg-brown text-white ms-auto"><strong>Save changes</strong></button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--payment cards modal -->
+    <div class="modal fade" id="personal-details-form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-credit-card p-3 "></i><strong>Payment card details</strong></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="php/updateProfile.php" method="post">
                     <div class="mb-3">
                         <label for="exampleInputFname" class="form-label">First Name</label>
                         <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="<?php echo $firstName;?>" required>
@@ -186,51 +293,6 @@
         </div>
     </div>
     
-
-    <!--address details model-->
-    <div class="modal fade" id="delivery-details-form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-truck p-3"></i><strong>Delivery details</strong></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="php/updateAddress.php" method="post">
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="exampleInputLine1" class="form-label">Address line 1</label>
-                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="Address line 1" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputLine2" class="form-label">Address line 2</label>
-                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="Address line 2" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputState" class="form-label">State / Province</label>
-                        <input class="form-control" id="disabledInput" type="text" placeholder="State/Province" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputCity" class="form-label">City</label>
-                        <input class="form-control" id="disabledInput" type="text" placeholder="City" required>
-                        
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputZip" class="form-label">Zip code</label>
-                        <input class="form-control" id="disabledInput" type="text" placeholder="Zip code" required>
-                        
-                    </div>
-                    <div class="mb-3 form-check d-none">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Edit the changes</label>
-                    </div>
-                    <div class="mb-3 form-check d-flex">
-                        <button type="submit" class="btn bg-brown text-white ms-auto"><strong>Save changes</strong></button>
-                    </div>
-                </div>
-            </form>
-            </div>
-        </div>
-    </div>
 
     <!--track order-->
     <div class="modal" tabindex="-1" id="trackOrder">
