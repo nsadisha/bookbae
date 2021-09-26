@@ -98,7 +98,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter your zip code" name="zip">
+                            <input type="text" placeholder="Enter your zip code" name="zipcode">
                         </div>
                     </div>
                     <div class="row p-2">
@@ -142,13 +142,20 @@
                     $contact=$_REQUEST['contact'];
                     $password=$_REQUEST['password'];
                     $confirmPassword=$_REQUEST['conpassword'];
+                    $address=$_REQUEST['address'];
+                    $state=$_REQUEST['state'];
+                    $city=$_REQUEST['city'];
+                    $zipcode=$_REQUEST['zipcode'];
                     $sql="INSERT into users values(\"$email\",\"$fname\",\"$lname\",\"$password\",\"$contact\")";
-
+                    $location="INSERT INTO user_addresses values(\"$email\",\"$address\",\"$address\",\"$state\",\"$city\",\"$zipcode\")";
+                    
                     $result=$conn->query($sql);
                     if($password==$confirmPassword){
                         if($result)
                         {
+                            $result2=$conn->query($location);
                             header('Location:signin.php');
+                            
                         }else{
                             echo "<p class='text-center' style='color:red;'>This email is already registered!!</p>";
                         }
