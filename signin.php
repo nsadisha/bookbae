@@ -20,10 +20,10 @@
 </head>
 <body>
     <div class="container pt-5 content">
-        <div class="row my-5">
+        <div class="row my-5 justify-content-center">
             
-            <div class="col-md-6  input-data">
-                <form name="registerForm" action="$_SERVER['PHP_SELF']" method="post">
+            <div class="col-md-6  input-data " >
+                <form name="registerForm" action="<?php echo $_SERVER['PHP_SELF']?>"  method="post">
                     <div class="col-md-12 d-flex justify-content-center main-pic">
                         <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
                     </div>
@@ -54,12 +54,12 @@
             </div>
             
             <!--second picture-->
-            <div class="col-md-6 image">
+            <!-- <div class="col-md-6 image">
                 <div class="col-md-12 d-flex justify-content-end ">
                     <img src="assets\images\register\undraw_Welcome_re_h3d9.png" style="width:80%">
                 </div>
                
-            </div>
+            </div> -->
             
         </div>
     </div>
@@ -67,7 +67,18 @@
     if(isset($_REQUEST['submit'])){
         $conn=mysqli_connect('localhost','root','','bookbae');
         $email=$_REQUEST['email'];
-        echo $email;
+        $password=$_REQUEST['password'];
+        $passwordCompare="select password from users where email=\"$email\"";
+        $result=$conn->query($passwordCompare);
+        while ($row = $result->fetch_array()) {
+            $savedPassword= $row['password'];
+        }
+        if($password==$savedPassword){
+            header('Location:index.php');
+        }
+        else{
+            echo "<p class='text-center' style='color:red;'>one of the elements you entered is incorrect!!<p>";
+        }
     }
         
     ?>
