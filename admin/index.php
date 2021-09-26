@@ -186,7 +186,7 @@ function showUnpaiedOrders(){
                     <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
                         <li><a class='dropdown-item' href='orders.php'>All orders</a></li>
                         <li><a class='dropdown-item <?php echo !$isSuper?"disabled":""; ?>' href='#' data-bs-toggle="modal" data-bs-target="#newAdmin">Add admin</a></li>
-                        <li><a class='dropdown-item' href='#'>Add book</a></li>
+                        <li><a class='dropdown-item' href='#' data-bs-toggle="modal" data-bs-target="#newBook">Add book</a></li>
                         <li><a class='dropdown-item' href='#'>Edit book</a></li>
                         <li><hr class='dropdown-divider'></li>
                         <li><a class='dropdown-item text-danger' href='php/signout.php'>Sign out</a></li>
@@ -291,7 +291,7 @@ function showUnpaiedOrders(){
                 <button class="btn quick-link" data-bs-toggle="modal" data-bs-target="#newAdmin" <?php echo !$isSuper?"disabled":""; ?>><strong>+ New admin</strong></button>
             </div>
             <div class="col-6 col-lg-3 mb-3 d-flex">
-                <button class="btn quick-link"><strong>+ New book</strong></button>
+                <button class="btn quick-link" data-bs-toggle="modal" data-bs-target="#newBook"><strong>+ New book</strong></button>
             </div>
             <div class="col-6 col-lg-3 mb-3 d-flex">
                 <button class="btn quick-link"><strong>Edit book</strong></button>
@@ -301,7 +301,7 @@ function showUnpaiedOrders(){
 
 
 
-    <!-- Modal -->
+    <!-- New Admin Modal -->
     <div class="modal fade" id="newAdmin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -343,6 +343,73 @@ function showUnpaiedOrders(){
                             </div>
                             <div class="col-12 d-flex">
                                 <button type="submit" class="btn bg-brown text-white ms-auto" name="submit"><strong>Add</strong></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Book Modal -->
+    <div class="modal fade" id="newBook" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Add new book</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form name="addBookForm" action="addBook.php" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" name="isbn" class="form-control" placeholder="ISBN" aria-label="ISBN" required>
+                            </div>
+                            <div class="col">
+                                <input type="text" name="name" class="form-control" placeholder="Book name" aria-label="Book name" required>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <input type="text" name="author" class="form-control" placeholder="Author name" aria-label="Author name" required>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <input type="text" name="publisher" class="form-control" placeholder="Publisher name" aria-label="Publisher name" required>
+                            </div>
+                            <div class="col mt-2">
+                                <input type="text" name="category" class="form-control" placeholder="Category" aria-label="Category" required>
+                            </div>
+                            <div class="col mt-2">
+                                <input type="text" name="language" class="form-control" placeholder="Language" aria-label="Language" required>
+                            </div>
+
+                            <div class="w-100"></div>
+
+                            <div class="col mt-2">
+                                <input type="number" name="price" class="form-control" placeholder="Price" aria-label="Price" min="0" required>
+                            </div>
+                            <div class="col mt-2">
+                                <input type="number" name="year" class="form-control" placeholder="Year" aria-label="Year" min="0" required>
+                            </div>
+                            <div class="col mt-2">
+                                <input type="number" name="edition" class="form-control" placeholder="Edition" aria-label="Edition" min="1" required>
+                            </div>
+                            <div class="col mt-2">
+                                <input type="number" name="quantity" class="form-control" placeholder="Available quantity" aria-label="Quantity" min="1" required>
+                            </div>
+                            
+                            <div class="w-100"></div>
+
+                            <div class="col-12 mt-2">
+                                <textarea class="form-control font-sf-pro" rows="3" name="description" placeholder="Book description"></textarea>
+                            </div>
+                            <div class="col mt-2">
+                                <input type="file" name="image_1" class="form-control" aria-label="Image 1" required>
+                            </div>
+                            <div class="col mt-2">
+                                <input type="file" name="image_2" class="form-control" aria-label="Image 2">
+                            </div>
+
+                            <div class="col-12 d-flex mt-3">
+                                <button type="submit" class="btn bg-brown text-white ms-auto" name="submit"><strong>Add book</strong></button>
                             </div>
                         </div>
                     </form>
