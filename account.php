@@ -109,7 +109,7 @@
                     <h5  style="font-weight:bold;">Payment cards</h5>
                     </div>
                     <div class="col-2">
-                        <button type="button" class="btn btn-primary-outline" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-arrow-right-circle-fill"></i></button>
+                        <button type="button" class="btn btn-primary-outline" data-bs-toggle="modal" data-bs-target="#payment-details-form"><i class="bi bi-arrow-right-circle-fill"></i></button>
                     </div>
                 </div>
                 <p  style="color:#495057;">Manage your payment card details</p>
@@ -234,7 +234,7 @@
 
 
     <!--payment cards modal -->
-    <div class="modal fade" id="personal-details-form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade paymentForm" id="payment-details-form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -244,48 +244,42 @@
             <div class="modal-body">
                 <form action="php/updateProfile.php" method="post">
                     <div class="mb-3">
-                        <label for="exampleInputFname" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="<?php echo $firstName;?>" required>
+                        <label for="exampleInputFname" class="form-label">Credit / Debit Card</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="visa" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                               <img src="assets\images\profile\download.jpg" style="width=1rem;"> Visa Card
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="master" id="flexRadioDefault2" >
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Master Card
+                            </label>
+                        </div>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputLname" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="<?php echo $lastName;?>" required>
+                        <label for="exampleInputLname" class="form-label">Name on card</label>
+                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="name on card" required>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $email;?>" disabled required>
-                        <div id="emailHelp" class="form-text">You can't change your email address.</div>
+                        <label for="exampleInputEmail1" class="form-label">Card Number</label>
+                        <input class="form-control"  type="text" placeholder="card number" name="card number">
+                        
                     </div>
-                    <label for="exampleContactNumber" class="form-label">Contact Number</label>
+                    <label for="exampleContactNumber" class="form-label">Expiration Date</label>
                     <div class="input-group mb-3">
                         
-                        <span class="input-group-text" id="basic-addon1">+94</span>
-                        <input type="text" class="form-control" placeholder="<?php echo $contact;?>" aria-label="contact" aria-describedby="basic-addon1" required>
+                        <span class="input-group-text" id="basic-addon1"><input type="text" class="form-control" placeholder="mm" aria-label="contact" aria-describedby="basic-addon1" required></span>
+                        <span class="input-group-text" id="basic-addon2"><input type="text" class="form-control" placeholder="yy" aria-label="contact" aria-describedby="basic-addon1" required></span>
                     </div>
-                    <div class="mb-3 form-check d-none">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Edit the changes</label>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">CVV</label>
+                        <input class="form-control"  type="text" placeholder="Number appears in back of the card" name="cvv">
+                        
                     </div>
                     <div class="mb-3 form-check d-flex">
                         <button type="submit" class="btn bg-brown text-white ms-auto"><strong>Save changes</strong></button>
-                    </div>
-                </form>
-                <form action="php/changePassword.php" method="post">
-                    <h4>Change password</h4>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Current password</label>
-                        <input type="password" name="currentPassword" class="form-control" id="exampleInputPassword1" placeholder="Current password" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword2" class="form-label">New password</label>
-                        <input type="password" name="newPassword" class="form-control" id="exampleInputPassword2" placeholder="New password" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword3" class="form-label">Confirm password</label>
-                        <input type="password" name="confirmPassword" class="form-control" id="exampleInputPassword3" placeholder="Confirm password" required>
-                    </div>
-                    <div class="mb-3 form-check d-flex">
-                        <button type="submit" class="btn bg-brown text-white ms-auto"><strong>Change password</strong></button>
                     </div>
                 </form>
             </div>
