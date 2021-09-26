@@ -294,7 +294,7 @@ function showUnpaiedOrders(){
                 <button class="btn quick-link" data-bs-toggle="modal" data-bs-target="#newBook"><strong>+ New book</strong></button>
             </div>
             <div class="col-6 col-lg-3 mb-3 d-flex">
-                <button class="btn quick-link"><strong>Edit book</strong></button>
+                <a href="edit.php" class="btn quick-link"><strong>Edit book</strong></a>
             </div>
         </div>
     </section>
