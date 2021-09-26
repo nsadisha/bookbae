@@ -20,6 +20,39 @@
     
     <title>BookBae | Register</title>
 </head>
+<?php
+    if(isset($_REQUEST['submit'])){
+        $conn=mysqli_connect('localhost','root','','bookbae');
+        $fname=$_REQUEST['fname'];
+        $lname=$_REQUEST['lname'];
+        $email=$_REQUEST['email'];
+        $contact=$_REQUEST['contact'];
+        $password=$_REQUEST['password'];
+        $confirmPassword=$_REQUEST['conpassword'];
+        $address=$_REQUEST['address'];
+        $state=$_REQUEST['state'];
+        $city=$_REQUEST['city'];
+        $zipcode=$_REQUEST['zipcode'];
+        $sql="INSERT into users values(\"$email\",\"$fname\",\"$lname\",\"$password\",\"$contact\")";
+        $location="INSERT INTO user_addresses values(\"$email\",\"$address\",\"$address\",\"$state\",\"$city\",\"$zipcode\")";
+        
+        $result=$conn->query($sql);
+        if($password==$confirmPassword){
+            if($result)
+            {
+                $result2=$conn->query($location);
+                header("Location:signin.php");
+                
+            }else{
+                echo "<p class='text-center' style='color:red;'>This email is already registered!!</p>";
+            }
+        }else{
+            echo "<p class='text-center' style='color:red;'>Passwords you entered are not same!!</p>";
+        }
+        
+    }
+
+?>
 <body>
     <div class="container pt-5 content">
         <div class="row my-5 jutify-content-center">
@@ -133,39 +166,7 @@
                 </div>
                
             </div>
-            <?php
-                if(isset($_REQUEST['submit'])){
-                    $conn=mysqli_connect('localhost','root','','bookbae');
-                    $fname=$_REQUEST['fname'];
-                    $lname=$_REQUEST['lname'];
-                    $email=$_REQUEST['email'];
-                    $contact=$_REQUEST['contact'];
-                    $password=$_REQUEST['password'];
-                    $confirmPassword=$_REQUEST['conpassword'];
-                    $address=$_REQUEST['address'];
-                    $state=$_REQUEST['state'];
-                    $city=$_REQUEST['city'];
-                    $zipcode=$_REQUEST['zipcode'];
-                    $sql="INSERT into users values(\"$email\",\"$fname\",\"$lname\",\"$password\",\"$contact\")";
-                    $location="INSERT INTO user_addresses values(\"$email\",\"$address\",\"$address\",\"$state\",\"$city\",\"$zipcode\")";
-                    
-                    $result=$conn->query($sql);
-                    if($password==$confirmPassword){
-                        if($result)
-                        {
-                            $result2=$conn->query($location);
-                            header('Location:signin.php');
-                            
-                        }else{
-                            echo "<p class='text-center' style='color:red;'>This email is already registered!!</p>";
-                        }
-                    }else{
-                        echo "<p class='text-center' style='color:red;'>Passwords you entered are not same!!</p>";
-                    }
-                    
-                }
-            
-            ?>
+
         </div>
     </div>
 
