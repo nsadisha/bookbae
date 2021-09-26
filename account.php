@@ -138,11 +138,11 @@
                     
                     <div class="mb-3">
                         <label for="exampleInputFname" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="<?php echo $firstName;?>" required>
+                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="<?php echo $firstName;?>" name="fname" value="<?php echo $firstName;?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputLname" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="<?php echo $lastName;?>" required>
+                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="<?php echo $lastName;?>" name="lname" value="<?php echo $lastName;?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -153,14 +153,14 @@
                     <div class="input-group mb-3">
                         
                         <span class="input-group-text" id="basic-addon1">+94</span>
-                        <input type="text" class="form-control" placeholder="<?php echo $contact;?>" aria-label="contact" aria-describedby="basic-addon1" required>
+                        <input type="text" class="form-control" placeholder="<?php echo $contact;?>" aria-label="contact" aria-describedby="basic-addon1" name="contact" value="<?php echo $contact;?>"required>
                     </div>
                     <div class="mb-3 form-check d-none">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Edit the changes</label>
                     </div>
                     <div class="mb-3 form-check d-flex">
-                        <button type="submit" class="btn bg-brown text-white ms-auto"><strong>Save changes</strong></button>
+                        <button type="submit" class="btn bg-brown text-white ms-auto" name="submit"><strong>Save changes</strong></button>
                     </div>
                 </form>
                 <form action="php/changePassword.php" method="post">
@@ -248,13 +248,13 @@
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="visa" id="flexRadioDefault1">
                             <label class="form-check-label" for="flexRadioDefault1">
-                               <img src="assets\images\profile\download.jpg" style="width=1rem;"> Visa Card
+                                <i class="bi bi-credit-card-2-back-fill p-2"></i> Visa Card
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="master" id="flexRadioDefault2" >
                             <label class="form-check-label" for="flexRadioDefault2">
-                                Master Card
+                                <i class="bi bi-credit-card-2-front p-2"></i>Master Card
                             </label>
                         </div>
                     </div>
