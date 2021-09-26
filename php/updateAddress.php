@@ -1,13 +1,13 @@
 <?php
  $conn=mysqli_connect('localhost','root','','bookbae');
 
- if(isset($_REQUEST['submit'])){
+ if(isset($_REQUEST['submit2'])){
 
      session_start();
      $email=$_SESSION['email'];
 
      $line1=$_REQUEST['line1'];
-     $lname=$_REQUEST['line2'];
+     $line2=$_REQUEST['line2'];
      $state=$_REQUEST['state'];
      $city=$_REQUEST['city'];
      $zip=$_REQUEST['zip'];

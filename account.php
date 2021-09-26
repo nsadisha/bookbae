@@ -178,7 +178,7 @@
                         <input type="password" name="confirmPassword" class="form-control" id="exampleInputPassword3" placeholder="Confirm password" required>
                     </div>
                     <div class="mb-3 form-check d-flex">
-                        <button type="submit" class="btn bg-brown text-white ms-auto"><strong>Change password</strong></button>
+                        <button type="submit" class="btn bg-brown text-white ms-auto" name="submit3"><strong>Change password</strong></button>
                     </div>
                 </form>
             </div>
@@ -224,7 +224,7 @@
                         <label class="form-check-label" for="exampleCheck1">Edit the changes</label>
                     </div>
                     <div class="mb-3 form-check d-flex">
-                        <button type="submit" class="btn bg-brown text-white ms-auto"><strong>Save changes</strong></button>
+                        <button type="submit" class="btn bg-brown text-white ms-auto" name="submit2"><strong>Save changes</strong></button>
                     </div>
                 </div>
             </form>
