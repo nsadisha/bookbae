@@ -22,7 +22,7 @@ if (isset($_REQUEST["submit"])) {
     $description = $_REQUEST["description"];
 
     //add data to the databse
-    $result1 = execute("INSERT INTO books VALUES(\"$isbn\", \"$name\", \"$price\", \"$category\", \"$language\", \"$author\", \"$year\", \"$edition\", \"$publisher\", \"$quantity\")");
+    $result1 = execute("INSERT INTO books VALUES(\"$isbn\", \"$name\", \"$price\", \"$category\", \"$language\", \"$author\", \"$year\", \"$edition\", \"$publisher\", \"$description\", \"$quantity\")");
     var_dump($result1);
     //file uploading
     if($result1){
