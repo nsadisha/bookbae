@@ -15,8 +15,8 @@
 <?php
     $conn=mysqli_connect('localhost','root','','bookbae');
     session_start();
-    //$email=$_SESSION['email'];
-    $email="tharu.chamalsha@gmail.com";
+    $email=$_SESSION['email'];
+    //$email="tharu.chamalsha@gmail.com";
     $sql1="select * from users where email=\"$email\"";
     $sql2="select * from user_addresses where email=\"$email\"";
 
@@ -199,24 +199,24 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="exampleInputLine1" class="form-label">Address line 1</label>
-                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="<?php echo $line1;?>" required>
+                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="<?php echo $line1;?>" name="line1" value="<?php echo $line1;?>"required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputLine2" class="form-label">Address line 2</label>
-                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="<?php echo $line2;?>" required>
+                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="<?php echo $line2;?>" name="line2" value="<?php echo $line2;?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputState" class="form-label">State / Province</label>
-                        <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $province;?>" required>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $province;?>" name="state" value="<?php echo $province;?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputCity" class="form-label">City</label>
-                        <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $city;?>" required>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $city;?>" name="city" value="<?php echo $city;?>" required>
                         
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputZip" class="form-label">Zip code</label>
-                        <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $zip;?>" required>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $zip;?>" name="zip" value="<?php echo $zip;?>" required>
                         
                     </div>
                     <div class="mb-3 form-check d-none">
