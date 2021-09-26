@@ -22,7 +22,7 @@
 </head>
 <body>
     <div class="container pt-5 content">
-        <div class="row my-5">
+        <div class="row my-5 jutify-content-center">
             
             <div class="col-md-6  input-data">
                 <form name="registerForm" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
@@ -67,6 +67,42 @@
                     </div>
                     <div class="row p-2">
                         <div class="col-4">
+                            <p><strong>Address line</strong><p> 
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-4">
+                            <input type="text" placeholder="Address line 1" name="address">
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-4">
+                            <p><strong>State / Province</strong><p> 
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-4">
+                            <input type="text" placeholder="Type your state" name="state">
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-4">
+                            <p><strong>City</strong><p> 
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-4">
+                            <input type="text" placeholder="Enter Your city" name="city">
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-4">
+                            <p><strong>Zip code</strong><p> 
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-4">
+                            <input type="text" placeholder="Enter your zip code" name="zip">
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-4">
                             <p><strong>Password</strong><p> 
                         </div>
                         <div class="col-1"></div>
@@ -83,6 +119,7 @@
                             <input type="password" placeholder="Confirm password" name="conpassword">
                         </div>
                     </div>
+                    
                     <div class="col-md-12 d-flex justify-content-center ">
                         <button type="submit" class="btn btn-primary " name="submit" >Register</button>
                     </div>
