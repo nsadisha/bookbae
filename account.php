@@ -22,11 +22,18 @@
 
     $personalDetails=$conn->query($sql1);
     while ($row1 = $personalDetails->fetch_array()) {
-        $firstName= $row['fname'];
-        $lastName= $row['fname'];
-        $contact= $row['fname'];
+        $firstName= $row1['fname'];
+        $lastName= $row1['lname'];
+        $contact= $row1['contact'];
     }
-    
+    $locationDetails=$conn->query($sql2);
+    while ($row2 = $locationDetails->fetch_array()) {
+        $line1= $row2['line1'];
+        $line2= $row2['line2'];
+        $province= $row2['province'];
+        $city=$row2['city'];
+        $zip=$row2['zip'];
+    }
 
 ?>
 <body>
@@ -41,7 +48,7 @@
                 <img src="assets\images\profile\dp.png" class="dp" style="width:12rem; height:12rem;">
             </div>
             <div class="col-md-8 m-auto mt-3 mt-md-auto">
-                <div class="text-center"><h1>Welcome </h1></div>
+                <div class="text-center"><h1>Welcome <?php echo $firstName." ".$lastName; ?> !</h1></div>
                 <div class="sub-heading"><P id="sub-heading">Here's where you'll find all your account details as well as your shopping history</p></div>
             </div>
         </div>
@@ -131,22 +138,22 @@
                     <h4>Edit personal info</h4>
                     <div class="mb-3">
                         <label for="exampleInputFname" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="First name" required>
+                        <input type="text" class="form-control" id="exampleInputFname" aria-describedby="emailHelp" placeholder="<?php echo $firstName;?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputLname" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="Last name" required>
+                        <input type="text" class="form-control" id="exampleInputLname" aria-describedby="emailHelp" placeholder="<?php echo $lastName;?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input class="form-control" id="disabledInput" type="text" placeholder="example@gmail.com" disabled required>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo $email;?>" disabled required>
                         <div id="emailHelp" class="form-text">You can't change your email address.</div>
                     </div>
                     <label for="exampleContactNumber" class="form-label">Contact Number</label>
                     <div class="input-group mb-3">
                         
                         <span class="input-group-text" id="basic-addon1">+94</span>
-                        <input type="text" class="form-control" placeholder="Phone" aria-label="contact" aria-describedby="basic-addon1" required>
+                        <input type="text" class="form-control" placeholder="<?php echo $contact;?>" aria-label="contact" aria-describedby="basic-addon1" required>
                     </div>
                     <div class="mb-3 form-check d-none">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
