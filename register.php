@@ -25,7 +25,7 @@
         <div class="row my-5">
             
             <div class="col-md-6  input-data">
-                <form name="registerForm" action="components/user.php" method="post">
+                <form name="registerForm" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
                     <div class="col-md-12 d-flex justify-content-center main-pic">
                         <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
                     </div>
@@ -80,7 +80,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="password" placeholder="Confirm password" >
+                            <input type="password" placeholder="Confirm password" name="conpassword">
                         </div>
                     </div>
                     <div class="col-md-12 d-flex justify-content-center ">
@@ -96,7 +96,32 @@
                 </div>
                
             </div>
+            <?php
+                if(isset($_REQUEST['submit'])){
+                    $conn=mysqli_connect('localhost','root','','bookbae');
+                    $fname=$_REQUEST['fname'];
+                    $lname=$_REQUEST['lname'];
+                    $email=$_REQUEST['email'];
+                    $contact=$_REQUEST['contact'];
+                    $password=$_REQUEST['password'];
+                    $confirmPassword=$_REQUEST['conpassword'];
+                    $sql="INSERT into users values(\"$email\",\"$fname\",\"$lname\",\"$password\",\"$contact\")";
+
+                    $result=$conn->query($sql);
+                    if($password==$confirmPassword){
+                        if($result)
+                        {
+                            header('Location:signin.php');
+                        }else{
+                            echo "<p class='text-center' style='color:red;'>This email is already registered!!</p>";
+                        }
+                    }else{
+                        echo "<p class='text-center' style='color:red;'>Passwords you entered are not same!!</p>";
+                    }
+                    
+                }
             
+            ?>
         </div>
     </div>
 

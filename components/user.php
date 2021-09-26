@@ -14,9 +14,9 @@ if(isset($_REQUEST['submit'])){
     $result=$conn->query($sql);
     if($result)
     {
-        echo 'success';
+        header('Location:\\signin.php');
     }else{
-        echo "error";
+        header('Location:register.php');
     }
 
 }
