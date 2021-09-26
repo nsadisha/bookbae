@@ -10,14 +10,81 @@ $email = getSignedAdminEmail();
 
 $isSearched = false;
 $isFound = true;
+$book = null;
 
-// complete order
+//book details
+$isbn = "";
+$name = "";
+$author = "";
+$publisher = "";
+$category = "";
+$language = "";
+$price = "";
+$year = "";
+$edition = "";
+$quantity = "";
+$description = "";
+
+// check if success
+if(isset($_REQUEST["success"])){
+    echo "<script>alert('Changes saved!')</script>";
+}
+
+// check isbn
 if(isset($_REQUEST["isbn"])){
     $isbn = $_REQUEST["isbn"];
-    echo $isbn;
     $isSearched = true;
-    $books = execute("SELECT * FROM books WHERE isbn=\"$isbn\"");
-    $isFound = $books->num_rows!=0?true:false;
+    $book = get("SELECT * FROM books WHERE isbn=\"$isbn\"");
+    $isFound = $book?true:false;
+
+    //get book details
+    $name = $book["name"];
+    $author = $book["author"];
+    $publisher = $book["publisher"];
+    $category = $book["category"];
+    $language = $book["language"];
+    $price = $book["price"];
+    $year = $book["year"];
+    $edition = $book["edition"];
+    $quantity = $book["available_quantity"];
+    $description = $book["description"];
+}
+
+//edit book
+if(isset($_REQUEST["edit"])){
+    //getting details from request
+    $isbn = $_REQUEST["isbn"];
+    $name = $_REQUEST["name"];
+    $author = $_REQUEST["author"];
+    $publisher = $_REQUEST["publisher"];
+    $category = $_REQUEST["category"];
+    $language = $_REQUEST["language"];
+    $price = $_REQUEST["price"];
+    $year = $_REQUEST["year"];
+    $edition = $_REQUEST["edition"];
+    $quantity = $_REQUEST["quantity"];
+    $description = $_REQUEST["description"];
+
+    $query = "
+        UPDATE books SET
+            name=\"$name\",
+            author=\"$author\", 
+            publisher=\"$publisher\", 
+            category=\"$category\", 
+            language=\"$language\", 
+            price=\"$price\", 
+            year=\"$year\", 
+            edition=\"$edition\", 
+            available_quantity=\"$quantity\", 
+            description=\"$description\" 
+        WHERE isbn=\"$isbn\"
+    ";
+    $result = execute($query);
+
+    if($result){
+        //back to check
+        header("Location: edit.php?success=true");
+    }
 }
 
 ?>
@@ -67,29 +134,90 @@ if(isset($_REQUEST["isbn"])){
     </nav>
 
     <!-- Search ISBN -->
-    <section class="container mt-5 <?php echo $isSearched?'d-none':''; ?>">
+    <section class="container mt-4 <?php echo $isSearched&&$isFound?'d-none':''; ?>">
         <div class="row justify-content-center">
             <div class="col-md-5">
+                <h2><strong>Check ISBN</strong></h2>
+                <div class="hr mb-4"></div>
                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="get" class="row">
                     <div class="col">
-                        <input type="text" name="isbn" class="form-control" placeholder="ISBN" aria-label="ISBN" required>
+                        <input type="text" name="isbn" class="form-control" placeholder="ISBN" aria-label="ISBN" value="<?php echo $isbn; ?>" required>
                     </div>
                     <div class="col-auto">
                         <button type="submit" class="btn bg-brown text-white"><strong>Check</strong></button>
                     </div>
                 </form>
+            <!-- Not found message -->
+            <h2 class="text-center mt-3 <?php echo $isFound?'d-none':''; ?>">ISBN not found...!</h2>
             </div>
         </div>
     </section>
 
     <!-- Edit foem -->
-    <section class="container mt-5 <?php echo $isSearched?'':'d-none'; ?>">
+    <section class="container mt-4 <?php echo $isSearched?'':'d-none'; ?>">
         <div class="row justify-content-center">
-            <!-- Not found message -->
-            <h2 class="text-center <?php echo $isFound?'d-none':''; ?>">ISBN not found...!</h2>
 
-            <div class="col-md-7 bg-light">
-                ere
+            <div class="col-md-7 <?php echo $isFound?'':'d-none'; ?>">
+                <h2><strong>Edit book</strong></h2>
+                <div class="hr mb-4"></div>
+                <form name="editBookForm" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+                    <div class="row">
+                        <div class="col">
+                            <label><small>ISBN</small></label>
+                            <input type="text" name="isbn" class="form-control" placeholder="ISBN" aria-label="ISBN" value="<?php echo $isbn; ?>" readonly>
+                        </div>
+                        <div class="col">
+                            <label><small>Name</small></label>
+                            <input type="text" name="name" class="form-control" placeholder="Book name" aria-label="Book name" value="<?php echo $name; ?>" required>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <label><small>Author</small></label>
+                            <input type="text" name="author" class="form-control" placeholder="Author name" aria-label="Author name" value="<?php echo $author; ?>" required>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <label><small>Publisher</small></label>
+                            <input type="text" name="publisher" class="form-control" placeholder="Publisher name" aria-label="Publisher name" value="<?php echo $publisher; ?>" required>
+                        </div>
+                        <div class="col mt-2">
+                            <label><small>Category</small></label>
+                            <input type="text" name="category" class="form-control" placeholder="Category" aria-label="Category" value="<?php echo $category; ?>" required>
+                        </div>
+                        <div class="col mt-2">
+                            <label><small>Language</small></label>
+                            <input type="text" name="language" class="form-control" placeholder="Language" aria-label="Language" value="<?php echo $language; ?>" required>
+                        </div>
+
+                        <div class="w-100"></div>
+
+                        <div class="col mt-2">
+                            <label><small>Price</small></label>
+                            <input type="number" name="price" class="form-control" placeholder="Price" aria-label="Price" min="0" value="<?php echo $price; ?>" required>
+                        </div>
+                        <div class="col mt-2">
+                            <label><small>Year</small></label>
+                            <input type="number" name="year" class="form-control" placeholder="Year" aria-label="Year" min="0" value="<?php echo $year; ?>" required>
+                        </div>
+                        <div class="col mt-2">
+                            <label><small>Edition</small></label>
+                            <input type="number" name="edition" class="form-control" placeholder="Edition" aria-label="Edition" min="1" value="<?php echo $edition; ?>" required>
+                        </div>
+                        <div class="col mt-2">
+                            <label><small>Quantity</small></label>
+                            <input type="number" name="quantity" class="form-control" placeholder="Available quantity" aria-label="Quantity" min="1" value="<?php echo $quantity; ?>" required>
+                        </div>
+                        
+                        <div class="w-100"></div>
+
+                        <div class="col-12 mt-2">
+                            <label><small>Description</small></label>
+                            <textarea class="form-control font-sf-pro" rows="4" name="description" placeholder="Book description"><?php echo $description; ?></textarea>
+                        </div>
+
+                        <div class="col-12 d-flex mt-3">
+                            <button type="submit" class="btn bg-brown text-white ms-auto" name="edit"><strong>Edit book</strong></button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
