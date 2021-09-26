@@ -74,11 +74,15 @@
             $savedPassword= $row['password'];
         }
         if($password==$savedPassword){
+            session_start();
+            $_SESSION['email']=$email;
             header('Location:index.php');
         }
         else{
             echo "<p class='text-center' style='color:red;'>one of the elements you entered is incorrect!!<p>";
         }
+
+
     }
         
     ?>
