@@ -12,6 +12,23 @@
     
     <title>BookBae | Account</title>
 </head>
+<?php
+    $conn=mysqli_connect('localhost','root','','bookbae');
+    session_start();
+    //$email=$_SESSION['email'];
+    $email="tharu.chamalsha@gmail.com";
+    $sql1="select * from users where email=\"$email\"";
+    $sql2="select * from user_addresses where email=\"$email\"";
+
+    $personalDetails=$conn->query($sql1);
+    while ($row1 = $personalDetails->fetch_array()) {
+        $firstName= $row['fname'];
+        $lastName= $row['fname'];
+        $contact= $row['fname'];
+    }
+    
+
+?>
 <body>
     <!-- Navbar starts -->
     <?php navbar("account"); ?>
@@ -24,7 +41,7 @@
                 <img src="assets\images\profile\dp.png" class="dp" style="width:12rem; height:12rem;">
             </div>
             <div class="col-md-8 m-auto mt-3 mt-md-auto">
-                <div class="text-center"><h1>Welcome Ada shelby!</h1></div>
+                <div class="text-center"><h1>Welcome </h1></div>
                 <div class="sub-heading"><P id="sub-heading">Here's where you'll find all your account details as well as your shopping history</p></div>
             </div>
         </div>
