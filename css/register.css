@@ -32,6 +32,20 @@
         top: -15%;
         position: absolute;
     }
-  
+    .input-data input{
+      width:10rem;
      
+  }
+     
+}
+@media only screen and (max-width:768px){
+  .main-pic img{
+      top: -15%;
+      position: absolute;
+  }
+  .input-data input{
+    width:12rem;
+   
+}
+   
 }

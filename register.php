@@ -30,56 +30,56 @@
                         <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
                     </div>
                     <div class="row pt-4 p-2">
-                        <div class="col-md-4 ">
+                        <div class="col-4 ">
                             <p><strong>First Name</strong><p> 
                         </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-6">
+                        <div class="col-1"></div>
+                        <div class="col-6">
                             <input type="text" placeholder="Type your first name" name='fname'>
                         </div>
                     </div>
                     <div class="row p-2">
-                        <div class="col-md-4">
+                        <div class="col-4">
                             <p><strong>Last Name</strong><p> 
                         </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-4 ">
+                        <div class="col-1"></div>
+                        <div class="col-4 ">
                             <input type="text" placeholder="Type your last name" name='lname'>
                         </div>
                     </div>
                     <div class="row p-2">
-                        <div class="col-md-4">
+                        <div class="col-4">
                             <p><strong>Email address</strong><p> 
                         </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-4">
+                        <div class="col-1"></div>
+                        <div class="col-4">
                             <input type="email" placeholder="Type your email" name='email'>
                         </div>
                     </div>
                     <div class="row p-2">
-                        <div class="col-md-4">
+                        <div class="col-4">
                             <p><strong>Contact details</strong><p> 
                         </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-4">
+                        <div class="col-1"></div>
+                        <div class="col-4">
                             <input type="text" placeholder="Contact number" name='contact'>
                         </div>
                     </div>
                     <div class="row p-2">
-                        <div class="col-md-4">
+                        <div class="col-4">
                             <p><strong>Password</strong><p> 
                         </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-4">
+                        <div class="col-1"></div>
+                        <div class="col-4">
                             <input type="password"  name='password' placeholder="Password">
                         </div>
                     </div>
                     <div class="row p-2">
-                        <div class="col-md-4">
+                        <div class="col-4">
                             <p><strong>Confirm Password</strong><p> 
                         </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-4">
+                        <div class="col-1"></div>
+                        <div class="col-4">
                             <input type="password" placeholder="Confirm password" >
                         </div>
                     </div>

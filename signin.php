@@ -1,5 +1,3 @@
-<?php include "components/footer.php" ?>
-<?php include "components/navbar.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,74 +6,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- custom css -->
-    <link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/signin.css">
+   
+    <link rel="stylesheet" href="css/signin.css">
+
+    <!-- bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <!--google fonts -->
     
-    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <title>BookBae | Sign in</title>
-    <!-- <script src="js/signin.js"></script> -->
-
-    <script>
-        window.console = window.console || function(t) {};
-    </script>
-
-    <script>
-        if (document.location.search.match(/type=embed/gi)) {
-            window.parent.postMessage("resize", "*");
-    }
-    </script>
+    <title>BookBae | Signin</title>
 </head>
 <body>
-
-    <!-- Navbar starts -->
-    <?php navbar("signin"); ?>
-    <!-- Navbar ends -->
-
-    <!-- Page content starts -->
-    <div class="form">
+    <div class="container pt-5 content">
+        <div class="row my-5 justify-content-center">
+            
+            <div class="col-md-6  input-data " >
+                <form name="registerForm" action="<?php echo $_SERVER['PHP_SELF']?>"  method="post">
+                    <div class="col-md-12 d-flex justify-content-center main-pic">
+                        <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
+                    </div>
+                    <h3 class="pt-5">Welcome to Bookbae!</h3>
+                    <div class="row pt-4 p-2">
+                        <div class="col-4 ">
+                            <p><strong>Email</strong><p> 
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-6">
+                            <input type="email" placeholder="Type your Email address" name='email'>
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-4">
+                            <p><strong>Password</strong><p> 
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-4 ">
+                            <input type="password" placeholder="Type your password" name='password'>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12 d-flex justify-content-center ">
+                        <button type="submit" class="btn btn-primary " name="submit" >Signin</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!--second picture-->
+            <!-- <div class="col-md-6 image">
+                <div class="col-md-12 d-flex justify-content-end ">
+                    <img src="assets\images\register\undraw_Welcome_re_h3d9.png" style="width:80%">
+                </div>
+               
+            </div> -->
+            
+        </div>
+    </div>
+    <?php
+    if(isset($_REQUEST['submit'])){
+        $conn=mysqli_connect('localhost','root','','bookbae');
+        $email=$_REQUEST['email'];
+        $password=$_REQUEST['password'];
+        $passwordCompare="select password from users where email=\"$email\"";
+        $result=$conn->query($passwordCompare);
+        while ($row = $result->fetch_array()) {
+            $savedPassword= $row['password'];
+        }
+        if($password==$savedPassword){
+            header('Location:index.php');
+        }
+        else{
+            echo "<p class='text-center' style='color:red;'>one of the elements you entered is incorrect!!<p>";
+        }
+    }
         
-        
-        <div class="tab-content">
-        <div id="login">   
-            <h1>Welcome Back!</h1>
-            
-            <form action="/" method="post">
-            
-                <div class="field-wrap">
-                <label>
-                Email Address<span class="req">*</span>
-                </label>
-                <input type="email"required autocomplete="off"/>
-            </div>
-            
-            <div class="field-wrap">
-                <label>
-                Password<span class="req">*</span>
-                </label>
-                <input type="password"required autocomplete="off"/>
-            </div>
-            
-            <p class="forgot"><a href="#">Forgot Password?</a></p>
-            
-            <button class="button button-block"/>Log In</button>
-            
-            </form>
-
-            </div>
-            
-            <div>
-            </div>
-            
-        </div><!-- tab-content -->
-      
-    </div> <!-- /form -->
-    <!-- Page content ends -->
-
-    <!-- Footer starts -->
-    <?php footer(); ?>
-    <!-- Footer ends -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    ?>
 </body>
 </html>
