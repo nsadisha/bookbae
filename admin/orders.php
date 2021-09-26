@@ -144,7 +144,7 @@ function showOrderItems($id){
                 <li class='nav-item'><a class='nav-link' href='../'>
                     <span>BookBae</span>
                 </a></li>
-                <li class='nav-item'><a class='nav-link' href='#'>
+                <li class='nav-item'><a class='nav-link' href='sendMails.php'>
                     <span>Email to subscribers</span>
                 </a></li>
                 <li class='nav-item dropdown'>
@@ -153,9 +153,7 @@ function showOrderItems($id){
                     </a>
                     <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
                         <li><a class='dropdown-item active' href='orders.php'>All orders</a></li>
-                        <li><a class='dropdown-item <?php echo !$isSuper?"disabled":""; ?>' href='#' data-bs-toggle="modal" data-bs-target="#newAdmin">Add admin</a></li>
-                        <li><a class='dropdown-item' href='#'>Add book</a></li>
-                        <li><a class='dropdown-item' href='#'>Edit book</a></li>
+                        <li><a class='dropdown-item' href='edit.php'>Edit book</a></li>
                         <li><hr class='dropdown-divider'></li>
                         <li><a class='dropdown-item text-danger' href='php/signout.php'>Sign out</a></li>
                     </ul>
