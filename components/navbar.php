@@ -27,6 +27,9 @@ function isActive($current, $page){
 
 function navbar($nav){
 
+    $showIfSigned = !isSigned()?'d-none':'';
+    $hideIfSigned = isSigned()?'d-none':'';
+
     $navbar = "
     <nav class='navbar navbar-expand-md navbar-light bg-none'>
         <div class='container-fluid'>
@@ -45,13 +48,13 @@ function navbar($nav){
                 <li class='nav-item'><a class='nav-link".isActive($nav, "contact")."' href='contact.php'>
                     <span>Contact us</span>
                 </a></li>
-                <li class='nav-item'><a class='nav-link".isActive($nav, "signin")."' href='signin.php'>
+                <li class='nav-item $hideIfSigned'><a class='nav-link".isActive($nav, "signin")."' href='signin.php'>
                     <span>Sign in</span>
                 </a></li>
-                <li class='nav-item'><a class='nav-link".isActive($nav, "register")."' href='register.php'>
+                <li class='nav-item $hideIfSigned'><a class='nav-link".isActive($nav, "register")."' href='register.php'>
                     <span>Register</span>
                 </a></li>
-                <li class='nav-item dropdown'>
+                <li class='nav-item dropdown $showIfSigned'>
                     <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
                         Account
                     </a>
@@ -61,7 +64,7 @@ function navbar($nav){
                         <li><a class='dropdown-item".isActive($nav, "orders")."' href='orders.php'>Orders</a></li>
                         <li><a class='dropdown-item".isActive($nav, "favourites")."' href='favourite.php'>Favourite books</a></li>
                         <li><hr class='dropdown-divider'></li>
-                        <li><a class='dropdown-item text-danger' href='#'>Sign out</a></li>
+                        <li><a class='dropdown-item text-danger' href='php/signout.php'>Sign out</a></li>
                     </ul>
                 </li>
             </ul>
