@@ -1,5 +1,4 @@
 function validateregisterForm(_form){
-    console.log(_form["password"].value);
     if(_form["contact"].value.length != 9){
         alert("Invalid phone number.\n\nHint: exclude 0 \nExample: 794586932")
         return false;
