@@ -59,7 +59,7 @@
         <div class="row my-5 jutify-content-center">
             
             <div class="col-md-6  input-data">
-                <form name="registerForm" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+                <form name="registerForm" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateregisterForm(this);">
                     <div class="col-md-12 d-flex justify-content-center main-pic">
                         <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
                     </div>
@@ -69,7 +69,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-6">
-                            <input type="text" placeholder="First name" name='fname'>
+                            <input type="text" placeholder="First name" name='fname' required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -78,7 +78,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4 ">
-                            <input type="text" placeholder="Last name" name='lname'>
+                            <input type="text" placeholder="Last name" name='lname' required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -87,7 +87,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="email" placeholder="Email" name='email'>
+                            <input type="email" placeholder="Email" name='email' required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -96,7 +96,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="Contact number" name='contact'>
+                            <input type="text" placeholder="Contact number" name='contact' required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -105,7 +105,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="Address line 1" name="address1">
+                            <input type="text" placeholder="Address line 1" name="address1" required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -123,7 +123,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="State" name="state">
+                            <input type="text" placeholder="State" name="state" required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -132,7 +132,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="City" name="city">
+                            <input type="text" placeholder="City" name="city" required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -141,7 +141,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="Zip code" name="zipcode">
+                            <input type="text" placeholder="Zip code" name="zipcode" required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -150,7 +150,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="password"  name='password' placeholder="Password">
+                            <input type="password"  name='password' placeholder="Password" required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -159,7 +159,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="password" placeholder="Confirm password" name="conpassword">
+                            <input type="password" placeholder="Confirm password" name="conpassword" required>
                         </div>
                     </div>
                     
@@ -180,6 +180,7 @@
         </div>
     </div>
 
+    <script src="js/index.js"></script>
 </body>
 </html>
 
