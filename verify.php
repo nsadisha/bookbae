@@ -1,5 +1,46 @@
 <?php include "components/footer.php" ?>
 <?php include "components/navbar.php" ?>
+<?php include "php/helper.php" ?>
+<?php include "sendmail/sendMail.php" ?>
+
+<?php
+
+if(!isset($_REQUEST["email"])){
+    header("Location: register.php");
+}
+$email = $_REQUEST["email"];
+$verificationCode = get("SELECT code FROM user_verification_codes WHERE email=\"$email\"")["code"];
+
+if(!$verificationCode){
+    echo "<h5 class='text-center'>Please fill the <a href='register.php'>register form</a> first.</h5>";
+}
+
+if(isset($_REQUEST["verify"])){
+    $code = $_REQUEST["code"];
+    if(md5($code) == $verificationCode){
+        $result = execute("DELETE FROM user_verification_codes WHERE email=\"$email\"");
+        echo "<script>alert('Successfully verified!');</script>";
+        header("Location: signin.php");
+    }else{
+        echo "<script>alert('Incorrect pin. Try again!');</script>";
+    }
+}
+
+if(isset($_REQUEST["resend"])){
+    //generating a new code
+    $code = rand(100000,999999);
+    //email content
+    $subject = "Verification code";
+    $body = "<h1>BookBae</h1><p>Your verification code is: <strong>$code</strong></p>";
+    $code = md5($code);
+    //update the database with the new code
+    $result = execute("UPDATE user_verification_codes SET code=\"$code\" WHERE email=\"$email\"");
+    if($result){
+        //sending email
+        sendMail($email, $subject, $body);
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,13 +73,16 @@
                 </div>
                 <p>Before creating account, we need toverify your email ID <strong>example@gmail.com</strong><p> 
                 <p>We have sent you a verification code to your email address.</p>
-                <div class="col-md-12 d-flex justify-content-center">
-                    <input type="text" id="pin" name="pin" style="width: 30%;">
-                </div>
-                <p>Didn't get the pin. <a href="">Resend pin</a></p>
-                <div class="col-md-12 d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary " >Click to verify</button>
-                </div>
+                <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <input type="text" id="code" name="code" style="width: 30%;" required>
+                        <input type="hidden" name="email" value="<?php echo $email; ?>" required>
+                    </div>
+                    <p>Didn't get the pin. <a href="verify.php?resend&email=<?php echo $email; ?>">Resend pin</a></p>
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary " name="verify">Click to verify</button>
+                    </div>
+                </form>
             </div>
             <div class="col-md-6 image">
                 <div class="col-md-12 d-flex justify-content-center ">
