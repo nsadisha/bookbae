@@ -27,8 +27,8 @@
         $lname=$_REQUEST['lname'];
         $email=$_REQUEST['email'];
         $contact=$_REQUEST['contact'];
-        $password=$_REQUEST['password'];
-        $confirmPassword=$_REQUEST['conpassword'];
+        $password=md5($_REQUEST['password']);
+        $confirmPassword=md5($_REQUEST['conpassword']);
         $address1=$_REQUEST['address1'];
         $address2=$_REQUEST['address2'];
         $state=$_REQUEST['state'];
@@ -37,12 +37,15 @@
         $sql="INSERT into users values(\"$email\",\"$fname\",\"$lname\",\"$password\",\"$contact\")";
         $location="INSERT INTO user_addresses values(\"$email\",\"$address1\",\"$address2\",\"$state\",\"$city\",\"$zipcode\")";
         
+        $code = rand(100000,999999);
+
         $result=$conn->query($sql);
         if($password==$confirmPassword){
             if($result)
             {
                 $result2=$conn->query($location);
-                header("Location:signin.php");
+                $result3=$conn->query("INSERT INTO user_verification_codes VALUES(\"$email\", \"$code\")");
+                header("Location: verify.php");
                 
             }else{
                 echo "<p class='text-center' style='color:red;'>This email is already registered!!</p>";

@@ -11,5 +11,5 @@ function validateregisterForm(_form){
         alert("Confirm password did not matched!")
         return false;
     }
-    return false;
+    return true;
 }
