@@ -34,7 +34,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-6">
-                            <input type="email" placeholder="Type your Email address" name='email'>
+                            <input type="email" placeholder="Type your Email address" name='email' required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4 ">
-                            <input type="password" placeholder="Type your password" name='password'>
+                            <input type="password" placeholder="Type your password" name='password' required>
                         </div>
                     </div>
                     
@@ -76,7 +76,7 @@
         if($password==$savedPassword){
             session_start();
             $_SESSION['email']=$email;
-            header('Location:index.php');
+            header('Location: index.php');
         }
         else{
             echo "<p class='text-center' style='color:red;'>one of the elements you entered is incorrect!!<p>";
