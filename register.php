@@ -43,11 +43,11 @@
         $body = "<h1>BookBae</h1><p>Hi $fname $lname,<br>Your verification code is: <strong>$code</strong></p>";
 
         $result=$conn->query($sql);
+        $result2=$conn->query($location);
         if($password==$confirmPassword){
             if($result)
             {
                 $code = md5($code);
-                $result2=$conn->query($location);
                 $result3=$conn->query("INSERT INTO user_verification_codes VALUES(\"$email\", \"$code\")");
                 sendMail($email, $subject, $body);
                 header("Location: verify.php?email=$email");
