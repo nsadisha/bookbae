@@ -51,13 +51,13 @@
 }
 
   // is signin
+  session_start();
   function isSigned(){
-    return !isset($_SESSION["email"]);
+    return isset($_SESSION["email"]);
   }
   function getSignedEmail(){
     if(isSigned()){
-      // return $_SESSION["email"];
-      return "example@example.com";
+      return $_SESSION["email"];
     }else{
       return null;
     }
