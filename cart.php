@@ -3,7 +3,12 @@
 <?php include "components/item.php" ?>
 
 <?php
-$email = "example@example.com";
+//if user is not signed in
+if(!isSigned()){
+    header("Location: signin.php");
+}
+//get user email
+$email = getSignedEmail();
 $deliveryFee = 300;
 $subTotal = 0;
 $grandTotal = $subTotal + $deliveryFee;

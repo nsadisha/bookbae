@@ -15,8 +15,10 @@
 <?php
     $conn=mysqli_connect('localhost','root','','bookbae');
     session_start();
+    if(!isset($_SESSION["email"])){
+        header("Location: signin.php");
+    }
     $email=$_SESSION['email'];
-    //$email="tharu.chamalsha@gmail.com";
     $sql1="select * from users where email=\"$email\"";
     $sql2="select * from user_addresses where email=\"$email\"";
 
