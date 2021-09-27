@@ -26,10 +26,10 @@
                     echo "not success";
                 }
             }else{
-                echo "confirm and new deosn't match";
+                echo "confirm and new deosn't match. <a href='../account.php'>Back</a>";
             }
         }else{
-            echo "old and new not matching";
+            echo "old and new not matching. <a href='../account.php'>Back</a>";
         }
      }
 ?>

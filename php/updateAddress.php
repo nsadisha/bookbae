@@ -4,6 +4,9 @@
  if(isset($_REQUEST['submit2'])){
 
      session_start();
+     if(!isset($_SESSION["email"])){
+         header("Location: ../signin.php");
+     }
      $email=$_SESSION['email'];
 
      $line1=$_REQUEST['line1'];
@@ -20,6 +23,6 @@
          echo "no";
      }
 
-
+     header("Location: ../account.php");
  }
 ?>
