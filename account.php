@@ -1,5 +1,6 @@
 <?php include "components/footer.php" ?>
 <?php include "components/navbar.php" ?>
+<?php include "php/helper.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +15,10 @@
 </head>
 <?php
     $conn=mysqli_connect('localhost','root','','bookbae');
-    session_start();
+    if(!isSigned()){
+        header("Location: signin.php");
+    }
     $email=$_SESSION['email'];
-    //$email="tharu.chamalsha@gmail.com";
     $sql1="select * from users where email=\"$email\"";
     $sql2="select * from user_addresses where email=\"$email\"";
 
@@ -163,7 +165,7 @@
                         <button type="submit" class="btn bg-brown text-white ms-auto" name="submit"><strong>Save changes</strong></button>
                     </div>
                 </form>
-                <form action="php/changePassword.php" method="post" onsubmit="return validateChangePasswordForm();">
+                <form action="php/changePassword.php" method="post" onsubmit="return validateChangePasswordForm(this);">
                     <h5>Change password</h5>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Current password</label>
@@ -309,5 +311,5 @@
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/profile.js"></script>
+<script src="js/index.js"></script>
 </html>

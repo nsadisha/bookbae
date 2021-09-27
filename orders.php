@@ -3,7 +3,14 @@
 <?php include "components/item.php" ?>
 
 <?php
-    $orders = execute("SELECT * FROM orders");
+    //if user is not signed in
+    if(!isSigned()){
+        header("Location: signin.php");
+    }
+    //get user email
+    $email = getSignedEmail();
+
+    $orders = execute("SELECT * FROM orders WHERE email=\"$email\"");
 
     function showOrders(){
         global $orders;

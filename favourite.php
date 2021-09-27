@@ -3,8 +3,12 @@
 <?php include "components/book.php" ?>
 
 <?php
-    //get the current signed in user's email
-    $email = "example@example.com";
+    //if user is not signed in
+    if(!isSigned()){
+        header("Location: signin.php");
+    }
+    //get user email
+    $email = getSignedEmail();
     //get all favourite books of the user
     $books = execute("SELECT isbn FROM favourite_books WHERE email=\"$email\"");
 
