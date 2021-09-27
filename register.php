@@ -69,7 +69,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-6">
-                            <input type="text" placeholder="Type your first name" name='fname'>
+                            <input type="text" placeholder="First name" name='fname'>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -78,7 +78,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4 ">
-                            <input type="text" placeholder="Type your last name" name='lname'>
+                            <input type="text" placeholder="Last name" name='lname'>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -87,7 +87,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="email" placeholder="Type your email" name='email'>
+                            <input type="email" placeholder="Email" name='email'>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -105,7 +105,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="Required" name="address1">
+                            <input type="text" placeholder="Address line 1" name="address1">
                         </div>
                     </div>
                     <div class="row p-2">
@@ -114,7 +114,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="Optional" name="address2">
+                            <input type="text" placeholder="Address line 2" name="address2">
                         </div>
                     </div>
                     <div class="row p-2">
@@ -123,7 +123,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="Type your state" name="state">
+                            <input type="text" placeholder="State" name="state">
                         </div>
                     </div>
                     <div class="row p-2">
@@ -132,7 +132,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter Your city" name="city">
+                            <input type="text" placeholder="City" name="city">
                         </div>
                     </div>
                     <div class="row p-2">
@@ -141,7 +141,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="Enter your zip code" name="zipcode">
+                            <input type="text" placeholder="Zip code" name="zipcode">
                         </div>
                     </div>
                     <div class="row p-2">
