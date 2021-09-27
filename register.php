@@ -45,7 +45,7 @@
             {
                 $result2=$conn->query($location);
                 $result3=$conn->query("INSERT INTO user_verification_codes VALUES(\"$email\", \"$code\")");
-                header("Location: verify.php");
+                header("Location: verify.php?email=$email");
                 
             }else{
                 echo "<p class='text-center' style='color:red;'>This email is already registered!!</p>";
