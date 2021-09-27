@@ -57,6 +57,4 @@ function sendMail($receiver, $subject, $body){
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
-
-sendMail("gnsadisha@gmail.com", "This is a subject", "This is the <b>body</b>.<hr>");
 ?>
