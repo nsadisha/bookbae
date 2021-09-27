@@ -67,7 +67,7 @@
     if(isset($_REQUEST['submit'])){
         $conn=mysqli_connect('localhost','root','','bookbae');
         $email=$_REQUEST['email'];
-        $password=$_REQUEST['password'];
+        $password=md5($_REQUEST['password']);
         $passwordCompare="select password from users where email=\"$email\"";
         $result=$conn->query($passwordCompare);
         while ($row = $result->fetch_array()) {
