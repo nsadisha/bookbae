@@ -12,8 +12,12 @@
 
         $sql="UPDATE users SET fname=\"$fname\",lname=\"$lname\",contact=\"$contact\" where email=\"$email\"";
         $update=$conn->query($sql);
-        
-        header("Location: ../account.php");
+        if($update){
+            header('Location:../account.php');
+        }else{
+            echo "Something went wrong!";
+        }
+
 
     }
 ?>
