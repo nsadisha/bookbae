@@ -6,8 +6,16 @@
     if(!isset($_REQUEST["id"])){
         header("location: orders.php");
     }
+
+    //if user is not signed in
+    if(!isSigned()){
+        header("Location: signin.php");
+    }
+    //get user email
+    $email = getSignedEmail();
+
     $id = $_REQUEST["id"];
-    $order = get("SELECT * FROM orders WHERE order_id=\"$id\"");
+    $order = get("SELECT * FROM orders WHERE order_id=\"$id\" AND email=\"$email\"");
 
     //order details
     $status = $order["status"];
