@@ -24,7 +24,7 @@
     text-align: center;
 }
 .main-pic img{
-    top: -25%;
+    top: -15%;
     position: absolute;
 }
 @media only screen and (max-width:450px){
