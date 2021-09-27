@@ -15,9 +15,9 @@
      $sql="UPDATE user_addresses SET line1=\"$line1\",line2=\"$line2\",province=\"$state\",city=\"$city\",zip=\"$zip\" where email=\"$email\"";
      $update=$conn->query($sql);
      if($update){
-         echo "done";
+         header('Location:../account.php');
      }else{
-         echo "no";
+         echo "Something went wrong!";
      }
 
 

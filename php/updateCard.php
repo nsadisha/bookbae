@@ -13,9 +13,9 @@
             $sql="UPDATE cards SET Name=\"$name\",CardNum=\"$CardNum\",CardType=\"$type\",ExYY=\"$exYY\",ExMM=\"$exMM\",CVV=\"$cvv\" where email=\"$email\"";
             $update=$conn->query($sql);
             if($update){
-                echo "done";
+                header('Location:../account.php');
             }else{
-                echo "no";
+                echo "Something went wrong!";
             }
 
     }
