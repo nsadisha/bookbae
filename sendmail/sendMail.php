@@ -48,9 +48,9 @@ function sendMail($receiver, $subject, $body){
         $mail->AltBody = 'Please use a HTML support application!';
 
         if($mail->send()){
-            echo 'Message has been sent';
+            // echo 'Message has been sent';
         }else{
-            echo 'Message has not been sent';
+            // echo 'Message has not been sent';
         }
         $mail->smtpClose();
     } catch (Exception $e) {
