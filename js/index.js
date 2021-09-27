@@ -13,3 +13,15 @@ function validateregisterForm(_form){
     }
     return true;
 }
+
+function validateChangePasswordForm(_form){
+    if(_form["newPassword"].value.length < 8){
+        alert("Password must have atleast 8 charactors!")
+        return false;
+    }
+    if(_form["confirmPassword"].value != _form["newPassword"].value){
+        alert("Confirm password did not matched!")
+        return false;
+    }
+    return true;
+}
