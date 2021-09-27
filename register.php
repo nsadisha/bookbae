@@ -29,12 +29,13 @@
         $contact=$_REQUEST['contact'];
         $password=$_REQUEST['password'];
         $confirmPassword=$_REQUEST['conpassword'];
-        $address=$_REQUEST['address'];
+        $address1=$_REQUEST['address1'];
+        $address2=$_REQUEST['address2'];
         $state=$_REQUEST['state'];
         $city=$_REQUEST['city'];
         $zipcode=$_REQUEST['zipcode'];
         $sql="INSERT into users values(\"$email\",\"$fname\",\"$lname\",\"$password\",\"$contact\")";
-        $location="INSERT INTO user_addresses values(\"$email\",\"$address\",\"$address\",\"$state\",\"$city\",\"$zipcode\")";
+        $location="INSERT INTO user_addresses values(\"$email\",\"$address1\",\"$address2\",\"$state\",\"$city\",\"$zipcode\")";
         
         $result=$conn->query($sql);
         if($password==$confirmPassword){
@@ -100,11 +101,20 @@
                     </div>
                     <div class="row p-2">
                         <div class="col-4">
-                            <p><strong>Address line</strong><p> 
+                            <p><strong>Address line 1</strong><p> 
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="Address line 1" name="address">
+                            <input type="text" placeholder="Required" name="address1">
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-4">
+                            <p><strong>Address line 2</strong><p> 
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-4">
+                            <input type="text" placeholder="Optional" name="address2">
                         </div>
                     </div>
                     <div class="row p-2">
