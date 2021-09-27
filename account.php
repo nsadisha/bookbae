@@ -1,5 +1,6 @@
 <?php include "components/footer.php" ?>
 <?php include "components/navbar.php" ?>
+<?php include "php/helper.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +15,7 @@
 </head>
 <?php
     $conn=mysqli_connect('localhost','root','','bookbae');
-    session_start();
-    if(!isset($_SESSION["email"])){
+    if(!isSigned()){
         header("Location: signin.php");
     }
     $email=$_SESSION['email'];
