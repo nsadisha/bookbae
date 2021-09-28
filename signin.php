@@ -68,21 +68,30 @@
         $conn=mysqli_connect('localhost','root','','bookbae');
         $email=$_REQUEST['email'];
         $password=md5($_REQUEST['password']);
-        $passwordCompare="select password from users where email=\"$email\"";
-        $result=$conn->query($passwordCompare);
-        while ($row = $result->fetch_array()) {
-            $savedPassword= $row['password'];
-        }
-        if($password==$savedPassword){
-            session_start();
-            $_SESSION['email']=$email;
-            header('Location: index.php');
-        }
-        else{
-            echo "<p class='text-center' style='color:red;'>one of the elements you entered is incorrect!!<p>";
-        }
+        $passwordCompare="SELECT password FROM `users` WHERE email=\"$email\" AND email NOT IN (SELECT email FROM user_verification_codes)";
+        $result = ($conn->query($passwordCompare))->fetch_array();
 
-
+        if($result){
+            //checking password
+            if($password==$result["password"]){
+                session_start();
+                $_SESSION['email']=$email;
+                header('Location: index.php');
+            }else{
+                echo "<p class='text-center' style='color:red;'>Incorrect username or password!<p>";
+            }
+        }else{
+            //not registered or verified
+            //checking verified or not
+            $res = ($conn->query("SELECT email FROM user_verification_codes WHERE email=\"$email\""))->fetch_array();
+            if($res){
+                //not verified
+                echo "<p class='text-center' style='color:red;'>Your email address is not verified yet! Click <a href='verify.php?resend&email=$email'>here</a> to verify.<p>";
+            }else{
+                //not registered
+                echo "<p class='text-center' style='color:red;'>Email address not found!<br>Would you like to <a href='register.php'>register</a>?<p>";
+            }
+        }
     }
         
     ?>

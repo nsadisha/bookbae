@@ -1,5 +1,6 @@
 <?php include "components/footer.php" ?>
 <?php include "components/navbar.php" ?>
+<?php include "sendmail/sendMail.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,13 +39,17 @@
         $location="INSERT INTO user_addresses values(\"$email\",\"$address1\",\"$address2\",\"$state\",\"$city\",\"$zipcode\")";
         
         $code = rand(100000,999999);
+        $subject = "Verification code";
+        $body = "<h1>BookBae</h1><p>Hi $fname $lname,<br>Your verification code is: <strong>$code</strong></p>";
 
         $result=$conn->query($sql);
+        $result2=$conn->query($location);
         if($password==$confirmPassword){
             if($result)
             {
-                $result2=$conn->query($location);
+                $code = md5($code);
                 $result3=$conn->query("INSERT INTO user_verification_codes VALUES(\"$email\", \"$code\")");
+                sendMail($email, $subject, $body);
                 header("Location: verify.php?email=$email");
                 
             }else{

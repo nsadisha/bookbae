@@ -1,4 +1,5 @@
 <?php include "./php/adminHelper.php" ?>
+<?php include "../sendmail/sendMail.php" ?>
 
 <?php
 session_start();
@@ -11,12 +12,17 @@ $email = getSignedAdminEmail();
 // complete order
 if(isset($_REQUEST["send"])){
     $subscribers = execute("SELECT * FROM subscribers");
-    $message = $_REQUEST["message"];
+    $subject = $_REQUEST["subject"];
+    $body = $_REQUEST["body"];
 
-    //send mail to each subscriber
+    //get email list
+    $subs = array();
     foreach($subscribers as $subscriber){
         $subscriberEmail = $subscriber["email"];
+        array_push($subs, $subscriberEmail);
     }
+    //sending the mail
+    sendMailToAGroup($subs, $subject, $body);
 }
 
 ?>
@@ -72,7 +78,10 @@ if(isset($_REQUEST["send"])){
                 <div class="hr mb-3"></div>
                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="get">
                     <div class="col-12 mt-2">
-                        <textarea class="form-control font-sf-pro" rows="15" name="message" placeholder="Enter message"></textarea>
+                        <input type="text" class="form-control font-sf-pro" name="subject" placeholder="Email subject" required>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <textarea class="form-control font-sf-pro" rows="15" name="body" placeholder="Email body"></textarea>
                     </div>
                     <div class="col-12 d-flex mt-3">
                         <button type="submit" class="btn bg-brown text-white ms-auto" name="send"><strong>Send mail</strong></button>
