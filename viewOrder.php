@@ -19,8 +19,8 @@
 
     //order details
     $status = $order["status"];
-    $date = explode(" ", $order["date"])[0];
-    $time = explode(" ", $order["date"])[1];
+    $date = $order?explode(" ", $order["date"])[0]:"";
+    $time = $order?explode(" ", $order["date"])[1]:"";
     $grandTotal = number_format($order["total_price"], 2);
     // var_dump($order);
     $orderItems = execute("SELECT B.name, B.isbn, B.author, B.price, O.quantity, O.quantity * B.price 'total' FROM order_items O RIGHT OUTER JOIN books B ON O.isbn=B.isbn WHERE O.order_id=\"$id\"");

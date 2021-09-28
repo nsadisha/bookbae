@@ -5,7 +5,7 @@
 <?php
 $email = getSignedEmail();
 if(!$email){
-    echo "please sign in";
+    header("Location: signin.php");
 }
 $user = get("SELECT U.fname, U.lname, A.* FROM users U RIGHT OUTER JOIN user_addresses A ON U.email=A.email WHERE A.email=\"$email\"");
 $fname = $user["fname"];
