@@ -59,7 +59,7 @@ if(isset($_REQUEST["submit"])){
                     </div>
                             
                     <button type="submit" class="btn w-100 bg-brown text-white" name="submit" value="login"><strong>Log In</strong></button>
-                    <h3 class="text-center text-white mt-3"><?php echo $err; ?></h3>
+                    <h6 class="text-center text-danger mt-3"><strong><?php echo $err; ?></strong></h6>
                 </form>
             </div>
             <div class="w-100 mt-5"></div>
