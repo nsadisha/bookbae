@@ -40,6 +40,9 @@ h1{
     background-color: none;
     border-color: #B08968;
 }
+.description .favourite a{
+    text-decoration:none;
+}
 .description input{
     width: 65%;
 }

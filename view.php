@@ -38,7 +38,7 @@
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <h2 class="text-center p-3"><strong>Rotten school and great smelling bee</strong></h2>
+    <h2 class="text-center p-3"><strong><?php echo $row['name']; ?></strong></h2>
     <div class="container-fluid pb-5">
         <div class="row mt-3">
             <div class="col-lg-6 justify-content-end">
@@ -114,8 +114,8 @@
                         <strong>LKR<?php echo $row['price']; ?>.00</strong>
                     </div>
                 </div>
-                <div class="row justify-content-center pt-2 favourite">
-                   <a href="php/addToFavourite?isbn=<?php echo $isbn; ?>&favSubmit=true" > <button class="btn btn-primary" type="submit" ><i class="bi bi-heart-fill p-1"></i>Add to favourites</button></a>
+                <div class="row  pt-2 favourite">
+                   <a href="php/addToFavourite?isbn=<?php echo $isbn; ?>&favSubmit=true" class="d-flex justify-content-center" > <button class="btn btn-primary" type="submit" ><i class="bi bi-heart-fill p-1"></i>Add to favourites</button></a>
                 </div>
                 <div class="row justify-content-center pt-2">
                     <div class="col-4">
