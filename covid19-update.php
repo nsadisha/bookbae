@@ -15,7 +15,7 @@
 <body>
 
     <!-- Navbar starts -->
-    <?php navbar('contact'); ?>
+    <?php navbar(''); ?>
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
