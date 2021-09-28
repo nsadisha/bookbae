@@ -122,7 +122,7 @@
                         <input type="text" placeholder="Qty">
                     </div>
                     <div class="col-4">
-                        <button class="btn btn-primary" type="submit"><i class="bi bi-cart3 p-1"></i>Add to cart</button>
+                        <form action="php/addToCart.php?isbn=<?php echo $row['isbn'];?>" method="get"><button class="btn btn-primary" type="submit"><i class="bi bi-cart3 p-1"></i>Add to cart</button></form>
                     </div>
                     <div class="col-4">
                         <button class="btn btn-primary" type="submit"><i class="bi bi-wallet-fill p-1"></i>Buy now</button>

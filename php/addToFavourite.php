@@ -12,19 +12,16 @@ if(isset($_GET["favSubmit"])){
     $isbn = $_GET["isbn"];
     
     echo $email;
-    $delete = execute("DELETE FROM favourite_books WHERE  email=\"$email\" AND isbn=\"$isbn\"");
-    $insert = execute("INSERT INTO favourite_books VALUES(\"$email\", \"$isbn\"");
-    if($delete){
-        echo "ok";
+    echo $isbn;
+    $isAvailable = execute("SELECT * FROM favourite_books WHERE  email=\"$email\" AND isbn=\"$isbn\"");
+    
+    
+    if($isAvailable->num_rows != 0){
+        header("Location:../favourite.php");
     }else{
-        echo "no";
+        $insert = execute("INSERT INTO favourite_books VALUES(\"$email\", \"$isbn\")");
+        header("Location:../favourite.php");
     }
-    if($insert){
-        echo "ok";
-    }else{
-        echo "no";
-    }
-    //header("Location:../favourite.php");
 }
 ?>
 
