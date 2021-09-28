@@ -96,37 +96,23 @@
     </div>
 
     <!-- Page content starts -->
-
-    <!-- search bar -->
-    <section class="mt-2 d-none">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="get" class="col-sm-7 col-md-4">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search" name="q">
-                        <button class="btn btn-outline text-white bg-brown" type="submit"><strong>Search</strong></button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-    <!-- landing -->
-
+    
     <!-- search products -->
     <section class=" mt-2">
-    <div class="container-fluid">
+        <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 px-4 d-none d-md-block">
                 <div class="position-sticky top-0  py-4">
                     <?php showFilter($q); ?>
                 </div>
             </div>
-
+            
             <div class="col-md-9">
                 <div class="row">
                     <form action=<?php echo $_SERVER['PHP_SELF']; ?> method="get" class="col-md-6 m-0">
                         <div class="input-group">
                             <input type="text" class="form-control m-0" placeholder="Search" name="q" value="<?php echo $q; ?>">
+                            <input type="hidden" name="page" value="<?php echo $page; ?>">
                             <button class="btn btn-outline text-white bg-brown" type="submit"><strong>Search</strong></button>
                         </div>
                     </form>
@@ -135,7 +121,7 @@
                 </div>
                 <!-- <p class="mb-3">Showing <?php //echo $totalResults; ?> results</p> -->
                 <div class="row g-2 mt-4">
-
+                    
                     <?php 
                         // if(!$isSearched){
                             showSearchResults($q, $language, $category, $year, $author, $start, $n);
@@ -147,7 +133,7 @@
                 </div>
             
                 <!-- Pagination -->
-                <div class="row justify-content-center mt-3">
+                <div class="row justify-content-center mt-3 <?php echo $rows==0?"d-none":""; ?>">
                     <div class="col-auto">
                         <nav aria-label="...">
                             <ul class="pagination">
