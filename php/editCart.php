@@ -5,7 +5,7 @@
         goBack();
     }
 
-    $email = "example@example.com";
+    $email = getSignedEmail();
 
     $submitMethod = $_REQUEST["submit"];
     $isbn = $_REQUEST["isbn"];
