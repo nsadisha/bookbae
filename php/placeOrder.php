@@ -2,7 +2,7 @@
 
 <?php
 if(!isSigned()){
-    //do something
+    header("Location: signin.php");
 }
 $email = getSignedEmail();
 

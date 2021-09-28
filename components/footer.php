@@ -25,9 +25,9 @@ function footer(){
       <div class='container'>
           <div class='row'>
               <div class='col-sm-12 col-lg-4'>
-                  <img src='assets/images/logo.png' alt='logo' width='200px'>
+                  <img src='assets/images/logo.png' alt='logo' width='220px' style='filter:invert(100%);' class='mb-3'>
                   <p><span class='para'>
-                      At the BookBae, we provide you with an excellent shopping experience, high quality books for a better lifestyle. With professionalism, the best customer service and fast shipping as our client's satisfaction matters the most. <a href='../about.php' class='text-decoration-none'>Read more...</a>
+                      At the BookBae, we provide you with an excellent shopping experience, high quality books for a better lifestyle. With professionalism, the best customer service and fast shipping as our client's satisfaction matters the most. <a href='about.php' class='text-decoration-none'>Read more...</a>
                   </span></p>
               </div>
               <div class='col-12 col-sm-6 col-lg-3 ms-auto'>
