@@ -115,7 +115,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-center pt-2 favourite">
-                    <button class="btn btn-primary" type="submit"><i class="bi bi-heart-fill p-1"></i>Add to favourites</button>
+                   <a href="php/addToFavourite?isbn=<?php echo $isbn; ?>&favSubmit=true" > <button class="btn btn-primary" type="submit" ><i class="bi bi-heart-fill p-1"></i>Add to favourites</button></a>
                 </div>
                 <div class="row justify-content-center pt-2">
                     <div class="col-4">

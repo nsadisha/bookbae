@@ -9,6 +9,7 @@
     }
     //get user email
     $email = getSignedEmail();
+    
     //get all favourite books of the user
     $books = execute("SELECT isbn FROM favourite_books WHERE email=\"$email\"");
 
