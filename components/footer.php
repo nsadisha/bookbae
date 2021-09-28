@@ -27,7 +27,7 @@ function footer(){
               <div class='col-sm-12 col-lg-4'>
                   <img src='assets/images/logo.png' alt='logo' width='200px'>
                   <p><span class='para'>
-                      Sarasavi.lk is a website for an extensive collection of books, stationery and magazines.Not only a “one-stop shop” for book lovers but also an interactive and innovative destination designed to make it fun and exciting to discover and shop for new books and gifts online.book lovers but also an interactive and innovative destination designed to make it fun and exciting to discover and shop for new books and gifts online.
+                      At the BookBae, we provide you with an excellent shopping experience, high quality books for a better lifestyle. With professionalism, the best customer service and fast shipping as our client's satisfaction matters the most. <a href='../about.php' class='text-decoration-none'>Read more...</a>
                   </span></p>
               </div>
               <div class='col-12 col-sm-6 col-lg-3 ms-auto'>
