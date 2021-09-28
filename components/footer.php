@@ -33,10 +33,11 @@ function footer(){
               <div class='col-12 col-sm-6 col-lg-3 ms-auto'>
                   <h4>Quick links</h4>
                   <ul>
-                      <li><a href='#'>About us</a></li>
-                      <li><a href='#'>Contact us</a></li>
-                      <li><a href='#'>Privacy & Policy</a></li>
-                      <li><a href='#'>Terms & Conditions</a></li>
+                      <li><a href='about.php'>About us</a></li>
+                      <li><a href='contact.php'>Contact us</a></li>
+                      <li><a href='privacy.php'>Privacy & Policy</a></li>
+                      <li><a href='faq.php'>FAQs</a></li>
+                      <li><a href='covid19-update.php'>Covid 19 update</a></li>
                   </ul>
               </div>
               <div class='col-12 col-sm-6 col-lg-3'>
