@@ -10,12 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- custom css -->
     <link rel="stylesheet" href="css/styles.css">
-    <title>BookBae | About us</title>
+    <title>BookBae | Contact us</title>
 </head>
 <body>
 
     <!-- Navbar starts -->
-    <?php navbar('about'); ?>
+    <?php navbar('contact'); ?>
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
