@@ -1,12 +1,13 @@
 <?php
 
 function showFilter($q){
-    global $language, $category, $year, $author;
+    global $language, $category, $year, $author, $page;
 
     $filter = "
         <h3 class='text-center'>Filter</h3>
         <form action='search.php' method='get' class='px-2'>
             <input type='hidden' name='q' value='$q'>
+            <input type='hidden' name='page' value='$page'>
             <label for='lan'>Language</label>
             <div class='input-group input-group-sm mb-3'>
                 <select class='form-select form-select-sm' id='lan' name='lan'>
