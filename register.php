@@ -69,15 +69,16 @@
             <div class="col-md-6  input-data">
                 <form name="registerForm" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateregisterForm(this);">
                     <div class="col-md-12 d-flex justify-content-center main-pic">
-                        <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
+                        <img src="assets\images\profile.png" class="d-flex justify-content-center"><br>
                     </div>
+                    <h3 class="pt-5 text-center"><strong>Register</strong></h3>
                     <div class="row pt-4 p-2">
                         <div class="col-4 ">
                             <p><strong>First Name</strong><p> 
                         </div>
                         <div class="col-1"></div>
-                        <div class="col-6">
-                            <input type="text" placeholder="First name" name='fname' required>
+                        <div class="col-4">
+                            <input type="text" class="form-control" placeholder="First name" name='fname' required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -86,7 +87,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4 ">
-                            <input type="text" placeholder="Last name" name='lname' required>
+                            <input type="text" class="form-control" placeholder="Last name" name='lname' required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -95,7 +96,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="email" placeholder="Email" name='email' required>
+                            <input type="email" class="form-control" placeholder="Email" name='email' required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -104,7 +105,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="Contact number" name='contact' required>
+                            <input type="text" class="form-control" placeholder="Contact number" name='contact' required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -113,7 +114,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="Address line 1" name="address1" required>
+                            <input type="text" class="form-control" placeholder="Address line 1" name="address1" required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -122,7 +123,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="Address line 2" name="address2">
+                            <input type="text" class="form-control" placeholder="Address line 2" name="address2">
                         </div>
                     </div>
                     <div class="row p-2">
@@ -131,7 +132,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="State" name="state" required>
+                            <input type="text" class="form-control" placeholder="State" name="state" required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -140,7 +141,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="City" name="city" required>
+                            <input type="text" class="form-control" placeholder="City" name="city" required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -149,7 +150,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="text" placeholder="Zip code" name="zipcode" required>
+                            <input type="text" class="form-control" placeholder="Zip code" name="zipcode" required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -158,7 +159,7 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="password"  name='password' placeholder="Password" required>
+                            <input type="password"  class="form-control" name='password' placeholder="Password" required>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -167,12 +168,15 @@
                         </div>
                         <div class="col-1"></div>
                         <div class="col-4">
-                            <input type="password" placeholder="Confirm password" name="conpassword" required>
+                            <input type="password" class="form-control" placeholder="Confirm password" name="conpassword" required>
                         </div>
                     </div>
                     
-                    <div class="col-md-12 d-flex justify-content-center ">
+                    <div class="col-md-12 d-flex justify-content-center mt-3">
                         <button type="submit" class="btn btn-primary " name="submit" >Register</button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <small>Already have an account? <a href="signin.php">Signin</a></small>
                     </div>
                 </form>
             </div>
