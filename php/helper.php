@@ -115,8 +115,10 @@
   }
   //checking whether the order id is available or not
   function isIdAvailable($id){
-    //need to change this sql
-    $result = execute("SELECT * FROM books WHERE isbn=\"$id\"");
-    return $result->num_rows==0;
+    $result1 = execute("SELECT order_id FROM placed_orders WHERE order_id=\"$id\"");
+    $result2 = execute("SELECT order_id FROM orders WHERE order_id=\"$id\"");
+
+    $isAvailable = $result1->num_rows==0 && $result2->num_rows==0;
+    return $isAvailable;
   }
 ?>
