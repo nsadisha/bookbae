@@ -7,6 +7,12 @@
     $isSearched = false;
     $q = "";
     $search = "";
+
+    //filter
+    $language = "";
+    $category = "";
+    $year = "";
+    $author = "";
     // $totalResults = 0;
 
 
@@ -14,8 +20,17 @@
         $isSearched = empty($_REQUEST["q"]);
         $q = $_REQUEST["q"];
         $search = str_replace(" ", "+", $q);
+
+        if(isset($_REQUEST["filter"])){
+            $language = $_REQUEST["lan"];
+            $category = $_REQUEST["category"];
+            $year = $_REQUEST["year"];
+            $author = $_REQUEST["author"];
+            
+            $isSearched = false;
+        }
     }else{
-        header("Location: landing.php");
+        header("Location: index.php");
     }
 
 
@@ -60,7 +75,7 @@
                 <div class="modal-header border-0">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <?php showFilter(); ?>
+                <?php showFilter($q); ?>
             </div>
         </div>
     </div>
@@ -88,7 +103,7 @@
         <div class="row">
             <div class="col-md-3 px-4 d-none d-md-block">
                 <div class="position-sticky top-0  py-4">
-                    <?php showFilter(); ?>
+                    <?php showFilter($q); ?>
                 </div>
             </div>
 
@@ -107,11 +122,11 @@
                 <div class="row g-2 mt-4">
 
                     <?php 
-                        if(!$isSearched){
-                            showSearchResults($q);
-                        }else{
-                            showAllBooks();
-                        }
+                        // if(!$isSearched){
+                            showSearchResults($q, $language, $category, $year, $author);
+                        // }else{
+                            // showAllBooks();
+                        // }
                     ?>
 
                 </div>

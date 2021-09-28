@@ -77,9 +77,9 @@
     }
   }
   //get search results
-  function showSearchResults($search){
-    global $totalResults;
-    $books = execute("SELECT * FROM books WHERE name LIKE \"%$search%\"");
+  function showSearchResults($search, $lan, $cat, $year, $author){
+    // global $totalResults;
+    $books = execute("SELECT * FROM books WHERE name LIKE \"%$search%\" AND language LIKE \"%$lan%\" AND category LIKE \"%$cat%\" AND year LIKE \"%$year%\" AND author LIKE \"%$author%\"");
     //$totalResults = $books->num_rows;
     if($books->num_rows!=0){
       foreach($books as $book){
