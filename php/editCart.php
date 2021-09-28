@@ -1,11 +1,11 @@
 <?php include 'helper.php' ?>
 
 <?php
-    if(!isset($_REQUEST["submit"])){
+    if(!isset($_REQUEST["submit"]) || !isSigned()){
         goBack();
     }
 
-    $email = "example@example.com";
+    $email = getSignedEmail();
 
     $submitMethod = $_REQUEST["submit"];
     $isbn = $_REQUEST["isbn"];
