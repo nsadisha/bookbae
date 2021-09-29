@@ -24,28 +24,7 @@
     text-align: center;
 }
 .main-pic img{
-    top: -15%;
+    top: -9%;
+    width: 10rem;
     position: absolute;
-}
-@media only screen and (max-width:450px){
-    .main-pic img{
-        top: -15%;
-        position: absolute;
-    }
-    .input-data input{
-      width:10rem;
-     
-  }
-     
-}
-@media only screen and (max-width:768px){
-  .main-pic img{
-      top: -15%;
-      position: absolute;
-  }
-  .input-data input{
-    width:12rem;
-   
-}
-   
 }

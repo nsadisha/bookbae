@@ -7,7 +7,6 @@ if(!isSigned() || !isset($_REQUEST["isbn"])){
 }
 //get email
 $email = getSignedEmail();
-
 $isbn = $_REQUEST["isbn"];
 $quantity = $_REQUEST["quantity"];
 

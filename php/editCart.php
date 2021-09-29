@@ -1,7 +1,7 @@
 <?php include 'helper.php' ?>
 
 <?php
-    if(!isset($_REQUEST["submit"])){
+    if(!isset($_REQUEST["submit"]) || !isSigned()){
         goBack();
     }
 

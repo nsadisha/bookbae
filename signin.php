@@ -1,3 +1,4 @@
+<?php include "php/helper.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,36 +20,32 @@
     <title>BookBae | Signin</title>
 </head>
 <body>
+
     <div class="container pt-5 content">
-        <div class="row my-5 justify-content-center">
+        <div class="row my-5 justify-content-center p-2 p-sm-0">
             
-            <div class="col-md-6  input-data " >
+            <div class="col-md-6 col-lg-5  input-data font-sf-pro">
                 <form name="registerForm" action="<?php echo $_SERVER['PHP_SELF']?>"  method="post">
                     <div class="col-md-12 d-flex justify-content-center main-pic">
-                        <img src="assets\images\profile.png" style="width:40%;" class="d-flex justify-content-cente"><br>
+                        <img src="assets\images\profile.png" class="d-flex justify-content-cente"><br>
                     </div>
                     <h3 class="pt-5">Welcome to Bookbae!</h3>
-                    <div class="row pt-4 p-2">
-                        <div class="col-4 ">
-                            <p><strong>Email</strong><p> 
+                    <div class="row">
+                        <div class="col-12 mb-2">
+                            <small>Email</small>
+                            <input type="email" class="form-control" placeholder="Email address" name='email' required>
                         </div>
-                        <div class="col-1"></div>
-                        <div class="col-6">
-                            <input type="email" placeholder="Type your Email address" name='email' required>
-                        </div>
-                    </div>
-                    <div class="row p-2">
-                        <div class="col-4">
-                            <p><strong>Password</strong><p> 
-                        </div>
-                        <div class="col-1"></div>
-                        <div class="col-4 ">
-                            <input type="password" placeholder="Type your password" name='password' required>
+                        <div class="col-12 mb-2">
+                            <small>Password</small>
+                            <input type="password"class="form-control" placeholder="Password" name='password' required>
                         </div>
                     </div>
                     
-                    <div class="col-md-12 d-flex justify-content-center ">
-                        <button type="submit" class="btn btn-primary " name="submit" >Signin</button>
+                    <div class="col-md-12 d-flex justify-content-center mt-3">
+                        <button type="submit" class="btn btn-primary px-3" name="submit" >Signin</button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <small>You don't have an account? <a href="register.php">Register</a></small>
                     </div>
                 </form>
             </div>
@@ -64,6 +61,11 @@
         </div>
     </div>
     <?php
+
+    if(isSigned()){
+        header("Location: index.php");
+    }
+
     if(isset($_REQUEST['submit'])){
         $conn=mysqli_connect('localhost','root','','bookbae');
         $email=$_REQUEST['email'];
@@ -74,7 +76,7 @@
         if($result){
             //checking password
             if($password==$result["password"]){
-                session_start();
+                // session_start();
                 $_SESSION['email']=$email;
                 header('Location: index.php');
             }else{

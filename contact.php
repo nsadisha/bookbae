@@ -1,4 +1,5 @@
 <?php include "components/footer.php" ?>
+<?php include "php/helper.php" ?>
 <?php include "components/navbar.php" ?>
 
 <!DOCTYPE html>
@@ -14,11 +15,21 @@
 <body>
 
     <!-- Navbar starts -->
-    <?php navbar("contact"); ?>
+    <?php navbar('contact'); ?>
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <h1 class="text-center">Contact us</h1>
+    <section class="container mt-3">
+        <h2><strong>Contact us</strong></h2>
+        <div class="hr mb-3"></div>
+        <p>
+            We love hearing from you. Whether you are looking for details about our products, information about your order or simply want to reach out to us.<br><br>
+
+            We do our best to reply to all inquiries as fast as we can. Please find below our mainstream contact lines for for your better shopping experience. In additional, please taking in consideration to use Email for our smooth informative conversation. We always got your back.<br><br>
+
+            <strong>Our Email:</strong> <a href="mailto:contact@bookbae.store">contact@bookbae.store</a>
+        </p>
+    </section>
     <!-- Page content ends -->
 
     <!-- Footer starts -->

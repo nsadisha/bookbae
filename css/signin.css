@@ -3,13 +3,13 @@
 
 .input-data{
     background-color: #F8F9FA;
-    border-radius: 4rem;
-   padding:2rem;
+    border-radius: 30px;
+    padding:2rem;
     position: relative;
 }
 .input-data h3{
-  text-align: center;
-  font-weight: bold;
+    text-align: center;
+    font-weight: bold;
 
 }
 .content button{
@@ -23,35 +23,8 @@
 .content button:hover{
     background-color: #b07d62;
 }
-.input-data input{
-    width:15rem;
-    background-color:#F8F9FA ;
-    text-align: center;
-    border-color: #6c757d;
-}
 .main-pic img{
-    top: -25%;
+    top: -23%;
+    width: 10rem;
     position: absolute;
-}
-@media only screen and (max-width:450px){
-    .main-pic img{
-        top: -15%;
-        position: absolute;
-    }
-    .input-data input{
-      width:12rem;
-     
-  }
-     
-}
-@media only screen and (max-width:768px){
-  .main-pic img{
-      top: -15%;
-      position: absolute;
-  }
-  .input-data input{
-    width:12rem;
-   
-}
-   
 }

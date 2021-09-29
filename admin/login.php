@@ -40,34 +40,33 @@ if(isset($_REQUEST["submit"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- custom css -->
-    <link rel="stylesheet" href="../css/styles.css">
-	<link rel="stylesheet" href="../css/signin.css">
+    <link rel="stylesheet" href="css/adminStyles.css">
     
     <title>BookBae | Sign in</title>
 </head>
 <body>
-    <!-- Page content starts -->
-    <div class="form">
-        <!-- <div class="tab-content"> -->
-        <div id="login">   
-            <h1>Admin Login</h1>
-            
-            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-                <div class="field-wrap">
-                    <input type="email" name="email" placeholder="Email" required>
-                </div>
-                
-                <div class="field-wrap">
-                    <input type="password" name="password" placeholder="Password" required>
-                </div>
-                        
-                <button type="submit" class="button button-block" name="submit" value="login">Log In</button>
-                <h3 class="text-center text-white mt-3"><?php echo $err; ?></h3>
-            </form>
-
+    <section class="container mt-5">
+        <h1 class="text-center">Admin Login</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mt-4">
+                <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+                    <div class="mb-2">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                    </div>
+                            
+                    <button type="submit" class="btn w-100 bg-brown text-white" name="submit" value="login"><strong>Log In</strong></button>
+                    <h6 class="text-center text-danger mt-3"><strong><?php echo $err; ?></strong></h6>
+                </form>
             </div>
+            <div class="w-100 mt-5"></div>
+            <hr class="w-50">
         </div>
-    </div>
+    </section>
+
     <div class="text-center">
         <a href="../" class="btn bg-brown text-white"><i class="bi bi-arrow-left"></i><strong>Back to site</strong></a>
     </div>
