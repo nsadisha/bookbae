@@ -19,16 +19,16 @@
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <section class="container mt-3">
+    <section class="container mt-3 animate__animated animate__slideInLeft">
         <h2><strong>Privacy policy</strong></h2>
         <div class="hr mb-3"></div>
 
         <p>This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from www.bookbae.store.</p>
 
-            <h5>Personal information we collect</h5>
+            <h5><strong>Personal information we collect</strong></h5>
             <p>When you visit the Site, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies that are installed on your device. Additionally, as you browse the Site, we collect information about the individual web pages or products that you view, what websites or search terms referred you to the Site, and information about how you interact with the Site. We refer to this automatically-collected information as “Device Information”.</p>
 
-            <h5>We collect Device Information using the following technologies:</h5>
+            <h5><strong>We collect Device Information using the following technologies:</strong></h5>
             <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- “Cookies” are data files that are placed on your device or computer and often include an anonymous unique identifier.<br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- “Log files” track actions occurring on the Site, and collect data including your IP address, browser type, Internet service provider, referring/exit pages, and date/time stamps.<br>
@@ -39,7 +39,7 @@
 
             <p>When we talk about “Personal Information” in this Privacy Policy, we are talking both about Device Information and Order Information.</p>
 
-            <h5>How do we use your personal information?</h5>
+            <h5><strong>How do we use your personal information?</strong></h5> 
             <p>
             We use the Order Information that we collect generally to fulfill any orders placed through the Site (including processing your payment information, arranging for shipping, and providing you with invoices and/or order confirmations). Additionally, we use this Order Information to:<br><br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Communicate with you;<br>
@@ -49,33 +49,33 @@
 
             <p>We use the Device Information that we collect to help us screen for potential risk and fraud (in particular, your IP address), and more generally to improve and optimize our Site (for example, by generating analytics about how our customers browse and interact with the Site, and to assess the success of our marketing and advertising campaigns).</p>
 
-            <h5>Sharing you personal Information</h5>
+            <h5><strong>Sharing you personal Information</strong></h5>
             <p>We share your Personal Information with third parties to help us use your Personal Information, as described above. We also use Google Analytics to help us understand how our customers use the Site.</p>
 
             <p>Finally, we may also share your Personal Information to comply with applicable laws and regulations, to respond to a subpoena, search warrant or other lawful request for information we receive, or to otherwise protect our rights.</p>
 
-            <h5>Behavioural advertising</h5>
+            <h5><strong>Behavioural advertising</strong></h5>
             <p>As described above, we use your Personal Information to provide you with targeted advertisements or marketing communications we believe may be of interest to you.</p>
-            <h5>You can opt out of targeted advertising by using the links below:</h5>
+            <h5><strong>You can opt out of targeted advertising by using the links below:</strong></h5>
             <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Facebook: https://www.facebook.com/settings/?tab=ads<br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Google: https://www.google.com/settings/ads/anonymous<br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Bing: https://advertise.bingads.microsoft.com/en-us/resources/policies/personalized-ads
             </p>
 
-            <h5>Do not track</h5>
+            <h5><strong>Do not track</strong></h5>
             <p>Please note that we do not alter our Site’s data collection and use practices when we see a Do Not Track signal from your browser.</p>
 
-            <h5>Data retention</h5>
+            <h5><strong>Data retention</strong></h5>
             <p>When you place an order through the Site, we will maintain your Order Information for our records unless and until you ask us to delete this information.</p>
 
-            <h5>Changes</h5>
+            <h5><strong>Changes</strong></h5>
             <p>We may update this privacy policy from time to time in order to reflect, for example, changes to our practices or for other operational, legal or regulatory reasons.</p>
 
-            <h5>Minors</h5>
+            <h5><strong>Minors</strong></h5>
             <p>The Site is intended for all individuals.</p>
 
-            <h5>Contact us</h5>
+            <h5><strong>Contact us</strong></h5>
             <p>For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e‑mail at</p>
             <strong>Our Email:</strong> <a href="mailto:contact@bookbae.store">contact@bookbae.store</a>
             <br><br>
@@ -94,15 +94,15 @@
         <p>You can always contact us for any return question at contact@bookbae.store.</p>
 
 
-        <h5>Damages and issues</h5>
+        <h5><strong>Damages and issues</strong></h5>
         <p>Please inspect your order upon reception and contact us immediately if the item is defective, damaged or if you receive the wrong item, so that we can evaluate the issue and make it right.</p>
 
 
-        <h5>Exchanges</h5>
+        <h5><strong>Exchanges</strong></h5>
         <p>The fastest way to ensure you get what you want is to return the item you have, and once the return is accepted, make a separate purchase for the new item.</p>
 
 
-        <h5>Refunds</h5>
+        <h5><strong>Refunds</strong></h5>
         <p>We will notify you once we’ve received and inspected your return, and let you know if the refund was approved or not. If approved, you’ll be automatically refunded on your original payment method. Please remember it can take some time for your bank or credit card company to process and post the refund too.</p>
     </section>
     <hr>

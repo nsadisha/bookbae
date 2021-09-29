@@ -29,7 +29,7 @@
                     <div class="col-md-12 d-flex justify-content-center main-pic">
                         <img src="assets\images\profile.png" class="d-flex justify-content-cente"><br>
                     </div>
-                    <h3 class="pt-5">Welcome to Bookbae!</h3>
+                    <h3 class="pt-5 animate__animated animate__slideInDown">Welcome to Bookbae!</h3>
                     <div class="row">
                         <div class="col-12 mb-2">
                             <small>Email</small>

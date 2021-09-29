@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- custom css -->
-   
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/register.css">
 
     <!-- bootstrap -->
@@ -63,6 +63,7 @@
 
 ?>
 <body>
+
     <div class="container pt-5 content">
         <div class="row my-5 jutify-content-center">
             
@@ -71,7 +72,7 @@
                     <div class="col-md-12 d-flex justify-content-center main-pic">
                         <img src="assets\images\profile.png" class="d-flex justify-content-center"><br>
                     </div>
-                    <h3 class="pt-5 text-center"><strong>Register</strong></h3>
+                    <h3 class="pt-5 text-center animate__animated animate__slideInDown"><strong>Register</strong></h3>
                     <div class="row pt-4 p-2">
                         <div class="col-4 ">
                             <p><strong>First Name</strong><p> 
@@ -182,7 +183,7 @@
             </div>
             
             <!--second picture-->
-            <div class="col-md-6 image">
+            <div class="col-md-6 image animate__animated animate__slideInRight">
                 <div class="col-md-12 d-flex justify-content-end ">
                     <img src="assets\images\register\undraw_Access_account_re_8spm.png" style="width:80%">
                 </div>

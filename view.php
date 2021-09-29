@@ -45,9 +45,9 @@
     <!-- custom css -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/view.css">
-
+    
     <!-- bootstrap -->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></link>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     
     <title>BookBae | View </title>
@@ -59,8 +59,8 @@
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <h2 class="text-center p-3"><strong><?php echo $row["name"]; ?></strong></h2>
-    <div class="container pb-5">
+    <h2 class="text-center p-3 animate__animated animate__slideInDown"><strong><?php echo $row['name']; ?></strong></h2>
+    <div class="container-fluid pb-5">
         <div class="row mt-3">
             <div class="col-lg-6 justify-content-end">
                 <div class="row justify-content-center">

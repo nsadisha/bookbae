@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- custom css -->
     <link rel="stylesheet" href="css/profile.css">    
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></link>
     <title>BookBae | Account</title>
 </head>
 <?php
@@ -49,7 +49,7 @@
             <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
                 <img src="assets\images\profile\dp.png" class="dp" style="width:12rem; height:12rem;">
             </div>
-            <div class="col-md-8 m-auto mt-3 mt-md-auto">
+            <div class="col-md-8 m-auto mt-3 mt-md-auto animate__animated animate__slideInDown">
                 <div class="text-center"><h1>Welcome <?php echo $firstName." ".$lastName; ?> !</h1></div>
                 <div class="sub-heading"><P id="sub-heading">Here's where you'll find all your account details as well as your shopping history</p></div>
             </div>
