@@ -33,8 +33,8 @@
     transform: scale(1.03);
   }
   .book .book-img{
-    width: 100%;
-    margin-bottom: 1rem;
+    width: auto;
+    max-height: 15rem;
     transition: 0.2s;
   }
   .book form .book-btn{
@@ -61,6 +61,13 @@
   .book .fav-btn{
     color: #87574b;
   }
+
+  @media only screen and (max-width: 575px){
+    .book .book-img{
+      width: 100%;
+      /* max-height: 15rem; */
+    }
+  }
 </style>
 
 <?php
@@ -68,13 +75,18 @@
 function book($isbn, $size){
   global $q;
   $data = get("SELECT * FROM books WHERE isbn=$isbn");
+  $imageName = get("SELECT image FROM book_images WHERE isbn=$isbn")["image"];
+  // charactor range
+  $range = 13;
+  // limit book name charactors to display in a book component
+  $name = (strlen($data["name"]) > $range) ? substr($data["name"], 0, $range)."...":$data["name"];
   $book = "
     <div class=\"col-6 col-sm-4 col-lg-$size mb-2\">
       <div class=\"book border d-grid p-3\">
-        <a href=\"view.php?isbn=$isbn\"><img src=\"assets/images/book.png\" class=\"book-img\" alt=\"image\"></a>
+        <a href=\"view.php?isbn=$isbn\" class=\"d-flex justify-content-center\"><img src=\"data/$imageName\" class=\"book-img\" alt=\"image\"></a>
         <div class=\"row align-items-center\">
           <div class=\"col\">
-            <a href=\"view.php?isbn=$isbn\"><h5 class=\"mb-0 book-name\">".$data["name"]."</h5></a>
+            <a href=\"view.php?isbn=$isbn\"><h5 class=\"mb-0 book-name\">".$name."</h5></a>
             <span class=\"book-price\">Rs. ".number_format($data["price"], 2)."</span>
           </div>
           <div class=\"col-auto d-none\">
