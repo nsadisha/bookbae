@@ -105,6 +105,14 @@
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-6 ">
+                            Category
+                        </div>
+                        <div class="col-6">
+                            <?php echo $row['category']; ?>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6 ">
                             Edition
                         </div>
                         <div class="col-6">
