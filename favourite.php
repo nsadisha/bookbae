@@ -16,7 +16,7 @@
     function displayFavouriteBooks(){
         global $books;
         foreach ($books as $book) {
-            book($book["isbn"], 2);
+            book($book["isbn"], 3);
         }
     }
 ?>
