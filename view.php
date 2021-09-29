@@ -117,7 +117,7 @@
                 <div class="row  pt-2 favourite">
                    <a href="php/addToFavourite?isbn=<?php echo $isbn; ?>&favSubmit=true" class="d-flex justify-content-center" > <button class="btn btn-primary" type="submit" ><i class="bi bi-heart-fill p-1"></i>Add to favourites</button></a>
                 </div>
-                <form action="php/addToCart.php?isbn=<?php echo $isbn; ?>" method="post">
+                <form action="php/addToCart.php?isbn=<?php echo $isbn; ?>&price=<?php echo $row['price']; ?>" method="post">
                     <div class="row justify-content-center pt-2">
                         <div class="col-4">
                             <input type="text" placeholder="Qty" name="quantity">

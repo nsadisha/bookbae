@@ -9,11 +9,23 @@ if(!isSigned() || !isset($_REQUEST["isbn"])){
 $email = getSignedEmail();
 $isbn = $_REQUEST["isbn"];
 $quantity = $_REQUEST["quantity"];
-
+$price=$_REQUEST['price'];
 if(!isset($quantity)){
     $quantity=1;
 }
-$delete = execute("DELETE FROM cart WHERE (email=\"$email\" AND isbn=\"$isbn\")");
-$insert = execute("INSERT INTO cart VALUES(\"$email\", \"$isbn\", \"$quantity\")");
+
+if(isset($_REQUEST['buyNow'])){
+ 
+  $_SESSION['qty']=$quantity;
+  $_SESSION['price']=$price;
+  header('Location:../buynow-checkout.php');
+
+}else{
+  $delete = execute("DELETE FROM cart WHERE (email=\"$email\" AND isbn=\"$isbn\")");
+  $insert = execute("INSERT INTO cart VALUES(\"$email\", \"$isbn\", \"$quantity\")");
   header("Location:../cart.php");
+}
+
+
+
 ?>
