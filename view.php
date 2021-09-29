@@ -120,6 +120,7 @@
                             <?php echo $row['edition']; ?>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <div class="row justify-content-center">
                         <div class="col-6 ">
                             Publisher
@@ -151,6 +152,25 @@
                         </div>
                     </div>    
 
+=======
+                </div>
+                <div class="row  pt-2 favourite">
+                   <a href="php/addToFavourite?isbn=<?php echo $isbn; ?>&favSubmit=true" class="d-flex justify-content-center" > <button class="btn btn-primary" type="submit" ><i class="bi bi-heart-fill p-1"></i>Add to favourites</button></a>
+                </div>
+                <form action="php/addToCart.php?isbn=<?php echo $isbn; ?>" method="post">
+                    <div class="row justify-content-center pt-2">
+                        <div class="col-4">
+                            <input type="text" placeholder="Qty" name="quantity">
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-primary" type="submit" name="addCart"><i class="bi bi-cart3 p-1"></i>Add to cart</button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-primary" type="submit" name="buyNow"><i class="bi bi-wallet-fill p-1"></i>Buy now</button>
+                        </div>
+                    </div>    
+                </form>
+>>>>>>> 16e95c8f1b542d6ddd3e8cc382896ef414badf99
                 </div>
             </div>
         </div>   
@@ -162,7 +182,12 @@
           <div class="row  justify-content-center align-content-center">
                 <div class="col-10 ">
                   <h4><strong>Description</strong></h4>
+<<<<<<< HEAD
                   <p><?php echo $row['description']; ?></p>
+=======
+                  <p><?php echo $row['description']; ?>
+                  </p>
+>>>>>>> 16e95c8f1b542d6ddd3e8cc382896ef414badf99
                 </div>
             </div>
         </div>

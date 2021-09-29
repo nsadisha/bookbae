@@ -42,7 +42,7 @@
                     </div>
                     
                     <div class="col-md-12 d-flex justify-content-center mt-3">
-                        <button type="submit" class="btn btn-primary px-3" name="submit" >Signin</button>
+                        <button type="submit" class="btn  px-3" name="submit" >Signin</button>
                     </div>
                     <div class="text-center mt-3">
                         <small>You don't have an account? <a href="register.php">Register</a></small>

@@ -1,5 +1,4 @@
 <?php include 'helper.php' ?>
-
 <?php
 
 //add an item to cart
