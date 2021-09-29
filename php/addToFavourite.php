@@ -17,10 +17,12 @@ if(isset($_GET["favSubmit"])){
     
     
     if($isAvailable->num_rows != 0){
-        header("Location:../favourite.php");
+        // header("Location:../favourite.php");
+        goBack();
     }else{
         $insert = execute("INSERT INTO favourite_books VALUES(\"$email\", \"$isbn\")");
-        header("Location:../favourite.php");
+        // header("Location:../favourite.php");
+        goBack();
     }
 }
 ?>
