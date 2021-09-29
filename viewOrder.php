@@ -34,13 +34,14 @@
             $price=$item["price"];
             $quantity=$item["quantity"];
             $total=$item["total"];
+            $imageName = get("SELECT image FROM book_images WHERE isbn=$isbn")["image"];
 
             $row = "
                 <tr class='align-middle'>
                     <td>
                         <div class='d-flex'>
                             <div class=''>
-                                <img src='assets/images/view page/1.jpg' alt='image' style='max-width: 4rem;'>
+                                <img src='data/$imageName' alt='image' style='max-width: 4rem;'>
                             </div>
                             <div class='d-grid align-items-center ms-3'>
                                 <div>

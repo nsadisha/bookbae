@@ -3,15 +3,25 @@
 
 //add an item to cart
 if(!isSigned() || !isset($_REQUEST["isbn"])){
-    goBack();
+    header("Location: ../signin.php");
 }
 //get email
-$email = getSignedEmail();
-$isbn = $_REQUEST["isbn"];
-$quantity = $_REQUEST["quantity"];
+if(isSigned()){
+    $email = getSignedEmail();
+    $isbn = $_REQUEST["isbn"];
+    $quantity = $_REQUEST["quantity"];
 
 if($quantity==0){
     $quantity=1;
+}
+$availableQuantity = get("SELECT available_quantity FROM books WHERE isbn=\"$isbn\"")["available_quantity"];
+
+if($availableQuantity == 0){
+    return;
+}else if($availableQuantity < $quantity){
+  $quantity=$availableQuantity;
+}else{
+  // do nothing
 }
 
 if(isset($_REQUEST['buyNow'])){
@@ -25,9 +35,12 @@ if(isset($_REQUEST['buyNow'])){
   $_SESSION['order_type']="add_cart";
   $delete = execute("DELETE FROM cart WHERE (email=\"$email\" AND isbn=\"$isbn\")");
   $insert = execute("INSERT INTO cart VALUES(\"$email\", \"$isbn\", \"$quantity\")");
-  goBack();
+    closeTab();
+    
 }
 
+    // $delete = execute("SELECT * FROM cart C WHERE EXISTS (SELECT * FROM cart WHERE email=\"$email\" AND isbn=\"$isbn\")");
 
+}
 
 ?>

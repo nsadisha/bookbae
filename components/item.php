@@ -59,12 +59,13 @@
 <?php
 
 function cartItem($isbn, $name, $author, $price, $quantity, $total){
+    $imageName = get("SELECT image FROM book_images WHERE isbn=$isbn")["image"];
     $item = "
         <tr class='align-middle cart-item'>
             <td class='w-50' style='min-width: 15rem;'>
                 <div class='d-flex'>
                     <div class=''>
-                        <img src='assets/images/view page/1.jpg' alt='image' style='max-width: 4rem;'>
+                        <img src='data/$imageName' alt='image' style='max-width: 4rem;'>
                     </div>
                     <div class='d-grid align-items-center ms-3'>
                         <div>

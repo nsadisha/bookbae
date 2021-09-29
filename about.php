@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- custom css -->
     <link rel="stylesheet" href="css/styles.css">
+
     <title>BookBae | About us</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <section class="container mt-3">
+    <section class="container mt-3 animate__animated animate__slideInLeft">
         <h2><strong>About us</strong></h2>
         <div class="hr mb-3"></div>
         <p>
