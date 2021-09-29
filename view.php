@@ -10,9 +10,10 @@
     $data=$conn->query($sql);
     $row=$data->fetch_array();
     $author=$row['author'];
-    $sql2="select isbn from books where author=\"$author\" limit 0,4";
-    $featuredData=$conn->query($sql2);
-    $row2=$featuredData->fetch_array();
+    $category=$row['category'];
+    $sql2="SELECT isbn FROM books WHERE category=\"$category\" AND isbn!=\"$isbn\" LIMIT 0,4";
+    $relatedBooks=$conn->query($sql2);
+    $row2=$relatedBooks->fetch_array();
 
     //book images
     $images = $conn->query("SELECT * FROM book_images WHERE isbn=\"$isbn\"");
@@ -169,12 +170,12 @@
         
         <div class="container related-items">
             <section class="container-fluid my-5">
-                <h3 class="mb-1">Featured products</h3>
+                <h3 class="mb-1">Related products</h3>
                 <div class="mb-4 hr"></div>
-                <div class="row justify-content-center">
+                <div class="row">
                     <?php 
-                        foreach($featuredData as $book){
-                            book($row2['isbn'],3);
+                        foreach($relatedBooks as $book){
+                            book($book['isbn'],3);
                         }
                     ?>
                 </div>
