@@ -58,7 +58,7 @@
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <h2 class="text-center p-3"><strong>Rotten school and great smelling bee</strong></h2>
+    <h2 class="text-center p-3"><strong><?php echo $row["name"]; ?></strong></h2>
     <div class="container pb-5">
         <div class="row mt-3">
             <div class="col-lg-6 justify-content-end">
