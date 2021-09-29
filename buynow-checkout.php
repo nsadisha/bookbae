@@ -31,6 +31,9 @@ $subTotal=((int)$quantity*(int)$price);
 $deliveryFee = 300;
 $grandTotal = $deliveryFee + $subTotal;
 
+//add to order_items table
+$updateOrderItems = execute("INSERT into order_items (order_id,isbn,quantity) values(\"$orderId\",\"$isbn\",\"$quantity\")");
+
 function showOrderSummery(){
     global $email, $deliveryFee,$orderItem,$subTotal,$grandTotal,$quantity;
    
