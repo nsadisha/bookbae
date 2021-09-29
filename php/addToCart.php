@@ -18,12 +18,14 @@ if(isset($_REQUEST['buyNow'])){
  
   $_SESSION['qty']=$quantity;
   $_SESSION['isbn']=$isbn;
+  $_SESSION['order_type']="buy_now";
   header('Location:../buynow-checkout.php');
 
 }else{
+  $_SESSION['order_type']="add_cart";
   $delete = execute("DELETE FROM cart WHERE (email=\"$email\" AND isbn=\"$isbn\")");
   $insert = execute("INSERT INTO cart VALUES(\"$email\", \"$isbn\", \"$quantity\")");
-  header("Location:../cart.php");
+  goBack();
 }
 
 
