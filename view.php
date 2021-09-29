@@ -38,7 +38,7 @@
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <h2 class="text-center p-3"><strong>Rotten school and great smelling bee</strong></h2>
+    <h2 class="text-center p-3"><strong><?php echo $row['name']; ?></strong></h2>
     <div class="container-fluid pb-5">
         <div class="row mt-3">
             <div class="col-lg-6 justify-content-end">
@@ -114,21 +114,22 @@
                         <strong>LKR<?php echo $row['price']; ?>.00</strong>
                     </div>
                 </div>
-                <div class="row justify-content-center pt-2 favourite">
-                    <button class="btn btn-primary" type="submit"><i class="bi bi-heart-fill p-1"></i>Add to favourites</button>
+                <div class="row  pt-2 favourite">
+                   <a href="php/addToFavourite?isbn=<?php echo $isbn; ?>&favSubmit=true" class="d-flex justify-content-center" > <button class="btn btn-primary" type="submit" ><i class="bi bi-heart-fill p-1"></i>Add to favourites</button></a>
                 </div>
-                <div class="row justify-content-center pt-2">
-                    <div class="col-4">
-                        <input type="text" placeholder="Qty">
-                    </div>
-                    <div class="col-4">
-                        <button class="btn btn-primary" type="submit"><i class="bi bi-cart3 p-1"></i>Add to cart</button>
-                    </div>
-                    <div class="col-4">
-                        <button class="btn btn-primary" type="submit"><i class="bi bi-wallet-fill p-1"></i>Buy now</button>
-                    </div>
-                </div>    
-
+                <form action="php/addToCart.php?isbn=<?php echo $isbn; ?>" method="post">
+                    <div class="row justify-content-center pt-2">
+                        <div class="col-4">
+                            <input type="text" placeholder="Qty" name="quantity">
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-primary" type="submit" name="addCart"><i class="bi bi-cart3 p-1"></i>Add to cart</button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-primary" type="submit" name="buyNow"><i class="bi bi-wallet-fill p-1"></i>Buy now</button>
+                        </div>
+                    </div>    
+                </form>
                 </div>
             </div>
         </div>   
@@ -140,14 +141,7 @@
           <div class="row  justify-content-center align-content-center">
                 <div class="col-10 ">
                   <h4><strong>Description</strong></h4>
-                  <p>Rotten School is a children's book series by R. L. Stine 
-                      concerning the adventures of children at a boarding school.
-                      Each book is written from the perspective of Bernie Bridges,
-                      a fourth-grader who lives in his dormitory at Rotten School 
-                      with his pals Belzer, Feenman and Crench, Beast, Chipmunk, 
-                      Nosebleed, Billy The Brain and others. Their rivals are Sherman
-                      Oaks, a rich spoiled brat, and his buddies Wes Updood and Joe
-                      Sweety, from the Nyce House dormitory. 
+                  <p><?php echo $row['description']; ?>
                   </p>
                 </div>
             </div>

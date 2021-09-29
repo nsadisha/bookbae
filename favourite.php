@@ -9,6 +9,7 @@
     }
     //get user email
     $email = getSignedEmail();
+    
     //get all favourite books of the user
     $books = execute("SELECT isbn FROM favourite_books WHERE email=\"$email\"");
 
@@ -54,6 +55,9 @@
             <div class="col">
                 <h2>Favourite books</h2>
                 <div class="hr mb-3"></div>
+            </div>
+            <div class="col-auto d-flex align-items-center d-none d-md-block">
+                <a href="search.php?q=" class="btn bg-brown text-white"><i class="bi bi-arrow-left"></i> <strong>Continue shopping</strong></a>
             </div>
             <div  class="text-center my-5 <?php echo $books->num_rows!=0?"d-none":""; ?>">
                 <h1>No favourite items...!</h1>

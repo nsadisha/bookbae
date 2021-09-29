@@ -173,7 +173,7 @@
                     </div>
                     
                     <div class="col-md-12 d-flex justify-content-center mt-3">
-                        <button type="submit" class="btn btn-primary " name="submit" >Register</button>
+                        <button type="submit" class="btn  " name="submit" >Register</button>
                     </div>
                     <div class="text-center mt-3">
                         <small>Already have an account? <a href="signin.php">Signin</a></small>
