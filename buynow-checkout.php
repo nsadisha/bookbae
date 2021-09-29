@@ -18,25 +18,29 @@ $province = $user["province"];
 $zip = $user["zip"];
 
 $orderId = generateOrderId();
-// calculate sub total and grand total
-//taking quantity and price
+
+//taking quantity and isbn
 
 $quantity=$_SESSION['qty'];
-$price=$_SESSION['price'];
+$isbn=$_SESSION['isbn'];
 
+$orderItem =execute("select * from books where isbn=$isbn");
+$item=$orderItem->fetch_array();
+$price=$item["price"];
 $subTotal=((int)$quantity*(int)$price);
 $deliveryFee = 300;
 $grandTotal = $deliveryFee + $subTotal;
 
 function showOrderSummery(){
-    global $email, $subTotal, $grandTotal, $deliveryFee;
-    $orderItems =[]
-    foreach ($orderItems as $item) {
+    global $email, $deliveryFee,$orderItem,$subTotal,$grandTotal,$quantity;
+   
+    foreach ($orderItem as $item) {
         // var_dump($item);
+
         $item = "
         <tr style='border-bottom: solid #ccc 1px;'>
-            <td class='text-secondary pt-2'><strong>".$item["name"]."</strong><br><small>RS. ".number_format($item["price"], 2)." &times; ".$item["quantity"]."</small></td>
-            <td class='text-end pt-2'><strong>Rs. ".number_format($item["total"], 2)."</strong></td>
+            <td class='text-secondary pt-2'><strong>".$item["name"]."</strong><br><small>RS. ".number_format($item["price"], 2)." &times; ".$quantity."</small></td>
+            <td class='text-end pt-2'><strong>Rs. ".number_format($subTotal, 2)."</strong></td>
         </tr>
         ";
 

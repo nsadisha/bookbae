@@ -9,15 +9,15 @@ if(!isSigned() || !isset($_REQUEST["isbn"])){
 $email = getSignedEmail();
 $isbn = $_REQUEST["isbn"];
 $quantity = $_REQUEST["quantity"];
-$price=$_REQUEST['price'];
-if(!isset($quantity)){
+
+if($quantity==0){
     $quantity=1;
 }
 
 if(isset($_REQUEST['buyNow'])){
  
   $_SESSION['qty']=$quantity;
-  $_SESSION['price']=$price;
+  $_SESSION['isbn']=$isbn;
   header('Location:../buynow-checkout.php');
 
 }else{
