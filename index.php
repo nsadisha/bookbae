@@ -9,6 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookBae | Home</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></link>
     <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
 </head>
 <body>
@@ -23,9 +26,9 @@
             <div class="row">
                 <div class="col-md-6 d-grid align-content-center order-2 order-md-1">
                     <div class="mx-auto mx-md-0 text-center text-md-start">
-                        <h1>Reading is dreaming with open eyes!</h1>
-                        <p class="text-secondary">Explore your favorite books for an affordable price and feel your dream world.</p>
-                        <a href="search.php?q=" class="btn px-3 shop-now-btn">
+                        <h1 class="animate__animated animate__slideInDown">Reading is dreaming with open eyes!</h1>
+                        <p class="text-secondary animate__animated animate__slideInLeft">Explore your favorite books for an affordable price and feel your dream world.</p>
+                        <a href="search.php?q=" class="btn px-3 shop-now-btn animate__animated animate__slideInLeft">
                             <strong>Shop now</strong> <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
