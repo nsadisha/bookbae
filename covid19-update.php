@@ -19,7 +19,7 @@
     <!-- Navbar ends -->
 
     <!-- Page content starts -->
-    <section class="container mt-3">
+    <section class="container mt-3 animate__animated animate__slideInLeft">
         <h2><strong>Covid 19 Update</strong></h2>
         <div class="hr mb-3"></div>
         <p>
