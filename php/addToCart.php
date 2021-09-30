@@ -35,7 +35,7 @@ if(isset($_REQUEST['buyNow'])){
   $_SESSION['order_type']="add_cart";
   $delete = execute("DELETE FROM cart WHERE (email=\"$email\" AND isbn=\"$isbn\")");
   $insert = execute("INSERT INTO cart VALUES(\"$email\", \"$isbn\", \"$quantity\")");
-  header('Location:../cart.php');
+  closeTab();
     
 }
 

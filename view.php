@@ -140,7 +140,7 @@
                     <div class="row  pt-2 favourite col-12">
                         <a href="php/addToFavourite?isbn=<?php echo $isbn; ?>&favSubmit=true" class="d-flex justify-content-center" > <button class="btn btn-primary" type="submit" ><i class="bi bi-heart-fill p-1"></i>Add to favourites</button></a>
                     </div>
-                    <form action="php/addToCart.php?isbn=<?php echo $isbn; ?>" method="post">
+                    <form action="php/addToCart.php?isbn=<?php echo $isbn; ?>" method="post" target="_blank">
                         <div class="row d-flex justify-content-center pt-2">
                             <div class="col-3 d-flex">
                                 <input type="text" placeholder="Qty" name="quantity">
