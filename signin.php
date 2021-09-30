@@ -1,5 +1,5 @@
 <?php include "php/helper.php" ?>
-
+<?php include "components/navbar.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +20,12 @@
     <title>BookBae | Signin</title>
 </head>
 <body>
+      <!-- Navbar starts -->
+      <?php navbar('signin'); ?>
+        <!-- Navbar ends -->
 
-    <div class="container pt-5 content">
+
+    <div class="container pt-3 content">
         <div class="row my-5 justify-content-center p-2 p-sm-0">
             
             <div class="col-md-6 col-lg-5  input-data font-sf-pro">
@@ -29,6 +33,7 @@
                     <div class="col-md-12 d-flex justify-content-center main-pic">
                         <img src="assets\images\profile.png" class="d-flex justify-content-cente"><br>
                     </div>
+                    
                     <h3 class="pt-5 animate__animated animate__slideInDown">Welcome to Bookbae!</h3>
                     <div class="row">
                         <div class="col-12 mb-2">
