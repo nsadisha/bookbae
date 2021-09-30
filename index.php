@@ -80,13 +80,16 @@
     <section class="container-fluid my-5">
         <h3 class="mb-1">New arrivals</h3>
         <div class="mb-4 hr"></div>
+        <?php 
+            $NEWbook=execute("SELECT isbn from books LIMIT 0,4");
+         
+        ?>
         <div class="row">
-            <?php book("12321354565856",2); ?>
-            <?php book("987456123654",2); ?>
-            <?php book("12321354598856",2); ?>
-            <?php book("456987456321",2); ?>
-            <?php book("987456123654",2); ?>
-            <?php book("556987456321",2); ?>
+            <?php 
+                        foreach($NEWbook as $book){
+                             book($book['isbn'],3); 
+                        }
+                    ?>
         </div>
     </section>
 
