@@ -1,5 +1,4 @@
 <?php include "components/footer.php" ?>
-<?php include "components/navbar.php" ?>
 <?php include "sendmail/sendMail.php" ?>
 
 <!DOCTYPE html>
@@ -64,13 +63,14 @@
 ?>
 <body>
 
+
     <div class="container pt-5 content">
         <div class="row my-5 jutify-content-center">
             
             <div class="col-md-6  input-data">
                 <form name="registerForm" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateregisterForm(this);">
                     <div class="col-md-12 d-flex justify-content-center main-pic">
-                        <img src="assets\images\profile.png" class="d-flex justify-content-center"><br>
+                        <img src="assets\images\logo.png" class="d-flex justify-content-center"><br>
                     </div>
                     <h3 class="pt-5 text-center animate__animated animate__slideInDown"><strong>Register</strong></h3>
                     <div class="row pt-4 p-2">
