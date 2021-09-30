@@ -20,9 +20,9 @@
     <title>BookBae | Signin</title>
 </head>
 <body>
-      <!-- Navbar starts -->
-      <?php navbar('signin'); ?>
-        <!-- Navbar ends -->
+    <!-- Navbar starts -->
+    <?php navbar('signin'); ?>
+    <!-- Navbar ends -->
 
 
     <div class="container pt-3 content">
