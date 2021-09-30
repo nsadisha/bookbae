@@ -136,20 +136,23 @@
                             <strong>LKR<?php echo $row['price']; ?>.00</strong>
                         </div>
                     </div>
-                    <div class="row justify-content-center pt-2 favourite">
-                        <button class="btn btn-primary" type="submit"><i class="bi bi-heart-fill p-1"></i>Add to favourites</button>
+                
+                    <div class="row  pt-2 favourite col-12">
+                        <a href="php/addToFavourite?isbn=<?php echo $isbn; ?>&favSubmit=true" class="d-flex justify-content-center" > <button class="btn btn-primary" type="submit" ><i class="bi bi-heart-fill p-1"></i>Add to favourites</button></a>
                     </div>
-                    <div class="row justify-content-center pt-2">
-                        <div class="col-4">
-                            <input type="text" placeholder="Qty">
-                        </div>
-                        <div class="col-4">
-                            <button class="btn btn-primary" type="submit"><i class="bi bi-cart3 p-1"></i>Add to cart</button>
-                        </div>
-                        <div class="col-4">
-                            <button class="btn btn-primary" type="submit"><i class="bi bi-wallet-fill p-1"></i>Buy now</button>
-                        </div>
-                    </div>    
+                    <form action="php/addToCart.php?isbn=<?php echo $isbn; ?>" method="post" target="_blank">
+                        <div class="row d-flex justify-content-center pt-2">
+                            <div class="col-3 d-flex">
+                                <input type="text" placeholder="Qty" name="quantity">
+                            </div>
+                            <div class="col-5 d-flex">
+                                <button class="btn btn-primary" type="submit" name="addCart"><i class="bi bi-cart3 p-1"></i>Add to cart</button>
+                            </div>
+                            <div class="col-4 d-flex">
+                                <button class="btn btn-primary" type="submit" name="buyNow"><i class="bi bi-wallet-fill p-1"></i>Buy now</button>
+                            </div>
+                        </div>    
+                    </form> 
 
                 </div>
             </div>

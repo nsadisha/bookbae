@@ -7,6 +7,7 @@ if(isset($_REQUEST["id"])){
     $id = $_REQUEST["id"];
     //email
     $email = getSignedEmail();
+
     //get order details
     $placedOrder = get("SELECT * FROM placed_orders WHERE order_id=\"$id\"");
     $orderDate = $placedOrder["date"];
@@ -17,18 +18,12 @@ if(isset($_REQUEST["id"])){
     //remove placed order from plced_orders
     $removeFromPlacedOrders = execute("DELETE FROM placed_orders WHERE order_id=\"$id\"");
 
-    //get order items
-    $orderItems = execute("SELECT isbn, quantity FROM cart WHERE email=\"$email\"");
-
-    foreach($orderItems as $item){
-        $itemIsbn = $item["isbn"];
-        $itemQuantity = $item["quantity"];
+    //checking buy now or from cart
+    if($_SESSION['order_type']=="buy_now"){
+        $itemQuantity=$_SESSION['qty'];
+        $itemIsbn=$_SESSION['isbn'];
         //add items to order items
         $addToOrderItems = execute("INSERT INTO order_items VALUES(\"$id\", \"$itemIsbn\", \"$itemQuantity\")");
-
-        //remove items from cart
-        $removeFromCart = execute("DELETE FROM cart WHERE email=\"$email\" AND isbn=\"$itemIsbn\"");
-
         //update inventory
         //get quantity
         $getItemQty = get("SELECT available_quantity FROM books WHERE isbn=\"$itemIsbn\"")["available_quantity"];
@@ -36,6 +31,34 @@ if(isset($_REQUEST["id"])){
         //updating quantity
         $newQuantity = $getItemQty-$itemQuantity;
         $update = execute("UPDATE books SET available_quantity=\"$newQuantity\" WHERE isbn=\"$itemIsbn\"");
+
+        //remove items from cart
+        $removeFromCart = execute("DELETE FROM cart WHERE email=\"$email\" AND isbn=\"$itemIsbn\"");
+
+        $_SESSION['order_type']="cart";
+    }
+    else{
+        
+        //get order items
+        $orderItems = execute("SELECT isbn, quantity FROM cart WHERE email=\"$email\"");
+
+        foreach($orderItems as $item){
+            $itemIsbn = $item["isbn"];
+            $itemQuantity = $item["quantity"];
+            //add items to order items
+            $addToOrderItems = execute("INSERT INTO order_items VALUES(\"$id\", \"$itemIsbn\", \"$itemQuantity\")");
+        
+            //remove items from cart
+            $removeFromCart = execute("DELETE FROM cart WHERE email=\"$email\" AND isbn=\"$itemIsbn\"");
+        
+            //update inventory
+            //get quantity
+            $getItemQty = get("SELECT available_quantity FROM books WHERE isbn=\"$itemIsbn\"")["available_quantity"];
+
+            //updating quantity
+            $newQuantity = $getItemQty-$itemQuantity;
+            $update = execute("UPDATE books SET available_quantity=\"$newQuantity\" WHERE isbn=\"$itemIsbn\"");
+        }
     }
 }
 // var_dump($_POST);

@@ -11,18 +11,37 @@ if(isSigned()){
     $isbn = $_REQUEST["isbn"];
     $quantity = $_REQUEST["quantity"];
 
-    $availableQuantity = get("SELECT available_quantity FROM books WHERE isbn=\"$isbn\"")["available_quantity"];
-    if($availableQuantity == 0){
-        // do nothing
-    }else if($availableQuantity < $quantity){
-        $query = execute("INSERT INTO cart VALUES(\"$email\", \"$isbn\", \"$availableQuantity\")");
-    }else{
-        $query = execute("INSERT INTO cart VALUES(\"$email\", \"$isbn\", \"$quantity\")");
-    }
+if(!$quantity){
+    $quantity=1;
+}
+$availableQuantity = get("SELECT available_quantity FROM books WHERE isbn=\"$isbn\"")["available_quantity"];
+
+if($availableQuantity == 0){
+    closeTab();
+    return;
+}else if($availableQuantity < $quantity){
+  $quantity=$availableQuantity;
+}else{
+  // do nothing
+}
+
+if(isset($_REQUEST['buyNow'])){
+ 
+  $_SESSION['qty']=$quantity;
+  $_SESSION['isbn']=$isbn;
+  $_SESSION['order_type']="buy_now";
+  header('Location:../buynow-checkout.php');
+
+}else{
+  $_SESSION['order_type']="add_cart";
+  $delete = execute("DELETE FROM cart WHERE (email=\"$email\" AND isbn=\"$isbn\")");
+  $insert = execute("INSERT INTO cart VALUES(\"$email\", \"$isbn\", \"$quantity\")");
+  closeTab();
+    
+}
 
     // $delete = execute("SELECT * FROM cart C WHERE EXISTS (SELECT * FROM cart WHERE email=\"$email\" AND isbn=\"$isbn\")");
 
-    closeTab();
 }
 
 ?>
