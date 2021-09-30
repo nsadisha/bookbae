@@ -86,10 +86,10 @@
         ?>
         <div class="row">
             <?php 
-                        foreach($NEWbook as $book){
-                             book($book['isbn'],3); 
-                        }
-                    ?>
+                foreach($NEWbook as $book){
+                        book($book['isbn'],3); 
+                }
+            ?>
         </div>
     </section>
 

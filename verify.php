@@ -71,7 +71,7 @@ if(isset($_REQUEST["resend"])){
                 <div class="col-md-12 d-flex justify-content-center mail">
                     <img src="assets\images\profile\undraw_Mail_sent_re_0ofv-removebg-preview (1).png" style="width:40%;" class="d-flex justify-content-cente"><br>
                 </div>
-                <p>Before creating account, we need toverify your email ID <strong>example@gmail.com</strong><p> 
+                <p>Before creating account, we need toverify your email ID <strong><?php echo "$email"; ?></strong><p> 
                 <p>We have sent you a verification code to your email address.</p>
                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
                     <div class="col-md-12 d-flex justify-content-center">
