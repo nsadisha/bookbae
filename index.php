@@ -69,12 +69,11 @@
         <h3 class="mb-1">Featured products</h3>
         <div class="mb-4 hr"></div>
         <div class="row">
-            <?php book("12321354565856",2); ?>
-            <?php book("987456123654",2); ?>
-            <?php book("12321354598856",2); ?>
-            <?php book("456987456321",2); ?>
-            <?php book("987456123654",2); ?>
-            <?php book("556987456321",2); ?>
+            <?php book("9789556654288",3); ?>
+            <?php book("1406340170",3); ?>
+            <?php book("034914043",3); ?>
+            <?php book("64537384647",3); ?>
+           
         </div>
     </section>
 
