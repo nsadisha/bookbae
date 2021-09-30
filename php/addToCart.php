@@ -18,6 +18,7 @@ $availableQuantity = get("SELECT available_quantity FROM books WHERE isbn=\"$isb
 
 if($availableQuantity == 0){
     closeTab();
+    return;
 }else if($availableQuantity < $quantity){
   $quantity=$availableQuantity;
 }else{
