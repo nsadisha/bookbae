@@ -20,10 +20,6 @@
     <title>BookBae | Signin</title>
 </head>
 <body>
-    <!-- Navbar starts -->
-    <?php navbar('signin'); ?>
-    <!-- Navbar ends -->
-
 
     <div class="container pt-3 content">
         <div class="row my-5 justify-content-center p-2 p-sm-0">
