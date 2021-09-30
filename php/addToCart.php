@@ -11,7 +11,7 @@ if(isSigned()){
     $isbn = $_REQUEST["isbn"];
     $quantity = $_REQUEST["quantity"];
 
-if($quantity==0){
+if(!$quantity){
     $quantity=1;
 }
 $availableQuantity = get("SELECT available_quantity FROM books WHERE isbn=\"$isbn\"")["available_quantity"];
@@ -35,7 +35,7 @@ if(isset($_REQUEST['buyNow'])){
   $_SESSION['order_type']="add_cart";
   $delete = execute("DELETE FROM cart WHERE (email=\"$email\" AND isbn=\"$isbn\")");
   $insert = execute("INSERT INTO cart VALUES(\"$email\", \"$isbn\", \"$quantity\")");
-    closeTab();
+  header('Location:../cart.php');
     
 }
 
