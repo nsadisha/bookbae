@@ -267,7 +267,7 @@ function showUnpaiedOrders(){
     <section class="container mt-3">
         <div class="row">
             <div class="col-12 col-lg-6">
-                <h4><strong>Otehr Admins</strong></h4>
+                <h4><strong>Other Admins</strong></h4>
 
                 <?php showAdmins(); ?>
                 
