@@ -204,7 +204,7 @@ function showUnpaiedOrders(){
             <h4><strong>Summary</strong></h4>
             <div class="col-6 col-md-3 mb-3">
                 <div class="cCard">
-                    <i class="bi bi-currency-dollar"></i>
+                    <i class="bi bi-cash"></i>
                     <h5><strong>Net Income</strong></h5>
                     <strong class="text-secondary"><?php echo "Rs. ".number_format(getTotalIncome(), 2); ?></strong>
                 </div>
