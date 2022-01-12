@@ -34,12 +34,14 @@
         $state=$_REQUEST['state'];
         $city=$_REQUEST['city'];
         $zipcode=$_REQUEST['zipcode'];
-        $sql="INSERT into users values(\"$email\",\"$fname\",\"$lname\",\"$password\",\"$contact\")";
+        $sql="INSERT INTO users (email, fname, lname, password, contact) VALUES(\"$email\",\"$fname\",\"$lname\",\"$password\",\"$contact\")";
         $location="INSERT INTO user_addresses values(\"$email\",\"$address1\",\"$address2\",\"$state\",\"$city\",\"$zipcode\")";
         
         $code = rand(100000,999999);
         $subject = "Verification code";
         $body = "<h1>BookBae</h1><p>Hi $fname $lname,<br>Your verification code is: <strong>$code</strong></p>";
+
+        echo $sql;
 
         $result=$conn->query($sql);
         $result2=$conn->query($location);
